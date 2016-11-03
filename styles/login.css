@@ -145,6 +145,10 @@ ul#menu li a {
     margin-right: 50px;
 }
 
+/*#form_body i ocus]{*/
+    /*color: #c6134f;*/
+/*}*/
+
 .field {
     height: 40px;
     width: 300px;
@@ -160,6 +164,10 @@ ul#menu li a {
     font-family: Shabnam;
 }
 
+.field:focus{
+    outline: 0px;
+    border-bottom: 4px solid #c6134f;
+}
 #submit_button {
     height: 55px;
     width: 350px;
