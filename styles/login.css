@@ -3,6 +3,24 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
+@font-face {
+    font-family: Shabnam;
+    src: url('Shabnam.eot');
+    src: url('Shabnam.eot?#iefix') format('embedded-opentype'),
+    url('Shabnam.woff') format('woff'),
+    url('Shabnam.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('Shabnam-Bold.eot');
+    src: url('Shabnam-Bold.eot?#iefix') format('embedded-opentype'),
+    url('Shabnam-Bold.woff') format('woff'),
+    url('Shabnam-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
 #header{
     width: 100%;
     height: 60px;
@@ -24,17 +42,19 @@ ul#menu li {
     float: left;
     padding-right: 105px;
     padding-left: 70px;
-    margin-top : 10px;
+    margin-top : 5px;
     width: 800px;
     font-weight: 100;
 }
 
 ul#menu li a {
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     padding-left: 200px;
     color: #cccccc;
     text-decoration: none;
+    font-family: Shabnam;
+    font-weight: bold;
 }
 
 #form{
@@ -57,10 +77,15 @@ ul#menu li a {
     background: #cccccc;
     color: #222222;
     font-size: 20px;
+    font-family: Shabnam;
 }
 
 #form_footer a {
-    font-family: Material Icons;
+    font-family: Shabnam;
+}
+
+#form_footer a:link {
+    color: #3a82a3;
 }
 
 #title{
@@ -71,6 +96,7 @@ ul#menu li a {
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 60px;
+    font-family: Shabnam;
 }
 
 #form_body{
@@ -92,8 +118,10 @@ ul#menu li a {
     border-top: 0px;
     border-right: 0px;
     border-left: 0px;
+    font-size: 20px;
     border-bottom: 2px solid #918f8f;
     background: #eaebed;
+    font-family:Shabnam;
 }
 
 #submit_button{
@@ -103,17 +131,24 @@ ul#menu li a {
     align-self: center;
     margin: 15px 52px 15px 15px;
     padding: 10px;
-    background: #d63535;
+    background: #d84949;
     border-radius: 4px;
     color: white;
     font-size: 20px;
+    font-family: Shabnam;
 }
 
 #text_plain{
     margin: 10px;
     text-align: center;
+    font-family: Shabnam;
+}
+
+#text_plain a:link{
+    color: #8c8888;
 }
 
 #form_content{
     padding-top: 15px;
 }
+

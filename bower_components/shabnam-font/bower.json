@@ -1,0 +1,31 @@
+{
+  "name": "shabnam-font",
+  "homepage": "https://github.com/mohrd/shabnam-font",
+  "authors": [
+    "Saber Rastikerdar <saber.rastikerdar@gmail.com>",
+    "Mohammad-Reza <mr.mohrd@gmail.com>"
+  ],
+  "description": "",
+  "main": [
+    "Shabnam-Bold.eot",
+    "Shabnam-Bold.ttf",
+    "Shabnam-Bold.woff",
+    "Shabnam.eot",
+    "Shabnam.ttf",
+    "Shabnam.woff"
+  ],
+  "keywords": [
+    "font",
+    "persian",
+    "shabnam"
+  ],
+  "license": "SIL Open Font License",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "source"
+  ]
+}
