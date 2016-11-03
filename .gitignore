@@ -53,3 +53,21 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
+.gitattributes
+.htaccess
+.idea/
+404.html
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE.md
+README.md
+apple-touch-icon-precomposed.png
+crossdomain.xml
+css/
+doc/
+favicon.ico
+humans.txt
+img/
+index.html
+js/
+robots.txt
