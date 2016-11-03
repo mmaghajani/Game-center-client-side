@@ -24,15 +24,25 @@ ul#menu li {
     float: left;
     padding-right: 105px;
     padding-left: 70px;
-    margin-top : 15px;
+    margin-top : 10px;
     width: 800px;
     font-weight: 100;
 }
 
 ul#menu li a {
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     padding-left: 200px;
     color: #cccccc;
     text-decoration: none;
+}
+
+#form{
+    alignment: center;
+    background: #eaebed;
+    width: 450px;
+    height: 550px;
+    margin-top : 180px;
+    margin-left: 710px;
+    border-radius: 10px;
 }
