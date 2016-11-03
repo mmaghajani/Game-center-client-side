@@ -41,8 +41,79 @@ ul#menu li a {
     alignment: center;
     background: #eaebed;
     width: 450px;
-    height: 550px;
+    height: 510px;
     margin-top : 180px;
     margin-left: 710px;
     border-radius: 10px;
+}
+
+#form_footer{
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 50px;
+    padding-top: 25px;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    background: #cccccc;
+    color: #222222;
+    font-size: 20px;
+}
+
+#form_footer a {
+    font-family: Material Icons;
+}
+
+#title{
+    text-align: center;
+    color: #444444;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+#form_body{
+    direction: rtl;
+}
+
+#form_body i {
+    color: #737373;
+    alignment-baseline: bottom;
+    margin-right: 50px;
+}
+
+.field{
+    height: 40px;
+    width: 300px;
+    margin: 15px;
+    align-content: center;
+    padding: 5px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px solid #918f8f;
+    background: #eaebed;
+}
+
+#submit_button{
+    height: 55px;
+    width: 350px;
+    align-content: center;
+    align-self: center;
+    margin: 15px 52px 15px 15px;
+    padding: 10px;
+    background: #d63535;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+}
+
+#text_plain{
+    margin: 10px;
+    text-align: center;
+}
+
+#form_content{
+    padding-top: 15px;
 }
