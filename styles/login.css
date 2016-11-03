@@ -21,7 +21,40 @@
     font-weight: bold;
 }
 
-#header{
+.material-icons {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 48px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    vertical-align: text-bottom;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+#header {
     width: 100%;
     height: 60px;
     margin: 0px;
@@ -42,32 +75,34 @@ ul#menu li {
     float: left;
     padding-right: 105px;
     padding-left: 70px;
-    margin-top : 5px;
+    margin-top: 4px;
     width: 800px;
     font-weight: 100;
 }
 
 ul#menu li a {
-    font-size: 30px;
+    font-size: 27px;
     text-align: center;
     padding-left: 200px;
     color: #cccccc;
     text-decoration: none;
     font-family: Shabnam;
     font-weight: bold;
+    align-self: center;
 }
 
-#form{
+#form {
     alignment: center;
     background: #eaebed;
     width: 450px;
-    height: 510px;
-    margin-top : 180px;
+    height: 568px;
+    margin-top: 180px;
     margin-left: 710px;
     border-radius: 10px;
+    box-shadow: 10px 15px 12px #4f5051;
 }
 
-#form_footer{
+#form_footer {
     border-radius: 0px 0px 10px 10px;
     margin-top: 50px;
     padding-top: 25px;
@@ -88,7 +123,7 @@ ul#menu li a {
     color: #3a82a3;
 }
 
-#title{
+#title {
     text-align: center;
     color: #444444;
     display: block;
@@ -99,17 +134,18 @@ ul#menu li a {
     font-family: Shabnam;
 }
 
-#form_body{
+#form_body {
     direction: rtl;
 }
 
 #form_body i {
     color: #737373;
     alignment-baseline: bottom;
+    margin-top: 20px;
     margin-right: 50px;
 }
 
-.field{
+.field {
     height: 40px;
     width: 300px;
     margin: 15px;
@@ -121,10 +157,10 @@ ul#menu li a {
     font-size: 20px;
     border-bottom: 2px solid #918f8f;
     background: #eaebed;
-    font-family:Shabnam;
+    font-family: Shabnam;
 }
 
-#submit_button{
+#submit_button {
     height: 55px;
     width: 350px;
     align-content: center;
@@ -138,17 +174,17 @@ ul#menu li a {
     font-family: Shabnam;
 }
 
-#text_plain{
+#text_plain {
     margin: 10px;
     text-align: center;
     font-family: Shabnam;
 }
 
-#text_plain a:link{
+#text_plain a:link {
     color: #8c8888;
 }
 
-#form_content{
+#form_content {
     padding-top: 15px;
 }
 
