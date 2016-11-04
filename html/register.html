@@ -10,7 +10,8 @@
 
     <link rel="stylesheet" href="../styles/hw2-global.css">
     <link rel="stylesheet" href="../styles/register.css">
-    <link href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.0.2/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -24,10 +25,22 @@
 <div id="content">
     <div id="form">
         <div id="title">
-
+            ثبت نام
         </div>
         <div id="form_body">
-
+            <form action="action_page.php">
+                <i class="material-icons md-36">account_circle</i><input class="field" type="text" name="username"
+                                                                         placeholder="نام کاربری">
+                <br>
+                <i class="material-icons md-36">email</i><input class="field" type="email" name="email"
+                                                                placeholder="رایانامه">
+                <i class="material-icons md-36">https</i><input class="field" type="password" name="password"
+                                                                placeholder="رمز عبور">
+                <div id="accept">
+                    <input id="box" type="checkbox" name="rules" value="false"><a href="#">قوانین</a> را می پذیرم
+                </div>
+                <input id="submit_button" type="submit" value="ثبت نام">
+            </form>
         </div>
     </div>
 </div>
