@@ -3,3 +3,147 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
+
+#form {
+    alignment: center;
+    background: #eaebed;
+    width: 450px;
+    height: 568px;
+    margin-top: 180px;
+    padding-top: 20px;
+    margin-left: 710px;
+    border-radius: 10px;
+    box-shadow: 10px 15px 12px #4f5051;
+}
+
+#form_footer {
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 50px;
+    padding-top: 25px;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    background: #cccccc;
+    color: #222222;
+    font-size: 20px;
+    font-family: Shabnam;
+}
+
+#form_footer a {
+    font-family: Shabnam;
+}
+
+#form_footer a:link {
+    color: #3a82a3;
+}
+
+#title {
+    text-align: center;
+    color: #444444;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    font-family: Shabnam;
+}
+
+#form_body {
+    direction: rtl;
+}
+
+#form_body i {
+    color: #737373;
+    alignment-baseline: bottom;
+    margin-top: 20px;
+    margin-right: 50px;
+    float: right;
+}
+
+.field {
+    height: 40px;
+    width: 288px;
+    margin: 15px;
+    align-content: center;
+    padding: 5px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    font-size: 20px;
+    border-bottom: 2px solid #918f8f;
+    background: #eaebed;
+    font-family: Shabnam;
+}
+
+.field:focus{
+    outline: 0px;
+    border-bottom: 4px solid #c6134f;
+    color: #c6134f;
+}
+
+#row1 input:focus ~ i {
+    color: #c6134f;
+}
+
+#row2 input:focus ~ i {
+    color: #c6134f;
+}
+#row3 input:focus ~ i {
+    color: #c6134f;
+}
+
+#submit_button {
+    height: 55px;
+    width: 350px;
+    align-content: center;
+    align-self: center;
+    margin: 15px 52px 15px 15px;
+    padding: 10px;
+    background: #0087ff;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    font-family: Shabnam;
+}
+
+#text_plain {
+    margin: 10px;
+    text-align: center;
+    font-family: Shabnam;
+}
+
+#text_plain a:link {
+    color: #8c8888;
+}
+
+#form_content {
+    padding-top: 15px;
+}
+
+#box{
+    width: 36px;
+    height: 36px;
+    background : #e6e6e6;
+    margin: 10px 10px 0px 10px;
+    border-radius: 2px;
+}
+
+#accept input:checked{
+    background: #2aa1c0;
+}
+
+#accept{
+    font-family: Shabnam;
+    width: 288px;
+    margin-right: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #737373;
+    align-content: center;
+    padding: 5px;
+}
+
+#accept a:link{
+    color: #3a82a3;
+}
