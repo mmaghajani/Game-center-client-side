@@ -57,7 +57,7 @@
 	background: #eaebed;
 	text-align: center;
 	width: 560px;
-	height: 970px;
+	height: 1000px;
 	/*margin-top: 25px;*/
 	padding: 10px 0px 10px 0px;
 	margin: auto;
@@ -387,6 +387,15 @@
 	bottom: -14.8492px;
 	border-bottom: solid 2.8284px #fcf0f0;
 	border-left: solid 2.8284px #fcf0f0;
+}
+
+.progress-bar{
+	text-align: center;
+	background: #9e9e9e;
+	border-radius: 50%;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
 }
 
 
