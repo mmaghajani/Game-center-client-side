@@ -21,8 +21,8 @@
 	display: block;
 	font-size: 25px;
 	font-weight: bold;
-	margin-top: 3px;
-	margin-bottom: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	font-family: Shabnam;
 }
 
@@ -32,7 +32,7 @@
 	width: 500px;
 	height: 820px;
 	margin-top: 50px;
-	padding-top: 20px;
+	padding-top: 5px;
 	margin-left: 710px;
 	border-radius: 2px;
 	box-shadow: 0px 5px 10px #4f5051;
@@ -86,9 +86,9 @@
 	text-align: center;
 	align-self: center;
 	margin-left: 0px;
-	width: 105px;
-	height: 105px;
-	padding: 5px;;
+	width: 85px;
+	height: 85px;
+	padding: 3px;;
 	background: #a0a0a0;
 }
 
@@ -97,8 +97,12 @@
 }
 
 .score{
-	font-size: 25px;
+	font-size: 20px;
 	color: #26a008;
+	margin-bottom: 0px;
+	border: 0px;
+	padding: 0px;
+	margin-top: -10px;
 }
 
 #rate{
@@ -112,8 +116,9 @@
 }
 
 #score{
-	font-size: 27px;
+	font-size: 24px;
 	color: #26a008;
+	margin-top: -10px;
 }
 
 .gold_star{
@@ -121,7 +126,7 @@
 }
 
 .light_gray_star{
-	color: #8b8b8b;
+	color: #b4b4b4;
 }
 
 /*#image{*/
@@ -137,10 +142,10 @@
 /*}*/
 
 .gold_border{
-	padding: 7px;
+	padding: 3px;
 	border: 5px #c6134f;
-	width: 125px;
-	height: 125px;
+	width: 95px;
+	height: 95px;
 	border-radius: 50%;
 	align-content: center;
 	text-align: center;
@@ -150,14 +155,26 @@
 }
 
 .bronze-border{
-	padding: 5px;
+	padding: 3px;
 	border: 5px #c6134f;
-	width: 105px;
-	height: 105px;
+	width: 85px;
+	height: 85px;
 	border-radius: 50%;
 	align-content: center;
 	text-align: center;
 	align-self: center;
 	margin-left: 5px;
 	background: #A92B0C;
+}
+
+.stars{
+	border : 0px;
+	margin-top: 0px;
+	margin-top: -15px ;
+}
+
+#stars{
+	border : 0px;
+	margin-top: 0px;
+	margin-top: -15px ;
 }
