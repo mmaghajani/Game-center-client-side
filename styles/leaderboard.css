@@ -19,18 +19,54 @@
 	font-size: 25px;
 	font-weight: bold;
 	margin-top: 3px;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 	font-family: Shabnam;
 }
 
 #board {
 	alignment: center;
 	background: #eaebed;
-	width: 450px;
+	width: 500px;
 	height: 820px;
 	margin-top: 50px;
 	padding-top: 20px;
 	margin-left: 710px;
 	border-radius: 2px;
 	box-shadow: 10px 15px 12px #4f5051;
+}
+
+#best{
+	border-bottom: 10px;
+	border-color: #8c8c8c;
+	width: 100%;
+	height: 190px;
+}
+
+#person1{
+	float: left;
+	background: #2aa1c0;
+	width: 166px;
+	height:100%;
+}
+
+#person2{
+	background: #ffff00;
+	width: 168px;
+	float: left;
+	height:100%;
+}
+
+#person3{
+	background: #c6134f;
+	width: 166px;
+	float: left;
+	height:100%;
+}
+
+.rate{
+	text-align: center;
+	font-family: Shabnam;
+	color: #3c3d3c;
+	font-size: 20px;
+	font-weight: bold;
 }
