@@ -3,6 +3,9 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
+*{
+	font-family: Shabnam;
+}
 #header {
 	width: 100%;
 	height: 60px;
@@ -44,29 +47,65 @@
 
 #person1{
 	float: left;
+	padding: 5px;
+	text-align: center;
 	background: #2aa1c0;
-	width: 166px;
-	height:100%;
+	width: 31%;
+	height:85%;
+	margin: 35px 4px 4px 4px;
 }
 
 #person2{
 	background: #ffff00;
-	width: 168px;
+	text-align: center;
+	width: 31%;
 	float: left;
 	height:100%;
+	margin: 4px;
 }
 
 #person3{
 	background: #c6134f;
-	width: 166px;
+	text-align: center;
+	width: 31%;
 	float: left;
-	height:100%;
+	margin: 35px 4px 4px 4px;
+	height:85%;
 }
 
 .rate{
 	text-align: center;
-	font-family: Shabnam;
 	color: #3c3d3c;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.name{
+	font-size: 21px;
+}
+
+.score{
+	font-size: 25px;
+}
+
+#rate{
+	color: #3c3d3c;
+	font-size: 23px;
+	font-weight: bold;
+}
+
+#name{
+	font-size: 24px;
+}
+
+#score{
+	font-size: 27px;
+}
+
+.gold_star{
+	color: #efcb17;
+}
+
+.light_gray_star{
+	color: #eaeaea;
 }

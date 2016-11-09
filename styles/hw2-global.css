@@ -104,6 +104,10 @@ ul#menu li a {
 	font-size: 24px;
 }
 
+.material-icons.md-18 {
+	font-size: 18px;
+}
+
 
 @font-face {
 	font-family: Material Icons ;
