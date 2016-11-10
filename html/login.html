@@ -17,8 +17,8 @@
 <body>
 <div id="header">
     <ul id="menu">
-        <li><a href="#"><i class="material-icons md-36">account_box</i></a></li>
-        <li><a href="#">ceitgames</a></li>
+        <li id="account"><a href="#"><i class="material-icons md-36">account_box</i></a></li>
+        <li id="games"><a href="#">ceitgames</a></li>
     </ul>
 </div>
 <div id="content">
@@ -29,12 +29,16 @@
             </div>
             <div id="form_body">
                 <form action="action_page.php">
-                    <i class="material-icons md-36">email</i><input class="field" type="text" name="firstname"
+                    <div id="row1"><input class="field" type="text" name="firstname"
                                                               placeholder="ایمیل یا شماره تلفن">
-                    <br>
-                    <i class="material-icons md-36">https</i><input class="field" type="text" name="lastname"
+                        <i class="material-icons md-36">email</i>
+                    </div>
+                        <br>
+                    <div id="row2"><input class="field" type="text" name="lastname"
                                                               placeholder="رمز عبور">
-                    <br><br>
+                        <i class="material-icons md-36">https</i>
+                    </div>
+                        <br><br>
                     <input id="submit_button" type="submit" value="ورود">
                 </form>
             </div>

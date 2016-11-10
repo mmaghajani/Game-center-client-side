@@ -12,7 +12,7 @@
     margin-top: 180px;
     margin-left: 710px;
     border-radius: 10px;
-    box-shadow: 10px 15px 12px #4f5051;
+    box-shadow: 0px 5px 10px #4f5051;
 }
 
 #form_footer {
@@ -36,6 +36,10 @@
     color: #3a82a3;
 }
 
+a:link{
+    color: #750a58;
+}
+
 #title {
     text-align: center;
     color: #444444;
@@ -56,6 +60,7 @@
     alignment-baseline: bottom;
     margin-top: 30px;
     margin-right: 50px;
+    float: right;
 }
 
 /*#form_body i ocus]{*/
@@ -81,6 +86,15 @@
     outline: 0px;
     border-bottom: 4px solid #c6134f;
 }
+
+#row1 input:focus ~ i {
+    color: #c6134f;
+}
+
+#row2 input:focus ~ i {
+    color: #c6134f;
+}
+
 #submit_button {
     height: 55px;
     width: 350px;
@@ -93,6 +107,12 @@
     color: white;
     font-size: 20px;
     font-family: Shabnam;
+}
+
+#submit_button:hover{
+    box-shadow: 0px 2px 25px #a6a7a8;
+    background: #e54c4c;
+    cursor: auto;
 }
 
 #text_plain {
