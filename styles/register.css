@@ -13,7 +13,7 @@
     padding-top: 20px;
     margin-left: 710px;
     border-radius: 10px;
-    box-shadow: 10px 15px 12px #4f5051;
+    box-shadow: 0px 5px 10px #4f5051;
 }
 
 #form_footer {
@@ -104,6 +104,12 @@
     color: white;
     font-size: 20px;
     font-family: Shabnam;
+}
+
+#submit_button:hover{
+    box-shadow: 0px 2px 25px #a6a7a8;
+    background: rgba(0, 135, 255, 0.82);
+    cursor: auto;
 }
 
 #text_plain {
