@@ -3,15 +3,6 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
-*{
-	font-family: Shabnam;
-}
-
-#content{
-	text-align: center;
-	padding: 20px;
-}
-
 .level-18md{
 	float: right;
 	position: relative;
