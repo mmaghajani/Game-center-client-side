@@ -3,14 +3,15 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
-
+#content{
+    padding: 150px;
+}
 #form {
     alignment: center;
     background: #eaebed;
     width: 450px;
     height: 568px;
-    margin-top: 180px;
-    margin-left: 710px;
+    margin:auto;
     border-radius: 10px;
     box-shadow: 0px 5px 10px #4f5051;
 }
