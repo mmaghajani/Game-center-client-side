@@ -1,5 +1,10 @@
 // Test Funcs
 // See Inspect Element's Console Log Output
+
+var gameInformation = [];
+
+processGameInformation();
+
 createBasicElement();
 
 function createModal() {
@@ -11,7 +16,7 @@ function createModal() {
     name.placeholder = "Enter your name";
 
     var OKButton = createCustomElement("button", "btn", null, "OK");
-    OKButton.style.marginLeft = "10px" ;
+    OKButton.style.marginLeft = "10px";
 
     modal_content.appendChild(name);
     modal_content.appendChild(OKButton);
@@ -25,7 +30,8 @@ function createWindow() {
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
-    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper Online - Beginner!");
+    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper Online - " +
+        gameInformation["game-title"]);
 
     var div = document.createElement("div");
     var btnMinimize = createCustomElement("span", "btn", "btn-minimize", '-');
@@ -33,10 +39,10 @@ function createWindow() {
 
     var top = createCustomElement("div", "top", null, null);
 
-    var counter1 = createCustomElement("span" , "counter" , null , "123");
-    var smile = createCustomElement("span" , "smile" , null , null);
-    smile.setAttribute("data-value" , "normal");
-    var counter2 = createCustomElement("span" , "counter" , null ,"321") ;
+    var counter1 = createCustomElement("span", "counter", null, "123");
+    var smile = createCustomElement("span", "smile", null, null);
+    smile.setAttribute("data-value", "normal");
+    var counter2 = createCustomElement("span", "counter", null, "321");
 
     div.appendChild(btnMinimize);
     div.appendChild(btnClose);
@@ -48,7 +54,7 @@ function createWindow() {
     window.appendChild(titleBar);
     window.appendChild(top);
 
-    return window ;
+    return window;
 }
 
 function createBasicElement() {
@@ -82,7 +88,25 @@ function createCustomElement(tagName, className, id, text) {
 
     return element;
 }
-getGameXML();
+
+function processGameInformation() {
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(getGameXML(), "text/xml");
+    gameInformation["game_title"] = xmlDoc.getElementsByTagName("game")[0].title;
+    gameInformation["game_id"] = xmlDoc.getElementsByTagName("game")[0].id;
+    var levels = xmlDoc.getElementsByTagName("levels")[0].children;
+    for (var i = 0; i < levels.length; i++) {
+        gameInformation["levels"][i] = {
+            id: levels[i].id,
+            title: levels[i].title,
+            timer: levels[i].timer,
+            rows: levels[i].children[0],
+            cols: levels[i].children[1],
+            mines: levels[i].children[2],
+            time: levels[i].children[3]
+        }
+    }
+}
 
 getNewGame('<request>' +
     '<rows>3</rows>' +
