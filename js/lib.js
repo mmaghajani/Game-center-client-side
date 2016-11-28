@@ -12,7 +12,7 @@
 function getGameXML(cb) {
     // Simple Static Game Levels
     var xml = '<game id="minesweeper" title="Minesweeper Online" >'
-            + '<levels default ="1">'
+            +'<levels default ="1">'
                 +'<level id="1" title="Beginner!" timer="true">'
                     +'<rows>10</rows>'
                     +'<cols>10</cols>'
@@ -20,7 +20,9 @@ function getGameXML(cb) {
                     +'<time>120</time>'
                 +'</level>'
             +'</levels>'
-        +'</game>';
+        +'</game>'
+    ;
+
     // Return XML File
     return _xml(xml, "game.xml", cb);
 }
