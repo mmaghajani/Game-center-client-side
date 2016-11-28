@@ -95,7 +95,7 @@ function processGameInformation() {
     gameInformation["game_title"] = xmlDoc.getElementsByTagName("game")[0].getAttribute("title");
     gameInformation["game_id"] = xmlDoc.getElementsByTagName("game")[0].getAttribute("id");
     var levels = xmlDoc.getElementsByTagName("levels")[0].children;
-    var levelArray = [] ;
+    var levelArray = [];
     for (var i = 0; i < levels.length; i++) {
         levelArray[i] = {
             id: levels[i].getAttribute("id"),
@@ -107,8 +107,7 @@ function processGameInformation() {
             time: levels[i].getElementsByTagName("time")[0].childNodes[0].nodeValue
         }
     }
-    gameInformation["levels"] = levelArray ;
-    console.log(gameInformation["levels"][0]);
+    gameInformation["levels"] = levelArray;
 }
 
 getNewGame('<request>' +
