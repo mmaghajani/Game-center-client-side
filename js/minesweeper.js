@@ -101,13 +101,14 @@ function processGameInformation() {
             id: levels[i].getAttribute("id"),
             title: levels[i].getAttribute("title"),
             timer: levels[i].getAttribute("timer"),
-            rows: levels[i].children[0],
-            cols: levels[i].children[1],
-            mines: levels[i].children[2],
-            time: levels[i].children[3]
+            rows: levels[i].getElementsByTagName("rows")[0].childNodes[0].nodeValue,
+            cols: levels[i].getElementsByTagName("cols")[0].childNodes[0].nodeValue,
+            mines: levels[i].getElementsByTagName("mines")[0].childNodes[0].nodeValue,
+            time: levels[i].getElementsByTagName("time")[0].childNodes[0].nodeValue
         }
     }
     gameInformation["levels"] = levelArray ;
+    console.log(gameInformation["levels"][0]);
 }
 
 getNewGame('<request>' +
