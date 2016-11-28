@@ -18,8 +18,8 @@
 <body>
 <div id="header">
     <ul id="menu">
-        <li><a href="#"><i class="material-icons md-36">account_box</i></a></li>
-        <li><a href="#">ceitgames</a></li>
+        <li id="account"><a href="#"><i class="material-icons md-36">account_box</i></a></li>
+        <li id="games"><a href="#">ceitgames</a></li>
     </ul>
 </div>
 <div id="content">
@@ -34,7 +34,6 @@
                                         placeholder="نام کاربری">
                     <i class="material-icons md-36">account_circle</i>
                 </div>
-                <br>
                 <div id="row2"><input class="field" type="email" name="email"
                                         placeholder="رایانامه"><i class="material-icons md-36">email</i>
                 </div>
@@ -42,7 +41,7 @@
                                         placeholder="رمز عبور"><i class="material-icons md-36">https</i>
                 </div>
                 <div id="accept">
-                    <input id="box" type="checkbox" name="rules" value="false"><a href="#">قوانین</a> را می پذیرم
+                    <input id="box" type="checkbox" name="rules" value="false"><label for="box" class="label"><a href="#">قوانین</a> را می پذیرم</label>
                 </div>
                 <input id="submit_button" type="submit" value="ثبت نام">
             </form>
