@@ -30,8 +30,8 @@ function createWindow() {
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
-    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper Online - " +
-        gameInformation["game-title"]);
+    var gameTitle = createCustomElement("span", null, "game-title", gameInformation["game_title"] + " - " +
+        gameInformation["levels"][0].title);
 
     var div = document.createElement("div");
     var btnMinimize = createCustomElement("span", "btn", "btn-minimize", '-');
@@ -92,20 +92,22 @@ function createCustomElement(tagName, className, id, text) {
 function processGameInformation() {
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(getGameXML(), "text/xml");
-    gameInformation["game_title"] = xmlDoc.getElementsByTagName("game")[0].title;
-    gameInformation["game_id"] = xmlDoc.getElementsByTagName("game")[0].id;
+    gameInformation["game_title"] = xmlDoc.getElementsByTagName("game")[0].getAttribute("title");
+    gameInformation["game_id"] = xmlDoc.getElementsByTagName("game")[0].getAttribute("id");
     var levels = xmlDoc.getElementsByTagName("levels")[0].children;
+    var levelArray = [] ;
     for (var i = 0; i < levels.length; i++) {
-        gameInformation["levels"][i] = {
-            id: levels[i].id,
-            title: levels[i].title,
-            timer: levels[i].timer,
+        levelArray[i] = {
+            id: levels[i].getAttribute("id"),
+            title: levels[i].getAttribute("title"),
+            timer: levels[i].getAttribute("timer"),
             rows: levels[i].children[0],
             cols: levels[i].children[1],
             mines: levels[i].children[2],
             time: levels[i].children[3]
         }
     }
+    gameInformation["levels"] = levelArray ;
 }
 
 getNewGame('<request>' +
