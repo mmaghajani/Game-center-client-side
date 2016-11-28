@@ -7,6 +7,8 @@ processGameInformation();
 
 createBasicElement();
 
+newGame();
+
 function createModal() {
     var modal = createCustomElement("div", "modal", "alert-modal", null);
 
@@ -44,6 +46,8 @@ function createWindow() {
     smile.setAttribute("data-value", "normal");
     var counter2 = createCustomElement("span", "counter", null, "321");
 
+    var grid = createCustomElement("div" , "grid" , "grid" , null);
+
     div.appendChild(btnMinimize);
     div.appendChild(btnClose);
     titleBar.appendChild(gameTitle);
@@ -53,6 +57,7 @@ function createWindow() {
     top.appendChild(counter2);
     window.appendChild(titleBar);
     window.appendChild(top);
+    window.appendChild(grid);
 
     return window;
 }
@@ -110,8 +115,30 @@ function processGameInformation() {
     gameInformation["levels"] = levelArray;
 }
 
-getNewGame('<request>' +
-    '<rows>3</rows>' +
-    '<cols>3</cols>' +
-    '<mines>3</mines>' +
-    '</request>');
+function makeXSL() {
+    // This XSL Should Convert level.xml to
+    // appreciate DOM elements for #grid.
+    var xml = '<?xml version="1.0" encoding="UTF-8"?>'
+        + '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">'
+        + '<xsl:template match="/">'
+        + '<!-- TODO -->'
+        + '</xsl:template>'
+        + '</xsl:stylesheet>';
+    return new DOMParser().parseFromString(xml,"text/xml") ;
+}
+
+function newGame() {
+    var requestXML = '<request>' +
+        '<rows>9</rows>' +
+        '<cols>9</cols>' +
+        '<mines>9</mines>' +
+        '</request>';
+
+    var game = getNewGame(requestXML);
+
+    var xsltProcessor = new XSLTProcessor();
+    xsltProcessor.importStylesheet(makeXSL());
+    var resultDocument = xsltProcessor.transformToFragment(new DOMParser().parseFromString(game,"text/xml") , document);
+    console.log(resultDocument);
+    document.getElementById('grid').appendChild(resultDocument);
+}
