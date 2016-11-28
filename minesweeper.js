@@ -3,50 +3,59 @@
 createBasicElement();
 
 function createModal() {
-    var modal = createElementWithAttrs("div" , "modal" , "alert-modal" , null);
+    var modal = createCustomElement("div", "modal", "alert-modal", null);
 
-    var modal_content = createElementWithAttrs("div" , "modal-content" , null , null);
+    var modal_content = createCustomElement("div", "modal-content", null, null);
 
-    var name = createElementWithAttrs("input" , "field" , "name" , null);
+    var name = createCustomElement("input", "field", "name", null);
     name.placeholder = "Enter your name";
 
-    var OKButton = createElementWithAttrs("button" , null , null , "OK");
+    var OKButton = createCustomElement("button", "btn", null, "OK");
+    OKButton.style.marginLeft = "10px" ;
 
     modal_content.appendChild(name);
     modal_content.appendChild(OKButton);
     modal.appendChild(modal_content);
 
-    return modal ;
+    return modal;
 }
 
-// function createWindow() {
-//     var window = document.createElement("div");
-//     window.className = "window";
-//     var titleBar = document.createElement("div");
-//     titleBar.className = "title-bar";
-//     var gameTitle = document.createElement("span");
-//     gameTitle.id = "game-title";
-//     var text = document.createElement("Minesweeper Online - Beginner!");
-//     gameTitle.appendChild(text);
-//     var div = document.createElement("div");
-//     var btnMinimize = document.createElement("span");
-//     var btnClose = document.createElement("span");
-//     btnMinimize.className = "btn";
-//     btnClose.className = "btn";
-//     btnMinimize.id = "btn-minimize";
-//     btnClose.id = "btn-close";
-//     var text = document.createTextNode("-");
-//     btnMinimize.appendChild(text);
-//     var top = document.createElement("div");
-//     top.className = "top";
-//
-//     window.appendChild(titleBar);
-//     window.appendChild(top);
-// }
+function createWindow() {
+    var window = createCustomElement("div", "window", null, null);
+
+    var titleBar = createCustomElement("div", "title-bar", null, null);
+
+    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper Online - Beginner!");
+
+    var div = document.createElement("div");
+    var btnMinimize = createCustomElement("span", "btn", "btn-minimize", '-');
+    var btnClose = createCustomElement("span", "btn", "btn-close", 'x');
+
+    var top = createCustomElement("div", "top", null, null);
+
+    var counter1 = createCustomElement("span" , "counter" , null , "123");
+    var smile = createCustomElement("span" , "smile" , null , null);
+    smile.setAttribute("data-value" , "normal");
+    var counter2 = createCustomElement("span" , "counter" , null ,"321") ;
+
+    div.appendChild(btnMinimize);
+    div.appendChild(btnClose);
+    titleBar.appendChild(gameTitle);
+    titleBar.appendChild(div);
+    top.appendChild(counter1);
+    top.appendChild(smile);
+    top.appendChild(counter2);
+    window.appendChild(titleBar);
+    window.appendChild(top);
+
+    return window ;
+}
+
 function createBasicElement() {
     var modal = createModal();
-    // var window = createWindow();
+    var window = createWindow();
     document.body.appendChild(modal);
+    document.body.appendChild(window);
 }
 
 /**
@@ -57,26 +66,26 @@ function createBasicElement() {
  * @param text a text label for element
  * @returns {Element}
  */
-function createElementWithAttrs(tagName , className , id , text){
+function createCustomElement(tagName, className, id, text) {
     var element = document.createElement(tagName);
 
-    if( className != null ){
-        element.className = className ;
+    if (className != null) {
+        element.className = className;
     }
-    if( id != null ){
-        element.id = id ;
+    if (id != null) {
+        element.id = id;
     }
-    if( text != null ){
+    if (text != null) {
         var text = document.createTextNode(text);
         element.appendChild(text);
     }
 
-    return element ;
+    return element;
 }
 getGameXML();
 
-getNewGame('<request>'+
-    '<rows>3</rows>'+
-    '<cols>3</cols>'+
-    '<mines>3</mines>'+
+getNewGame('<request>' +
+    '<rows>3</rows>' +
+    '<cols>3</cols>' +
+    '<mines>3</mines>' +
     '</request>');
