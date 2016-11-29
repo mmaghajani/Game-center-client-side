@@ -28,7 +28,7 @@ function createModal() {
 }
 
 function createWindow() {
-    var window = createCustomElement("div", "window", null, null);
+    var window = createCustomElement("div", "window", "window", null);
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
@@ -46,7 +46,7 @@ function createWindow() {
     smile.setAttribute("data-value", "normal");
     var counter2 = createCustomElement("span", "counter", null, "321");
 
-    var grid = createCustomElement("div" , "grid" , "grid" , null);
+    // var grid = createCustomElement("div", "grid", "grid", null);
 
     div.appendChild(btnMinimize);
     div.appendChild(btnClose);
@@ -57,7 +57,7 @@ function createWindow() {
     top.appendChild(counter2);
     window.appendChild(titleBar);
     window.appendChild(top);
-    window.appendChild(grid);
+    // window.appendChild(grid);
 
     return window;
 }
@@ -121,10 +121,16 @@ function makeXSL() {
     var xml = '<?xml version="1.0" encoding="UTF-8"?>'
         + '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">'
         + '<xsl:template match="/">'
-        + '<!-- TODO -->'
+        + '<div class=\'grid\'>' +
+        '<xsl:for-each select=\'grid/row\'>' +
+        '<xsl:for-each select=\'./col\'>' +
+        '<span class=\'active\'></span>' +
+        '</xsl:for-each>'+
+        '</xsl:for-each>' +
+        '</div>'
         + '</xsl:template>'
         + '</xsl:stylesheet>';
-    return new DOMParser().parseFromString(xml,"text/xml") ;
+    return new DOMParser().parseFromString(xml, "text/xml");
 }
 
 function newGame() {
@@ -138,7 +144,6 @@ function newGame() {
 
     var xsltProcessor = new XSLTProcessor();
     xsltProcessor.importStylesheet(makeXSL());
-    var resultDocument = xsltProcessor.transformToFragment(new DOMParser().parseFromString(game,"text/xml") , document);
-    console.log(resultDocument);
-    document.getElementById('grid').appendChild(resultDocument);
+    var resultDocument = xsltProcessor.transformToFragment(new DOMParser().parseFromString(game, "text/xml"), document);
+    document.getElementById('window').appendChild(resultDocument);
 }
