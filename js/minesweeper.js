@@ -121,10 +121,10 @@ function makeXSL() {
     var xml = '<?xml version="1.0" encoding="UTF-8"?>'
         + '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">'
         + '<xsl:template match="/">'
-        + '<div class=\'grid\'>' +
+        + '<div class=\'grid\' id=\'grid\'>' +
         '<xsl:for-each select=\'grid/row\'>' +
         '<xsl:for-each select=\'./col\'>' +
-        '<span class=\'active\'></span>' +
+        '<span></span>' +
         '</xsl:for-each>'+
         '</xsl:for-each>' +
         '</div>'
@@ -145,5 +145,11 @@ function newGame() {
     var xsltProcessor = new XSLTProcessor();
     xsltProcessor.importStylesheet(makeXSL());
     var resultDocument = xsltProcessor.transformToFragment(new DOMParser().parseFromString(game, "text/xml"), document);
+    resultDocument.id = "grid";
     document.getElementById('window').appendChild(resultDocument);
+
+    var grid = document.getElementById("grid").childNodes ;
+    for( var i =0 ; i < grid.length ; i++){
+        grid[i].id = 'c' + i ;
+    }
 }
