@@ -31,6 +31,10 @@ function initializeCurrentInformation() {
     } else {
         document.getElementById("mines").textContent = (gameInformation["levels"])[0].mines;
     }
+
+    document.addEventListener('contextmenu', function(e){
+        e.preventDefault();
+    });
 }
 
 function setEventListeners() {
@@ -48,9 +52,28 @@ function setEventListeners() {
 
     var cells = document.getElementById("grid").childNodes;
     for (var i = 0; i < cells.length; i++) {
-        cells[i].addEventListener("click", function (e) {
+        cells[i].addEventListener("mouseup", function (e) {
             clickOnCells(e);
         })
+
+        cells[i].addEventListener("mousedown" , function(e){
+            mouseDownOnCells(e);
+        })
+
+        cells[i].addEventListener("contextmenu" , function(e){
+            rightClickOnCell(e);
+        } , false);
+    }
+}
+
+function rightClickOnCell(element){
+    var cell = element.srcElement ;
+    if( cell.className != "revealed" ){
+        if( cell.className == "flag" ) {
+            cell.className = "";
+        }else {
+            cell.className = "flag";
+        }
     }
 }
 
@@ -67,36 +90,103 @@ function okBtnClicked() {
 }
 
 function loose() {
-    alert("You loose");
     document.getElementById("smile").setAttribute("data-value" , "hover");
+    alert("You loose");
+}
+
+function getNeighbors(cell){
+    var id = cell.id ;
+    var neighbors = [] ;
+    var temp = Number(id) - Number((gameInformation['levels'])[0].cols) ;
+    if( temp > 0 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = temp + 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = temp - 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = Number(id) + Number((gameInformation['levels'])[0].cols) ;
+    if( temp < Number(gameInformation['levels'].cols) * Number((gameInformation['levels'])[0].rows) ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = temp + 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = temp - 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = Number(id) + 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    temp = Number(id) - 1 ;
+    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+        neighbors.push(document.getElementById(temp.toString()))
+    }
+    return neighbors ;
+}
+
+function numOfMines(cell) {
+    var count = 0 ;
+    var neighbors = getNeighbors(cell) ;
+    for( var i = 0 ; i < neighbors.length ; i++ ){
+        var id = neighbors[i].id ;
+        if( mines[id] == true){
+            count++ ;
+        }
+    }
+    return count ;
 }
 
 function clickOnCells(element) {
-    var grid = document.getElementById("grid");
-    if (currentInformation["numOfClicks"] == 0) {
-        if ((gameInformation["levels"])[0].timer == "true") {
-            //TODO start timer
-            var interval = setInterval(function () {
-                document.getElementById("timer").textContent = Number(document.getElementById("timer").textContent) - 1 + 1000;
-                document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
-                if (document.getElementById("timer").textContent == "000") {
-                    loose();
-                    clearInterval(interval);
-                }
-            }, 1000);
+    if( element.which == 1 ) {
+        var grid = document.getElementById("grid");
+        var cell = element.srcElement;
+        if (currentInformation["numOfClicks"] == 0) {
+            if ((gameInformation["levels"])[0].timer == "true") {
+                //TODO start timer
+                var interval = setInterval(function () {
+                    document.getElementById("timer").textContent = Number(document.getElementById("timer").textContent) - 1 + 1000;
+                    document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
+                    if (document.getElementById("timer").textContent == "000") {
+                        loose();
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            } else {
+                document.getElementById("timer").textContent = "001";
+            }
+            currentInformation["numOfClicks"]++;
+            // console.log(currentInformation['numOfClicks'])
         } else {
-            document.getElementById("timer").textContent = "001";
+            if ((gameInformation["levels"])[0].timer == "false") {
+                document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
+                document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
+            }
+            currentInformation["numOfClicks"]++;
+            // console.log(currentInformation['numOfClicks'])
+
         }
-        currentInformation["numOfClicks"]++;
-        // console.log(currentInformation['numOfClicks'])
-    } else {
-        if ((gameInformation["levels"])[0].timer == "false") {
-            document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
-            document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
+        console.log(cell.className);
+        if (cell.className != "flag") {
+            cell.className = "revealed";
+            cell.setAttribute("data-value", numOfMines(cell));
         }
-        currentInformation["numOfClicks"]++;
-        // console.log(currentInformation['numOfClicks'])
-        // console.log(element.srcElement.id)
+    }
+}
+
+function mouseDownOnCells(element) {
+    if( element.which == 1 ) {
+        var cell = element.srcElement;
+        if (cell.className != "flag") {
+            cell.className = "active";
+        }
     }
 }
 
@@ -246,7 +336,7 @@ function newGame() {
     //Adds ID for cells
     var cells = document.getElementById("grid").childNodes;
     for (var i = 0; i < cells.length; i++) {
-        cells[i].id = 'c' + i;
+        cells[i].id = i;
     }
     //Get position of mines
     var rows = game.getElementsByTagName("row");
