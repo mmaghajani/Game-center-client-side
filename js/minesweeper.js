@@ -70,8 +70,14 @@ function rightClickOnCell(element){
     var cell = element.srcElement ;
     if( cell.className != "revealed" ){
         if( cell.className == "flag" ) {
+            var mines = Number(document.getElementById('mines').textContent) ;
+            mines = mines + 1 + 1000 ;
+            document.getElementById('mines').textContent = (mines.toString()).substr(1);
             cell.className = "";
         }else {
+            var mines = Number(document.getElementById('mines').textContent) ;
+            mines = mines - 1 + 1000 ;
+            document.getElementById('mines').textContent = (mines.toString()).substr(1);
             cell.className = "flag";
         }
     }
