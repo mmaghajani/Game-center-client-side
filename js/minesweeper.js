@@ -32,7 +32,7 @@ function initializeCurrentInformation() {
         document.getElementById("mines").textContent = (gameInformation["levels"])[0].mines;
     }
 
-    document.addEventListener('contextmenu', function(e){
+    document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     });
 }
@@ -56,27 +56,27 @@ function setEventListeners() {
             clickOnCells(e);
         })
 
-        cells[i].addEventListener("mousedown" , function(e){
+        cells[i].addEventListener("mousedown", function (e) {
             mouseDownOnCells(e);
         })
 
-        cells[i].addEventListener("contextmenu" , function(e){
+        cells[i].addEventListener("contextmenu", function (e) {
             rightClickOnCell(e);
-        } , false);
+        }, false);
     }
 }
 
-function rightClickOnCell(element){
-    var cell = element.srcElement ;
-    if( cell.className != "revealed" ){
-        if( cell.className == "flag" ) {
-            var mines = Number(document.getElementById('mines').textContent) ;
-            mines = mines + 1 + 1000 ;
+function rightClickOnCell(element) {
+    var cell = element.srcElement;
+    if (cell.className != "revealed") {
+        if (cell.className == "flag") {
+            var mines = Number(document.getElementById('mines').textContent);
+            mines = mines + 1 + 1000;
             document.getElementById('mines').textContent = (mines.toString()).substr(1);
             cell.className = "";
-        }else {
-            var mines = Number(document.getElementById('mines').textContent) ;
-            mines = mines - 1 + 1000 ;
+        } else {
+            var mines = Number(document.getElementById('mines').textContent);
+            mines = mines - 1 + 1000;
             document.getElementById('mines').textContent = (mines.toString()).substr(1);
             cell.className = "flag";
         }
@@ -96,62 +96,62 @@ function okBtnClicked() {
 }
 
 function loose() {
-    document.getElementById("smile").setAttribute("data-value" , "hover");
+    document.getElementById("smile").setAttribute("data-value", "hover");
     alert("You loose");
 }
 
-function getNeighbors(cell){
-    var id = cell.id ;
-    var neighbors = [] ;
-    var temp = Number(id) - Number((gameInformation['levels'])[0].cols) ;
-    if( temp > 0 ){
+function getNeighbors(cell) {
+    var id = cell.id;
+    var neighbors = [];
+    var temp = Number(id) - Number((gameInformation['levels'])[0].cols);
+    if (temp > 0) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = temp + 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+    temp = temp + 1;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = temp - 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+    temp = temp - 2;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = Number(id) + Number((gameInformation['levels'])[0].cols) ;
-    if( temp < Number(gameInformation['levels'].cols) * Number((gameInformation['levels'])[0].rows) ){
+    temp = Number(id) + Number((gameInformation['levels'])[0].cols);
+    if (temp < Number((gameInformation['levels'])[0].cols) * Number((gameInformation['levels'])[0].rows)) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = temp + 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+    temp = temp + 1;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = temp - 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+    temp = temp - 2;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = Number(id) + 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 0 ){
+    temp = Number(id) + 1;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    temp = Number(id) - 1 ;
-    if( Number(id) % (gameInformation['levels'])[0].cols != 1 ){
+    temp = Number(id) - 1;
+    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
         neighbors.push(document.getElementById(temp.toString()))
     }
-    return neighbors ;
+    return neighbors;
 }
 
 function numOfMines(cell) {
-    var count = 0 ;
-    var neighbors = getNeighbors(cell) ;
-    for( var i = 0 ; i < neighbors.length ; i++ ){
-        var id = neighbors[i].id ;
-        if( mines[id] == true){
-            count++ ;
+    var count = 0;
+    var neighbors = getNeighbors(cell);
+    for (var i = 0; i < neighbors.length; i++) {
+        var id = neighbors[i].id;
+        if (mines[id] == true) {
+            count++;
         }
     }
-    return count ;
+    return count;
 }
 
 function clickOnCells(element) {
-    if( element.which == 1 ) {
+    if (element.which == 1) {
         var grid = document.getElementById("grid");
         var cell = element.srcElement;
         if (currentInformation["numOfClicks"] == 0) {
@@ -180,6 +180,26 @@ function clickOnCells(element) {
 
         }
         console.log(cell.className);
+
+        if (cell.className == "revealed") {
+            var numOfMine = cell.getAttribute("data-value");
+            var neighbors = getNeighbors(cell);
+            console.log(neighbors);
+            var count = 0 ;
+            for( var i = 0 ; i < neighbors.length ; i++ ){
+                if( neighbors[i].className == "flag" )
+                    count++ ;
+            }
+            console.log(numOfMine + " "  + count );
+            if( count == numOfMine && numOfMine != 0 ){
+                for( var i = 0 ; i < neighbors.length ; i++ ){
+                    if( neighbors[i].className != "flag" ) {
+                        triggerMouseEvent (neighbors[i], "mouseup");
+                    }
+                }
+            }
+        }
+
         if (cell.className != "flag") {
             cell.className = "revealed";
             cell.setAttribute("data-value", numOfMines(cell));
@@ -187,10 +207,16 @@ function clickOnCells(element) {
     }
 }
 
+function triggerMouseEvent (node, eventType) {
+    var clickEvent = document.createEvent ('MouseEvents');
+    clickEvent.initEvent (eventType, true, true);
+    node.dispatchEvent (clickEvent);
+}
+
 function mouseDownOnCells(element) {
-    if( element.which == 1 ) {
+    if (element.which == 1) {
         var cell = element.srcElement;
-        if (cell.className != "flag") {
+        if (cell.className != "flag" && cell.className != "revealed") {
             cell.className = "active";
         }
     }
