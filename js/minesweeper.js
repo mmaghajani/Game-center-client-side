@@ -4,16 +4,23 @@
 var gameInformation = [];
 var mines = [];
 var currentInformation = [];
+var interval ;
 
 processGameInformation();
 
 createBasicElement();
 
-newGame();
+startGame();
 
-initializeCurrentInformation();
+function startGame(){
+    mines = [];
+    currentInformation = [];
+    newGame();
 
-setEventListeners();
+    initializeCurrentInformation();
+
+    setEventListeners();
+}
 
 function initializeCurrentInformation() {
     currentInformation["numOfClicks"] = 0;
@@ -97,7 +104,18 @@ function okBtnClicked() {
 
 function loose() {
     document.getElementById("smile").setAttribute("data-value", "hover");
-    alert("You loose");
+    for( var i = 1 ; i <= (gameInformation['levels'])[0].cols * (gameInformation['levels'])[0].rows; i++ ){
+        if( mines[i] == true ) {
+            document.getElementById(i.toString()).className = "revealed";
+            document.getElementById(i.toString()).setAttribute("data-value" , "mine");
+        }
+    }
+    window.alert('You loose')
+    document.getElementById("window").removeChild(document.getElementById("grid"));
+    clearInterval(interval);
+    document.getElementById("smile").setAttribute("data-value" , "normal");
+    startGame();
+
 }
 
 function getNeighbors(cell) {
@@ -157,7 +175,7 @@ function clickOnCells(element) {
         if (currentInformation["numOfClicks"] == 0) {
             if ((gameInformation["levels"])[0].timer == "true") {
                 //TODO start timer
-                var interval = setInterval(function () {
+                interval = setInterval(function () {
                     document.getElementById("timer").textContent = Number(document.getElementById("timer").textContent) - 1 + 1000;
                     document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
                     if (document.getElementById("timer").textContent == "000") {
@@ -201,8 +219,22 @@ function clickOnCells(element) {
         }
 
         if (cell.className != "flag") {
-            cell.className = "revealed";
-            cell.setAttribute("data-value", numOfMines(cell));
+            if( mines[cell.id] == true ){
+                cell.className = "revealed";
+                cell.setAttribute("data-value" , "mine");
+                loose() ;
+            }else {
+                cell.className = "revealed";
+                cell.setAttribute("data-value", numOfMines(cell));
+                if( numOfMines(cell) == 0){
+                    var neighbors = getNeighbors(cell);
+                    for( var i = 0 ; i < neighbors.length ; i++ ){
+                        if( neighbors[i].className != "revealed") {
+                            triggerMouseEvent(neighbors[i], "mouseup");
+                        }
+                    }
+                }
+            }
         }
     }
 }
