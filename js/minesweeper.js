@@ -3,12 +3,79 @@
 
 var gameInformation = [];
 var mines = [] ;
+var currentInformation = [] ;
 
 processGameInformation();
 
 createBasicElement();
 
 newGame();
+
+initializeCurrentInformation();
+
+setEventListeners();
+
+function initializeCurrentInformation() {
+    currentInformation["numOfClicks"] = 0 ;
+    if( (gameInformation["levels"])[0].timer == true ){
+        document.getElementById("timer").textContent = (gameInformation["levels"])[0].time ;
+    }else{
+        document.getElementById("timer").textContent = "000" ;
+    }
+
+    if((gameInformation["levels"])[0].mines / 10 < 1 ) {
+        document.getElementById("mines").textContent = "00" + (gameInformation["levels"])[0].mines;
+    }
+    else if((gameInformation["levels"])[0].mines / 10 < 10){
+        document.getElementById("mines").textContent = "0" + (gameInformation["levels"])[0].mines;
+    }else{
+        document.getElementById("mines").textContent = (gameInformation["levels"])[0].mines;
+    }
+}
+
+function setEventListeners() {
+    var grid = document.getElementById("grid");
+    grid.onclick = clickOnCells ;
+    var okBtn = document.getElementById("ok-button");
+    okBtn.onclick = okBtnClicked ;
+    var nameBox = document.getElementById("name");
+    nameBox.addEventListener("keyup" , function(e) {
+        console.log(e.keyCode);
+        if (e.keyCode < 65 || e.keyCode > 90) {
+            nameBox.value = nameBox.value.substring(0 , nameBox.value.length-1);
+        }
+    }) ;
+}
+
+function okBtnClicked(){
+    var nameBox = document.getElementById("name");
+    if( nameBox.value == "" ) {
+        alert("please enter name")
+    }
+    else{
+        var modal = document.getElementById("alert-modal");
+        document.body.removeChild(modal);
+    }
+
+}
+
+function clickOnCells() {
+    var grid = document.getElementById("grid");
+    if( currentInformation["numOfClicks"] == 0 ){
+        if( (gameInformation["levels"])[0].timer == "true" ){
+            //TODO start timer
+        }else{
+            document.getElementById("timer").textContent = "001" ;
+        }
+        currentInformation["numOfClicks"]++ ;
+    }else{
+        if( (gameInformation["levels"])[0].timer == "false" ) {
+            document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
+            document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
+            currentInformation["numOfClicks"]++;
+        }
+    }
+}
 
 function createModal() {
     var modal = createCustomElement("div", "modal", "alert-modal", null);
@@ -18,7 +85,7 @@ function createModal() {
     var name = createCustomElement("input", "field", "name", null);
     name.placeholder = "Enter your name";
 
-    var OKButton = createCustomElement("button", "btn", null, "OK");
+    var OKButton = createCustomElement("button", "btn", "ok-button", "OK");
     OKButton.style.marginLeft = "10px";
 
     modal_content.appendChild(name);
@@ -42,10 +109,10 @@ function createWindow() {
 
     var top = createCustomElement("div", "top", null, null);
 
-    var counter1 = createCustomElement("span", "counter", null, "123");
+    var remainingMines = createCustomElement("span", "counter", "mines", "123");
     var smile = createCustomElement("span", "smile", null, null);
     smile.setAttribute("data-value", "normal");
-    var counter2 = createCustomElement("span", "counter", null, "321");
+    var timer = createCustomElement("span", "counter", "timer", "321");
 
     // var grid = createCustomElement("div", "grid", "grid", null);
 
@@ -53,9 +120,9 @@ function createWindow() {
     div.appendChild(btnClose);
     titleBar.appendChild(gameTitle);
     titleBar.appendChild(div);
-    top.appendChild(counter1);
+    top.appendChild(remainingMines);
     top.appendChild(smile);
-    top.appendChild(counter2);
+    top.appendChild(timer);
     window.appendChild(titleBar);
     window.appendChild(top);
     // window.appendChild(grid);
@@ -114,6 +181,7 @@ function processGameInformation() {
         }
     }
     gameInformation["levels"] = levelArray;
+    console.log(gameInformation);
 }
 
 function makeXSL() {
@@ -141,6 +209,9 @@ function newGame() {
         '<mines>9</mines>' +
         '</request>';
 
+    (gameInformation['levels'])[0].mines = 9 ;
+    (gameInformation['levels'])[0].rows = 9 ;
+    (gameInformation['levels'])[0].cols = 9 ;
     var game = getNewGame(requestXML);
     game = new DOMParser().parseFromString(game, "text/xml") ;
 
