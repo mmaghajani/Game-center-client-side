@@ -2,10 +2,13 @@
 // See Inspect Element's Console Log Output
 
 var gameInformation = [];
+var mines = [] ;
 
 processGameInformation();
 
 createBasicElement();
+
+newGame();
 
 function createModal() {
     var modal = createCustomElement("div", "modal", "alert-modal", null);
@@ -26,7 +29,7 @@ function createModal() {
 }
 
 function createWindow() {
-    var window = createCustomElement("div", "window", null, null);
+    var window = createCustomElement("div", "window", "window", null);
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
@@ -44,6 +47,8 @@ function createWindow() {
     smile.setAttribute("data-value", "normal");
     var counter2 = createCustomElement("span", "counter", null, "321");
 
+    // var grid = createCustomElement("div", "grid", "grid", null);
+
     div.appendChild(btnMinimize);
     div.appendChild(btnClose);
     titleBar.appendChild(gameTitle);
@@ -53,6 +58,7 @@ function createWindow() {
     top.appendChild(counter2);
     window.appendChild(titleBar);
     window.appendChild(top);
+    // window.appendChild(grid);
 
     return window;
 }
@@ -110,8 +116,52 @@ function processGameInformation() {
     gameInformation["levels"] = levelArray;
 }
 
-getNewGame('<request>' +
-    '<rows>3</rows>' +
-    '<cols>3</cols>' +
-    '<mines>3</mines>' +
-    '</request>');
+function makeXSL() {
+    // This XSL Should Convert level.xml to
+    // appreciate DOM elements for #grid.
+    var xml = '<?xml version="1.0" encoding="UTF-8"?>'
+        + '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">'
+        + '<xsl:template match="/">'
+        + '<div class=\'grid\' id=\'grid\'>' +
+        '<xsl:for-each select=\'grid/row\'>' +
+        '<xsl:for-each select=\'./col\'>' +
+        '<span></span>' +
+        '</xsl:for-each>'+
+        '</xsl:for-each>' +
+        '</div>'
+        + '</xsl:template>'
+        + '</xsl:stylesheet>';
+    return new DOMParser().parseFromString(xml, "text/xml");
+}
+
+function newGame() {
+    var requestXML = '<request>' +
+        '<rows>9</rows>' +
+        '<cols>9</cols>' +
+        '<mines>9</mines>' +
+        '</request>';
+
+    var game = getNewGame(requestXML);
+    game = new DOMParser().parseFromString(game, "text/xml") ;
+
+    var xsltProcessor = new XSLTProcessor();
+    xsltProcessor.importStylesheet(makeXSL());
+    var resultDocument = xsltProcessor.transformToFragment( game , document);
+    resultDocument.id = "grid";
+    document.getElementById('window').appendChild(resultDocument);
+    //Adds ID for cells
+    var grid = document.getElementById("grid").childNodes ;
+    for( var i =0 ; i < grid.length ; i++){
+        grid[i].id = 'c' + i ;
+    }
+    //Get position of mines
+    var rows = game.getElementsByTagName("row");
+    for( var i = 0 ; i < rows.length ; i++){
+        var cols = rows[i].getElementsByTagName("col");
+        for( var j = 0 ; j < cols.length ; j++ ){
+            if( cols[j].getAttribute("mine") == "true"){
+                mines[(i)*cols.length + j+1] = true ;
+            }
+        }
+    }
+}
