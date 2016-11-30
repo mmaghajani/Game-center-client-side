@@ -2,8 +2,8 @@
 // See Inspect Element's Console Log Output
 
 var gameInformation = [];
-var mines = [] ;
-var currentInformation = [] ;
+var mines = [];
+var currentInformation = [];
 
 processGameInformation();
 
@@ -16,19 +16,19 @@ initializeCurrentInformation();
 setEventListeners();
 
 function initializeCurrentInformation() {
-    currentInformation["numOfClicks"] = 0 ;
-    if( (gameInformation["levels"])[0].timer == "true" ){
-        document.getElementById("timer").textContent = (gameInformation["levels"])[0].time ;
-    }else{
-        document.getElementById("timer").textContent = "000" ;
+    currentInformation["numOfClicks"] = 0;
+    if ((gameInformation["levels"])[0].timer == "true") {
+        document.getElementById("timer").textContent = (gameInformation["levels"])[0].time;
+    } else {
+        document.getElementById("timer").textContent = "000";
     }
 
-    if((gameInformation["levels"])[0].mines / 10 < 1 ) {
+    if ((gameInformation["levels"])[0].mines / 10 < 1) {
         document.getElementById("mines").textContent = "00" + (gameInformation["levels"])[0].mines;
     }
-    else if((gameInformation["levels"])[0].mines / 10 < 10){
+    else if ((gameInformation["levels"])[0].mines / 10 < 10) {
         document.getElementById("mines").textContent = "0" + (gameInformation["levels"])[0].mines;
-    }else{
+    } else {
         document.getElementById("mines").textContent = (gameInformation["levels"])[0].mines;
     }
 }
@@ -37,51 +37,60 @@ function setEventListeners() {
     // var grid = document.getElementById("grid");
     // grid.onclick = clickOnCells ;
     var okBtn = document.getElementById("ok-button");
-    okBtn.onclick = okBtnClicked ;
+    okBtn.onclick = okBtnClicked;
     var nameBox = document.getElementById("name");
-    nameBox.addEventListener("keyup" , function(e) {
+    nameBox.addEventListener("keyup", function (e) {
         console.log(e.keyCode);
         if (e.keyCode < 65 || e.keyCode > 90) {
-            nameBox.value = nameBox.value.substring(0 , nameBox.value.length-1);
+            nameBox.value = nameBox.value.substring(0, nameBox.value.length - 1);
         }
-    }) ;
+    });
 
-    var cells = document.getElementById("grid").childNodes ;
-    for( var i = 0 ; i < cells.length ; i++ ){
-        cells[i].addEventListener("click" , function(e){
+    var cells = document.getElementById("grid").childNodes;
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].addEventListener("click", function (e) {
             clickOnCells(e);
         })
     }
 }
 
-function okBtnClicked(){
+function okBtnClicked() {
     var nameBox = document.getElementById("name");
-    if( nameBox.value == "" ) {
+    if (nameBox.value == "") {
         alert("please enter name")
     }
-    else{
+    else {
         var modal = document.getElementById("alert-modal");
         document.body.removeChild(modal);
     }
 
 }
 
+function loose() {
+    alert("You loose");
+    document.getElementById("smile").setAttribute("data-value" , "hover");
+}
+
 function clickOnCells(element) {
     var grid = document.getElementById("grid");
-    if( currentInformation["numOfClicks"] == 0 ){
-        if( (gameInformation["levels"])[0].timer == "true" ){
+    if (currentInformation["numOfClicks"] == 0) {
+        if ((gameInformation["levels"])[0].timer == "true") {
             //TODO start timer
-            setInterval(function(){
+            var interval = setInterval(function () {
                 document.getElementById("timer").textContent = Number(document.getElementById("timer").textContent) - 1 + 1000;
                 document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
-            } , 1000);
-        }else{
-            document.getElementById("timer").textContent = "001" ;
+                if (document.getElementById("timer").textContent == "000") {
+                    loose();
+                    clearInterval(interval);
+                }
+            }, 1000);
+        } else {
+            document.getElementById("timer").textContent = "001";
         }
-        currentInformation["numOfClicks"]++ ;
+        currentInformation["numOfClicks"]++;
         // console.log(currentInformation['numOfClicks'])
-    }else{
-        if( (gameInformation["levels"])[0].timer == "false" ) {
+    } else {
+        if ((gameInformation["levels"])[0].timer == "false") {
             document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
             document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
         }
@@ -124,7 +133,7 @@ function createWindow() {
     var top = createCustomElement("div", "top", null, null);
 
     var remainingMines = createCustomElement("span", "counter", "mines", "123");
-    var smile = createCustomElement("span", "smile", null, null);
+    var smile = createCustomElement("span", "smile", "smile", null);
     smile.setAttribute("data-value", "normal");
     var timer = createCustomElement("span", "counter", "timer", "321");
 
@@ -208,7 +217,7 @@ function makeXSL() {
         '<xsl:for-each select=\'grid/row\'>' +
         '<xsl:for-each select=\'./col\'>' +
         '<span></span>' +
-        '</xsl:for-each>'+
+        '</xsl:for-each>' +
         '</xsl:for-each>' +
         '</div>'
         + '</xsl:template>'
@@ -223,29 +232,29 @@ function newGame() {
         '<mines>9</mines>' +
         '</request>';
 
-    (gameInformation['levels'])[0].mines = 9 ;
-    (gameInformation['levels'])[0].rows = 9 ;
-    (gameInformation['levels'])[0].cols = 9 ;
+    (gameInformation['levels'])[0].mines = 9;
+    (gameInformation['levels'])[0].rows = 9;
+    (gameInformation['levels'])[0].cols = 9;
     var game = getNewGame(requestXML);
-    game = new DOMParser().parseFromString(game, "text/xml") ;
+    game = new DOMParser().parseFromString(game, "text/xml");
 
     var xsltProcessor = new XSLTProcessor();
     xsltProcessor.importStylesheet(makeXSL());
-    var resultDocument = xsltProcessor.transformToFragment( game , document);
+    var resultDocument = xsltProcessor.transformToFragment(game, document);
     resultDocument.id = "grid";
     document.getElementById('window').appendChild(resultDocument);
     //Adds ID for cells
-    var cells = document.getElementById("grid").childNodes ;
-    for( var i =0 ; i < cells.length ; i++){
-        cells[i].id = 'c' + i ;
+    var cells = document.getElementById("grid").childNodes;
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].id = 'c' + i;
     }
     //Get position of mines
     var rows = game.getElementsByTagName("row");
-    for( var i = 0 ; i < rows.length ; i++){
+    for (var i = 0; i < rows.length; i++) {
         var cols = rows[i].getElementsByTagName("col");
-        for( var j = 0 ; j < cols.length ; j++ ){
-            if( cols[j].getAttribute("mine") == "true"){
-                mines[(i)*cols.length + j+1] = true ;
+        for (var j = 0; j < cols.length; j++) {
+            if (cols[j].getAttribute("mine") == "true") {
+                mines[(i) * cols.length + j + 1] = true;
             }
         }
     }
