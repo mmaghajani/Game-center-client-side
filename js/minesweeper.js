@@ -34,8 +34,8 @@ function initializeCurrentInformation() {
 }
 
 function setEventListeners() {
-    var grid = document.getElementById("grid");
-    grid.onclick = clickOnCells ;
+    // var grid = document.getElementById("grid");
+    // grid.onclick = clickOnCells ;
     var okBtn = document.getElementById("ok-button");
     okBtn.onclick = okBtnClicked ;
     var nameBox = document.getElementById("name");
@@ -45,6 +45,13 @@ function setEventListeners() {
             nameBox.value = nameBox.value.substring(0 , nameBox.value.length-1);
         }
     }) ;
+
+    var cells = document.getElementById("grid").childNodes ;
+    for( var i = 0 ; i < cells.length ; i++ ){
+        cells[i].addEventListener("click" , function(e){
+            clickOnCells(e);
+        })
+    }
 }
 
 function okBtnClicked(){
@@ -59,7 +66,7 @@ function okBtnClicked(){
 
 }
 
-function clickOnCells() {
+function clickOnCells(element) {
     var grid = document.getElementById("grid");
     if( currentInformation["numOfClicks"] == 0 ){
         if( (gameInformation["levels"])[0].timer == "true" ){
@@ -68,12 +75,15 @@ function clickOnCells() {
             document.getElementById("timer").textContent = "001" ;
         }
         currentInformation["numOfClicks"]++ ;
+        console.log(currentInformation['numOfClicks'])
     }else{
         if( (gameInformation["levels"])[0].timer == "false" ) {
             document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
             document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
-            currentInformation["numOfClicks"]++;
         }
+        currentInformation["numOfClicks"]++;
+        // console.log(currentInformation['numOfClicks'])
+        // console.log(element.srcElement.id)
     }
 }
 
@@ -221,9 +231,9 @@ function newGame() {
     resultDocument.id = "grid";
     document.getElementById('window').appendChild(resultDocument);
     //Adds ID for cells
-    var grid = document.getElementById("grid").childNodes ;
-    for( var i =0 ; i < grid.length ; i++){
-        grid[i].id = 'c' + i ;
+    var cells = document.getElementById("grid").childNodes ;
+    for( var i =0 ; i < cells.length ; i++){
+        cells[i].id = 'c' + i ;
     }
     //Get position of mines
     var rows = game.getElementsByTagName("row");
