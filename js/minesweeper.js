@@ -17,7 +17,7 @@ setEventListeners();
 
 function initializeCurrentInformation() {
     currentInformation["numOfClicks"] = 0 ;
-    if( (gameInformation["levels"])[0].timer == true ){
+    if( (gameInformation["levels"])[0].timer == "true" ){
         document.getElementById("timer").textContent = (gameInformation["levels"])[0].time ;
     }else{
         document.getElementById("timer").textContent = "000" ;
@@ -71,11 +71,15 @@ function clickOnCells(element) {
     if( currentInformation["numOfClicks"] == 0 ){
         if( (gameInformation["levels"])[0].timer == "true" ){
             //TODO start timer
+            setInterval(function(){
+                document.getElementById("timer").textContent = Number(document.getElementById("timer").textContent) - 1 + 1000;
+                document.getElementById("timer").textContent = document.getElementById("timer").textContent.substr(1);
+            } , 1000);
         }else{
             document.getElementById("timer").textContent = "001" ;
         }
         currentInformation["numOfClicks"]++ ;
-        console.log(currentInformation['numOfClicks'])
+        // console.log(currentInformation['numOfClicks'])
     }else{
         if( (gameInformation["levels"])[0].timer == "false" ) {
             document.getElementById("timer").textContent = 1 + Number(document.getElementById("timer").textContent) + 1000;
