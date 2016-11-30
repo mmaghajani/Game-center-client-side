@@ -2,6 +2,7 @@
 // See Inspect Element's Console Log Output
 
 var gameInformation = [];
+var mines = [] ;
 
 processGameInformation();
 
@@ -141,15 +142,26 @@ function newGame() {
         '</request>';
 
     var game = getNewGame(requestXML);
+    game = new DOMParser().parseFromString(game, "text/xml") ;
 
     var xsltProcessor = new XSLTProcessor();
     xsltProcessor.importStylesheet(makeXSL());
-    var resultDocument = xsltProcessor.transformToFragment(new DOMParser().parseFromString(game, "text/xml"), document);
+    var resultDocument = xsltProcessor.transformToFragment( game , document);
     resultDocument.id = "grid";
     document.getElementById('window').appendChild(resultDocument);
-
+    //Adds ID for cells
     var grid = document.getElementById("grid").childNodes ;
     for( var i =0 ; i < grid.length ; i++){
         grid[i].id = 'c' + i ;
+    }
+    //Get position of mines
+    var rows = game.getElementsByTagName("row");
+    for( var i = 0 ; i < rows.length ; i++){
+        var cols = rows[i].getElementsByTagName("col");
+        for( var j = 0 ; j < cols.length ; j++ ){
+            if( cols[j].getAttribute("mine") == "true"){
+                mines[(i)*cols.length + j+1] = true ;
+            }
+        }
     }
 }
