@@ -4,19 +4,20 @@
 var gameInformation = [];
 var mines = [];
 var currentInformation = [];
-var interval ;
-
-processGameInformation();
+var interval;
 
 createBasicElement();
 
 startGame();
 
-function startGame(){
+function startGame() {
     mines = [];
     currentInformation = [];
+    processGameInformation();
+
     newGame();
 
+    console.log(mines);
     initializeCurrentInformation();
 
     setEventListeners();
@@ -71,6 +72,25 @@ function setEventListeners() {
             rightClickOnCell(e);
         }, false);
     }
+
+    var smile = document.getElementById('smile');
+
+    smile.addEventListener('click', function () {
+        smileClicked();
+
+    });
+}
+
+function smileClicked() {
+    var level = window.prompt("Choose game level : Beginner or Hard!")
+    document.getElementById("window").removeChild(document.getElementById("grid"));
+    clearInterval(interval);
+
+    startGame();
+    (gameInformation["levels"])[0].title = level;
+    console.log((gameInformation["levels"])[0])
+    document.getElementById("game-title").textContent = gameInformation["game_title"] + " - " +
+        (gameInformation["levels"])[0].title;
 }
 
 function rightClickOnCell(element) {
@@ -88,6 +108,10 @@ function rightClickOnCell(element) {
             cell.className = "flag";
         }
     }
+
+    if (isWin()) {
+        win();
+    }
 }
 
 function okBtnClicked() {
@@ -104,18 +128,17 @@ function okBtnClicked() {
 
 function loose() {
     document.getElementById("smile").setAttribute("data-value", "hover");
-    for( var i = 1 ; i <= (gameInformation['levels'])[0].cols * (gameInformation['levels'])[0].rows; i++ ){
-        if( mines[i] == true ) {
+    for (var i = 1; i <= (gameInformation['levels'])[0].cols * (gameInformation['levels'])[0].rows; i++) {
+        if (mines[i] == true) {
             document.getElementById(i.toString()).className = "revealed";
-            document.getElementById(i.toString()).setAttribute("data-value" , "mine");
+            document.getElementById(i.toString()).setAttribute("data-value", "mine");
         }
     }
     window.alert('You loose')
     document.getElementById("window").removeChild(document.getElementById("grid"));
     clearInterval(interval);
-    document.getElementById("smile").setAttribute("data-value" , "normal");
+    document.getElementById("smile").setAttribute("data-value", "normal");
     startGame();
-
 }
 
 function getNeighbors(cell) {
@@ -124,27 +147,29 @@ function getNeighbors(cell) {
     var temp = Number(id) - Number((gameInformation['levels'])[0].cols);
     if (temp > 0) {
         neighbors.push(document.getElementById(temp.toString()))
+        temp = temp + 1;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
+        temp = temp - 2;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
     }
-    temp = temp + 1;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
-    temp = temp - 2;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
+
     temp = Number(id) + Number((gameInformation['levels'])[0].cols);
     if (temp < Number((gameInformation['levels'])[0].cols) * Number((gameInformation['levels'])[0].rows)) {
         neighbors.push(document.getElementById(temp.toString()))
+        temp = temp + 1;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
+        temp = temp - 2;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
     }
-    temp = temp + 1;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
-    temp = temp - 2;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
+
     temp = Number(id) + 1;
     if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
         neighbors.push(document.getElementById(temp.toString()))
@@ -166,6 +191,15 @@ function numOfMines(cell) {
         }
     }
     return count;
+}
+
+function revealNeighbors(cell) {
+    var neighbors = getNeighbors(cell);
+    for (var i = 0; i < neighbors.length; i++) {
+        if (neighbors[i].className != "revealed") {
+            triggerMouseEvent(neighbors[i], "mouseup");
+        }
+    }
 }
 
 function clickOnCells(element) {
@@ -197,52 +231,95 @@ function clickOnCells(element) {
             // console.log(currentInformation['numOfClicks'])
 
         }
-        console.log(cell.className);
+        // console.log(cell.className);
 
         if (cell.className == "revealed") {
             var numOfMine = cell.getAttribute("data-value");
             var neighbors = getNeighbors(cell);
-            console.log(neighbors);
-            var count = 0 ;
-            for( var i = 0 ; i < neighbors.length ; i++ ){
-                if( neighbors[i].className == "flag" )
-                    count++ ;
+            // console.log(neighbors);
+            var count = 0;
+            for (var i = 0; i < neighbors.length; i++) {
+                if (neighbors[i].className == "flag")
+                    count++;
             }
-            console.log(numOfMine + " "  + count );
-            if( count == numOfMine && numOfMine != 0 ){
+            // console.log(numOfMine + " "  + count );
+            if (count == numOfMine && numOfMine != 0) {
+                for (var i = 0; i < neighbors.length; i++) {
+                    if (neighbors[i].className != "flag" && mines[neighbors[i].id] != true) {
+                        if (neighbors[i].className != "revealed") {
+                            triggerMouseEvent(neighbors[i], "mouseup");
+                        }
+                    }
+                }
                 for( var i = 0 ; i < neighbors.length ; i++ ){
-                    if( neighbors[i].className != "flag" ) {
+                    if( neighbors[i].className != "flag" && mines[neighbors[i].id] == true) {
                         triggerMouseEvent (neighbors[i], "mouseup");
+                        break ;
                     }
                 }
             }
         }
 
         if (cell.className != "flag") {
-            if( mines[cell.id] == true ){
+            if (mines[cell.id] == true) {
                 cell.className = "revealed";
-                cell.setAttribute("data-value" , "mine");
-                loose() ;
-            }else {
+                cell.setAttribute("data-value", "mine");
+                loose();
+            } else {
                 cell.className = "revealed";
                 cell.setAttribute("data-value", numOfMines(cell));
-                if( numOfMines(cell) == 0){
-                    var neighbors = getNeighbors(cell);
-                    for( var i = 0 ; i < neighbors.length ; i++ ){
-                        if( neighbors[i].className != "revealed") {
-                            triggerMouseEvent(neighbors[i], "mouseup");
-                        }
-                    }
+                if (numOfMines(cell) == 0) {
+                    revealNeighbors(cell);
                 }
             }
+        }
+
+        if (isWin()) {
+            win();
         }
     }
 }
 
-function triggerMouseEvent (node, eventType) {
-    var clickEvent = document.createEvent ('MouseEvents');
-    clickEvent.initEvent (eventType, true, true);
-    node.dispatchEvent (clickEvent);
+function win() {
+    document.getElementById("smile").setAttribute("data-value", "ok");
+    for (var i = 1; i <= (gameInformation['levels'])[0].cols * (gameInformation['levels'])[0].rows; i++) {
+        if (mines[i] == true) {
+            document.getElementById(i.toString()).className = "revealed";
+            document.getElementById(i.toString()).setAttribute("data-value", "mine");
+        }
+    }
+    window.alert('You win')
+    document.getElementById("window").removeChild(document.getElementById("grid"));
+    clearInterval(interval);
+    document.getElementById("smile").setAttribute("data-value", "normal");
+    startGame();
+}
+
+function isWin() {
+    var cells = document.getElementById("grid").childNodes;
+    var numOfRevealed = 0;
+    var numOfFlagged = 0;
+    for (var i = 0; i < cells.length; i++) {
+        if (cells[i].className == "revealed") {
+            numOfRevealed++;
+        }
+        if (cells[i].className == "flag") {
+            numOfFlagged++;
+        }
+    }
+
+    if (Number((gameInformation['levels'])[0].cols) * Number((gameInformation['levels'])[0].rows) ==
+        numOfFlagged + numOfRevealed) {
+        return true;
+    }
+
+    return false;
+}
+
+function triggerMouseEvent(node, eventType) {
+    var clickEvent = document.createEvent('MouseEvents');
+    clickEvent.initEvent(eventType, true, true);
+    node.dispatchEvent(clickEvent);
 }
 
 function mouseDownOnCells(element) {
@@ -277,8 +354,7 @@ function createWindow() {
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
-    var gameTitle = createCustomElement("span", null, "game-title", gameInformation["game_title"] + " - " +
-        gameInformation["levels"][0].title);
+    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper");
 
     var div = document.createElement("div");
     var btnMinimize = createCustomElement("span", "btn", "btn-minimize", '-');
@@ -358,6 +434,8 @@ function processGameInformation() {
         }
     }
     gameInformation["levels"] = levelArray;
+    document.getElementById("game-title").textContent = gameInformation["game_title"] + " - " +
+        (gameInformation["levels"])[0].title;
     console.log(gameInformation);
 }
 
