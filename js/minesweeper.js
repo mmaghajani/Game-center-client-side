@@ -182,6 +182,15 @@ function numOfMines(cell) {
     return count;
 }
 
+function revealNeighbors(cell) {
+    var neighbors = getNeighbors(cell);
+    for( var i = 0 ; i < neighbors.length ; i++ ){
+        if( neighbors[i].className != "revealed") {
+            triggerMouseEvent(neighbors[i], "mouseup");
+        }
+    }
+}
+
 function clickOnCells(element) {
     if (element.which == 1) {
         var grid = document.getElementById("grid");
@@ -241,12 +250,7 @@ function clickOnCells(element) {
                 cell.className = "revealed";
                 cell.setAttribute("data-value", numOfMines(cell));
                 if( numOfMines(cell) == 0){
-                    var neighbors = getNeighbors(cell);
-                    for( var i = 0 ; i < neighbors.length ; i++ ){
-                        if( neighbors[i].className != "revealed") {
-                            triggerMouseEvent(neighbors[i], "mouseup");
-                        }
-                    }
+                    revealNeighbors(cell);
                 }
             }
         }
