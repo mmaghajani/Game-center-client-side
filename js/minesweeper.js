@@ -72,6 +72,13 @@ function setEventListeners() {
             rightClickOnCell(e);
         }, false);
     }
+
+    var smile = document.getElementById('smile');
+    smile.addEventListener('click' , function () {
+        document.getElementById("window").removeChild(document.getElementById("grid"));
+        clearInterval(interval);
+        startGame()
+    } ) ;
 }
 
 function rightClickOnCell(element) {
@@ -166,7 +173,6 @@ function getNeighbors(cell) {
 function numOfMines(cell) {
     var count = 0;
     var neighbors = getNeighbors(cell);
-    console.log(neighbors)
     for (var i = 0; i < neighbors.length; i++) {
         var id = neighbors[i].id;
         if (mines[id] == true) {
