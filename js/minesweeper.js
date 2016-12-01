@@ -6,8 +6,6 @@ var mines = [];
 var currentInformation = [];
 var interval ;
 
-processGameInformation();
-
 createBasicElement();
 
 startGame();
@@ -15,8 +13,11 @@ startGame();
 function startGame(){
     mines = [];
     currentInformation = [];
+    processGameInformation();
+
     newGame();
 
+    console.log(mines);
     initializeCurrentInformation();
 
     setEventListeners();
@@ -87,6 +88,10 @@ function rightClickOnCell(element) {
             document.getElementById('mines').textContent = (mines.toString()).substr(1);
             cell.className = "flag";
         }
+    }
+
+    if( isWin() ){
+        win() ;
     }
 }
 
@@ -197,7 +202,7 @@ function clickOnCells(element) {
             // console.log(currentInformation['numOfClicks'])
 
         }
-        console.log(cell.className);
+        // console.log(cell.className);
 
         if (cell.className == "revealed") {
             var numOfMine = cell.getAttribute("data-value");
@@ -236,7 +241,47 @@ function clickOnCells(element) {
                 }
             }
         }
+
+        if( isWin() ){
+            win() ;
+        }
     }
+}
+
+function win(){
+    document.getElementById("smile").setAttribute("data-value", "ok");
+    for( var i = 1 ; i <= (gameInformation['levels'])[0].cols * (gameInformation['levels'])[0].rows; i++ ){
+        if( mines[i] == true ) {
+            document.getElementById(i.toString()).className = "revealed";
+            document.getElementById(i.toString()).setAttribute("data-value" , "mine");
+        }
+    }
+    window.alert('You win')
+    document.getElementById("window").removeChild(document.getElementById("grid"));
+    clearInterval(interval);
+    document.getElementById("smile").setAttribute("data-value" , "normal");
+    startGame();
+}
+
+function isWin(){
+    var cells = document.getElementById("grid").childNodes ;
+    var numOfRevealed = 0 ;
+    var numOfFlagged = 0 ;
+    for( var i = 0 ; i < cells.length ; i++ ){
+        if( cells[i].className == "revealed" ){
+            numOfRevealed++ ;
+        }
+        if( cells[i].className == "flag" ){
+            numOfFlagged++;
+        }
+    }
+
+    if( Number((gameInformation['levels'])[0].cols) * Number((gameInformation['levels'])[0].rows ) ==
+        numOfFlagged + numOfRevealed ){
+        return true ;
+    }
+
+    return false ;
 }
 
 function triggerMouseEvent (node, eventType) {
@@ -277,8 +322,7 @@ function createWindow() {
 
     var titleBar = createCustomElement("div", "title-bar", null, null);
 
-    var gameTitle = createCustomElement("span", null, "game-title", gameInformation["game_title"] + " - " +
-        gameInformation["levels"][0].title);
+    var gameTitle = createCustomElement("span", null, "game-title", "Minesweeper");
 
     var div = document.createElement("div");
     var btnMinimize = createCustomElement("span", "btn", "btn-minimize", '-');
@@ -358,6 +402,8 @@ function processGameInformation() {
         }
     }
     gameInformation["levels"] = levelArray;
+    document.getElementById("game-title").textContent = gameInformation["game_title"] + " - " +
+        gameInformation["levels"][0].title ;
     console.log(gameInformation);
 }
 
