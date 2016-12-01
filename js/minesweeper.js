@@ -129,27 +129,29 @@ function getNeighbors(cell) {
     var temp = Number(id) - Number((gameInformation['levels'])[0].cols);
     if (temp > 0) {
         neighbors.push(document.getElementById(temp.toString()))
+        temp = temp + 1;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
+        temp = temp - 2;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
     }
-    temp = temp + 1;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
-    temp = temp - 2;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
+
     temp = Number(id) + Number((gameInformation['levels'])[0].cols);
     if (temp < Number((gameInformation['levels'])[0].cols) * Number((gameInformation['levels'])[0].rows)) {
         neighbors.push(document.getElementById(temp.toString()))
+        temp = temp + 1;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
+        temp = temp - 2;
+        if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
+            neighbors.push(document.getElementById(temp.toString()))
+        }
     }
-    temp = temp + 1;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
-    temp = temp - 2;
-    if (Number(id) % (gameInformation['levels'])[0].cols != 1) {
-        neighbors.push(document.getElementById(temp.toString()))
-    }
+
     temp = Number(id) + 1;
     if (Number(id) % (gameInformation['levels'])[0].cols != 0) {
         neighbors.push(document.getElementById(temp.toString()))
@@ -164,6 +166,7 @@ function getNeighbors(cell) {
 function numOfMines(cell) {
     var count = 0;
     var neighbors = getNeighbors(cell);
+    console.log(neighbors)
     for (var i = 0; i < neighbors.length; i++) {
         var id = neighbors[i].id;
         if (mines[id] == true) {
