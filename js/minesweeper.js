@@ -74,11 +74,23 @@ function setEventListeners() {
     }
 
     var smile = document.getElementById('smile');
+
     smile.addEventListener('click' , function () {
-        document.getElementById("window").removeChild(document.getElementById("grid"));
-        clearInterval(interval);
-        startGame()
-    } ) ;
+        smileClicked();
+
+    });
+}
+
+function smileClicked(){
+    var level = window.prompt("Choose game level : Beginner or Hard!")
+    document.getElementById("window").removeChild(document.getElementById("grid"));
+    clearInterval(interval);
+
+    startGame();
+    (gameInformation["levels"])[0].title = level ;
+    console.log((gameInformation["levels"])[0])
+    document.getElementById("game-title").textContent = gameInformation["game_title"] + " - " +
+        (gameInformation["levels"])[0].title ;
 }
 
 function rightClickOnCell(element) {
@@ -416,7 +428,7 @@ function processGameInformation() {
     }
     gameInformation["levels"] = levelArray;
     document.getElementById("game-title").textContent = gameInformation["game_title"] + " - " +
-        gameInformation["levels"][0].title ;
+        (gameInformation["levels"])[0].title ;
     console.log(gameInformation);
 }
 
