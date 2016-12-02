@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Segment7Standard';
-    src: url('Segment7Standard.otf') format('opentype');
+    src: url('../assets/Segment7Standard.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
 }
@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #bbbbbb url('../img/bliss.jpg') no-repeat fixed center center;
+    background: #bbbbbb url('../assets/bliss.jpg') no-repeat fixed center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
