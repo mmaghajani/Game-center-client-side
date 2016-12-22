@@ -1,0 +1,42 @@
+#main-content{
+    background: url("../assets/call-of-duty-background-18.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 800px !important;
+    width: 100%;
+    padding: 0px;
+}
+#slider{
+    background: #c6134f;
+    height: 150px;
+}
+
+.text-center{
+    margin:auto;
+}
+
+.btn{
+    margin: 5px;
+}
+
+.btn-primary{
+    background: #0f73d2;
+    width: 100px;
+    border-radius: 3px;
+    border: 0px;
+    margin: 0px 5px 0px 5px;
+}
+
+.row{
+    margin: 10px;
+}
+
+#foregrand{
+    background: rgba(0, 0, 0, 0.77) ; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87) ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.55) ,rgba(0, 0, 0, 0.87) ); /* Standard syntax */
+    background-size: cover;
+    min-height: 800px !important;
+    width: 100%;
+}
