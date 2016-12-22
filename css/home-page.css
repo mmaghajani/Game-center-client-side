@@ -16,11 +16,23 @@
 
 #foregrand{
     background: rgba(0, 0, 0, 0.77) ; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.87) ); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0, 0, 0, 0.55) ,rgba(0, 0, 0, 0.87) ); /* Standard syntax */
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95) ); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.55) ,rgba(0, 0, 0, 0.95) ); /* Standard syntax */
     background-size: cover;
     min-height: 800px !important;
     width: 100%;
+}
+
+#content{
+    float: right;
+    margin-top: 200px;
+    margin-bottom:auto;
+}
+
+#frame{
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
 }
