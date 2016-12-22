@@ -10,24 +10,8 @@
     height: 150px;
 }
 
-.text-center{
-    margin:auto;
-}
-
-.btn{
-    margin: 5px;
-}
-
-.btn-primary{
-    background: #0f73d2;
-    width: 100px;
-    border-radius: 3px;
-    border: 0px;
-    margin: 0px 5px 0px 5px;
-}
-
-.row{
-    margin: 10px;
+#studio{
+    color: #2dc7ff;
 }
 
 #foregrand{
