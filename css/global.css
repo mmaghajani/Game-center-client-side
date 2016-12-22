@@ -21,7 +21,8 @@
 
 .btn-primary{
     background: #0f73d2;
-    width: 100px;
+    width: inherit;
+    padding: 5px;
     border-radius: 3px;
     border: 0px;
     margin: 0px 5px 0px 5px;
@@ -30,4 +31,47 @@
 .row{
     margin: 10px;
 }
+
+.material-icons {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 48px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 10;
+    vertical-align: middle;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-top: 2px;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: rtl;
+    float: none;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-18 {
+    font-size: 16px;
+}
+
 

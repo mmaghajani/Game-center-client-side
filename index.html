@@ -10,7 +10,10 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/home-page.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.theme.default.css"/>
     <link href="css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.0.2/dist/font-face.css" rel="stylesheet"
           type="text/css"/>
     <link href="css/ionicons.min.css" rel="stylesheet">
@@ -19,6 +22,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 </head>
 <body>
@@ -43,24 +47,62 @@
                     </div>
                 </div>
                 <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                        <div id="subject" class="row text-right text-info h2"><p>مرکز بازی سازی امیرکبیر</p></div>
-                        <br>
-                        <div id="explain" class="row text-right text-info h4">
-                            <p>لورم ایپسوم یا طرح نما به طرحی بی معنی</p>
-                            <p>در صنعت چاپ و طراحی گفته میشود</p>
-                        </div>
-                        <!--<div class="row">-->
-                        <!--<div class="col-sm-6">-->
+                    <div id="subject" class="row text-right text-info h2"><p>مرکز بازی سازی امیرکبیر</p></div>
+                    <br>
+                    <div id="explain" class="row text-right text-info h4">
+                        <p>لورم ایپسوم یا طرح نما به طرحی بی معنی</p>
+                        <p>در صنعت چاپ و طراحی گفته میشود</p>
+                    </div>
+                    <br>
+                    <div class="row text-right text-info">
+                        <span class="text-muted">تریلر این بازی</span>
+                        <span><i class="material-icons md-24 glyphicon text-muted">play_circle_filled</i></span>
+                        <a href="#">
+                            <button type="button" class="btn-primary">ورود به صفحه بازی</button>
+                        </a>
 
-                        <!--</div>-->
-                        <!--</div>-->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--<div id="slider" class="col-sm-12">-->
-
-    <!--</div>-->
+    <div id="slider" class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
+        <div class="owl-carousel owl-theme">
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-1">
+                <div class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin Creed</strong></strong></div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-2">
+                <div class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin Creed</strong></div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-3">
+                <div class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin Creed</strong></div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-4">
+                <div class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin Creed</strong></div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-5">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-7">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-8">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-9">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-10">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-11">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+            <div class="slider-item  text-right  vertical-align-wrap" id="item-12">
+                <div class="vertical-align text-info vertical-align--bottom h5">بررسی بازی Assassin Creed</div>
+            </div>
+        </div>
+    </div>
 </section>
 <section id="new-game">
     <div class="container">
@@ -100,6 +142,8 @@
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="js/home-page.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 </body>

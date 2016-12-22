@@ -6,8 +6,8 @@
     padding: 0px;
 }
 #slider{
-    background: #c6134f;
-    height: 150px;
+    height: 200px;
+    padding: 0px;;
 }
 
 #studio{
@@ -35,4 +35,134 @@
     margin-right: auto;
     margin-left: auto;
     float: none;
+}
+
+.slider-item{
+    font-weight: bold;
+    direction: rtl;
+    background: #1dff21;
+    height: 200px;
+    padding: 5px;
+}
+
+.slider-item:hover{
+    background: #0f8cf9;
+    box-shadow: 0px 5px 10px #222324;
+}
+
+#item-1{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+#item-1:hover{
+    background: #0f8cf9;
+    box-shadow: 0px 5px 10px #222324;
+}
+
+#item-2{
+    background: url("../assets/best_hd_assassins_creed_black_flag_game_wallpapers.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-2:hover{
+    background: #0f8cf9;
+    box-shadow: 0px 5px 10px #222324;
+}
+
+#item-3{
+    background: url("../assets/Callofduty4-screen1.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+#item-4{
+    background: url("../assets/game-wallpaper-rain-ship-helicopter-battlefield-games-background.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+#item-5{
+    background: url("../assets/grand-theft-auto-five-game-wallpapers-dekstop-backgrounds.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+#item-6{
+    background: url("../assets/Mortal-Kombat-X-hack-cheats.png") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-7{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-8{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-9{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-10{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-11{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-12{
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+.owl-carousel{
+    height: 200px;
+}
+
+.owl-stage{
+    height: 200px;;
+}
+
+.vertical-align-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.vertical-align {
+    display: table-cell;
+}
+
+.vertical-align--middle {
+    vertical-align: middle;
+}
+
+.vertical-align--bottom {
+    vertical-align: bottom;
 }
