@@ -1,150 +1,205 @@
-#main-content{
+#main-content {
     background: url("../assets/call-of-duty-background-18.jpg") no-repeat center center;
     background-size: cover;
     min-height: 800px !important;
     width: 100%;
     padding: 0px;
 }
-#slider{
+
+#slider {
     height: 200px;
     padding: 0px;;
 }
 
-#studio{
+#studio {
     color: #2dc7ff;
 }
 
-#foregrand{
-    background: rgba(0, 0, 0, 0.77) ; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0.55) , rgba(0, 0, 0, 0.95) ); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(rgba(0, 0, 0, 0.55) ,rgba(0, 0, 0, 0.95) ); /* Standard syntax */
+#foregrand {
+    background: rgba(0, 0, 0, 0.77); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.95)); /* Standard syntax */
     background-size: cover;
     min-height: 800px !important;
     width: 100%;
 }
 
-#content{
+#content {
     float: right;
     margin-top: 200px;
-    margin-bottom:auto;
+    margin-bottom: auto;
 }
 
-#frame{
+#frame {
     margin-right: auto;
     margin-left: auto;
     float: none;
 }
 
-.slider-item{
+.slider-item-one {
     font-weight: bold;
     direction: rtl;
-    background: #1dff21;
     height: 200px;
     padding: 5px;
+    background: #fafff3;
+    min-height: 200px !important;
+    width: 100%;
 }
 
-.slider-item:hover{
-    background: #0f8cf9;
+.slider-item-two{
+    font-weight: bold;
+    direction: rtl;
+    height: 250px;
+    background: #fafff3;
+    min-height: 200px !important;
+    width: 100%;
+    border: 1px #e8e8e8 solid;
+}
+
+.slider-item-two:hover{
+    box-shadow: 0px 0px 20px #565758;
+}
+
+.blue_star{
+    color: #4884ef;
+}
+
+.light_gray_star{
+    color: #b4b4b4;
+}
+
+#header {
+    margin: 10px 0px 0px 0px;
+}
+
+.slider-item-one:hover > div {
+    background: rgba(42, 136, 255, 0.55); /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.04)); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.04)); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.04)); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.04)); /* Standard syntax */
     box-shadow: 0px 5px 10px #222324;
 }
 
-#item-1{
+#item-1 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
-#item-1:hover{
-    background: #0f8cf9;
-    box-shadow: 0px 5px 10px #222324;
-}
 
-#item-2{
+#item-2 {
     background: url("../assets/best_hd_assassins_creed_black_flag_game_wallpapers.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-2:hover{
-    background: #0f8cf9;
-    box-shadow: 0px 5px 10px #222324;
-}
-
-#item-3{
+#item-3 {
     background: url("../assets/Callofduty4-screen1.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
-#item-4{
+
+#item-4 {
     background: url("../assets/game-wallpaper-rain-ship-helicopter-battlefield-games-background.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
-#item-5{
+
+#item-5 {
     background: url("../assets/grand-theft-auto-five-game-wallpapers-dekstop-backgrounds.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
-#item-6{
+
+#item-6 {
     background: url("../assets/Mortal-Kombat-X-hack-cheats.png") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-7{
+#item-7 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-8{
+#item-8 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-9{
+#item-9 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-10{
+#item-10 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-11{
+#item-11 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-#item-12{
+#item-12 {
     background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
     background-size: cover;
     min-height: 200px !important;
     width: 100%;
 }
 
-.owl-carousel{
+#item-13 {
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-14 {
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-15 {
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+#item-16 {
+    background: url("../assets/assassins-creed-3-wallpaper-3.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 200px !important;
+    width: 100%;
+}
+
+.owl-carousel {
     height: 200px;
 }
 
-.owl-stage{
+.owl-stage {
     height: 200px;;
 }
 
@@ -153,6 +208,10 @@
     width: 100%;
     height: 100%;
     display: table;
+}
+
+section {
+    display: block;
 }
 
 .vertical-align {
@@ -165,4 +224,25 @@
 
 .vertical-align--bottom {
     vertical-align: bottom;
+}
+
+#title {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#slider-2 {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.picture{
+    background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 150px;
+    max-height: 200px !important;
+    width: 100%;
 }

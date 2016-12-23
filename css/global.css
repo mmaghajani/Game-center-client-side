@@ -7,6 +7,11 @@
     margin: 0px 10px 0px 10px;
 }
 
+.text-primary{
+    color: #000000;
+    margin: 5px 10px 5px 10px;;
+}
+
 .col-sm-6{
     margin: 5px 0px 5px 0px;
 }
@@ -29,7 +34,7 @@
 }
 
 .row{
-    margin: 10px;
+    margin: 0px;
 }
 
 .material-icons {
