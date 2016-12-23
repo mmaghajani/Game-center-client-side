@@ -40,6 +40,11 @@
     margin: 0px 5px 0px 5px;
 }
 
+.btn-toolbar{
+    background: transparent;
+    border: 0px;
+}
+
 .btn-default {
     background: #ffffff;
     border-radius: 3px;

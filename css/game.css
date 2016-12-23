@@ -1,0 +1,17 @@
+#primary-bar{
+    min-height: 60px !important;
+}
+
+#search-field{
+    text-align: right;
+    align-content: center;
+    float: right;
+    direction: rtl;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background: url('../assets/ic_search_black_24dp_1x.png') no-repeat 0px 0px;
+    margin-top: 10px ;
+    margin-left: 10px;
+}
