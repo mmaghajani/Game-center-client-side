@@ -18,7 +18,7 @@ $(document).ready(function(){
                 nav:false
             },
             1000:{
-                items:4,
+                items:5,
                 loop:false
             }
         }
@@ -36,7 +36,7 @@ $(document).ready(function(){
                 nav:false
             },
             1000:{
-                items:4,
+                items:6,
                 loop:false
             }
         }});

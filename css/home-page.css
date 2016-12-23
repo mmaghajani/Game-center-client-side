@@ -325,3 +325,18 @@ section {
 .list-item:hover{
     background: #d2d2d2;
 }
+
+#contact{
+    background: url("../assets/best_hd_assassins_creed_black_flag_game_wallpapers.jpg") no-repeat top center;
+    background-size: cover;
+    min-height: 400px !important;
+    width: 100%;
+}
+
+#frame-on-contact{
+    background: rgba(39, 90, 255, 0.83);
+    -webkit-background-size:cover;
+    background-size:cover;
+    width:100%;
+    min-height: 400px !important;
+}
