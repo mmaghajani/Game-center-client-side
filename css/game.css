@@ -1,5 +1,8 @@
 #primary-bar{
     min-height: 60px !important;
+    background: white;
+    width: 100%;
+    background-size:cover;
 }
 
 #search-field{
@@ -8,10 +11,36 @@
     float: right;
     direction: rtl;
     box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
     font-size: 16px;
-    background: url('../assets/ic_search_black_24dp_1x.png') no-repeat 0px 0px;
-    margin-top: 10px ;
-    margin-left: 10px;
+    background: url("../assets/ic_search_black_24dp_1x.png") no-repeat 0px 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#main-content{
+    background: url("../assets/call-of-duty-ghosts-pc-screenshot-1920x1080-005.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 250px !important;
+    width: 100%;
+    padding: 0px;
+}
+
+#frame{
+    background: rgba(0, 0, 0, 0.64);
+    background-size: cover;
+    min-height: 250px !important;
+    width: 100%;
+    padding: 0px;
+}
+
+#game-pic{
+    background: url("../assets/thmub.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 100px !important;
+    width: 100px !important;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 20px;
 }

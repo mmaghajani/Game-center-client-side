@@ -64,13 +64,7 @@
     box-shadow: 0px 0px 20px #565758;
 }
 
-.blue_star {
-    color: #4884ef;
-}
 
-.light_gray_star {
-    color: #b4b4b4;
-}
 
 #header {
     margin: 10px 0px 0px 0px;
@@ -205,27 +199,14 @@
     height: 200px;;
 }
 
-.vertical-align-wrap {
-    display: table;
-    width: 100%;
-}
+
 
 section {
     display: block;
 }
 
-.vertical-align--middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 p {
     padding: 10px;
-}
-
-.vertical-align--bottom {
-    display: table-cell;
-    vertical-align: bottom;
 }
 
 #title {
