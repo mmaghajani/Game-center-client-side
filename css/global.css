@@ -2,30 +2,30 @@
     font-family: Shabnam;
 }
 
-.text-info{
+.text-info {
     color: #fbfffb;
     margin: 0px 10px 0px 10px;
 }
 
-.text-primary{
+.text-primary {
     color: #000000;
     margin: 5px 10px 5px 10px;;
 }
 
-.col-sm-6{
+.col-sm-6 {
     margin: 5px 0px 5px 0px;
     padding: 0px;
 }
 
-.text-center{
-    margin:auto;
+.text-center {
+    margin: auto;
 }
 
-.btn{
+.btn {
     margin: 5px;
 }
 
-.btn-primary{
+.btn-primary {
     background: #0f73d2;
     width: inherit;
     padding: 5px;
@@ -34,11 +34,18 @@
     margin: 0px 5px 0px 5px;
 }
 
-.row{
+.btn-default {
+    background: #ffffff;
+    border-radius: 3px;
+    border: 0px;
+    padding: 5px;
+}
+
+.row {
     margin: 0px;
 }
 
-.text-success{
+.text-success {
     color: #497cff;
 }
 
@@ -68,15 +75,15 @@
     font-feature-settings: 'liga';
 }
 
-.col-lg-6{
+.col-lg-6 {
     padding: 0px;
 }
 
-.col-md-6{
-    padding:0px;
+.col-md-6 {
+    padding: 0px;
 }
 
-.col-xs-12{
+.col-xs-12 {
     padding: 0px;
 }
 
@@ -96,7 +103,7 @@
     font-size: 16px;
 }
 
-.container{
+.container {
     float: none;
     margin-left: auto;
     margin-right: auto;

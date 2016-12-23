@@ -340,3 +340,11 @@ section {
     width:100%;
     min-height: 400px !important;
 }
+
+#content-of-contact{
+    position: relative;
+    /*top: 50%;*/
+    -webkit-transform: translateY(+85%);
+    -ms-transform: translateY(+85%);
+    transform: translateY(+85%);
+}
