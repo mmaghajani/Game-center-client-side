@@ -195,6 +195,13 @@
     float: right;
 }
 
+.nav-pills > li.active>a {
+    color: #585858;
+    border-radius: 0px;
+    border-bottom: 3px solid #378fff;
+    background: transparent;
+}
+
 .material-icons.md-24 {
     font-size: 24px;
 }

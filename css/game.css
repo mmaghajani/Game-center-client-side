@@ -39,6 +39,10 @@
     padding: 10px;
 }
 
+#menu{
+    padding: 0px;;
+}
+
 #game-pic{
     background: url("../assets/thmub.jpg") no-repeat center center;
     background-size: cover;
@@ -47,4 +51,8 @@
     border-radius: 10px;
     padding: 0px;
     margin-left: 5px;
+}
+
+#tab{
+    background: #e2e2e2;
 }
