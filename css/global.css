@@ -176,6 +176,14 @@
     border: 0px;
 }
 
+.navbar-inverse .navbar-nav > li > a :hover{
+    color: #000;
+}
+
+.navbar-inverse .navbar-nav > li :hover > a{
+    color: #000;
+}
+
 .navbar {
     margin: 0px;
     float: right;

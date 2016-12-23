@@ -2,9 +2,14 @@
     min-height: 60px !important;
     background: white;
     width: 100%;
+    padding-right: 5px;
     background-size:cover;
 }
 
+#navbar-collapse-button{
+    margin-right: 20px;
+    background: #515151;
+}
 #search-field{
     text-align: right;
     align-content: center;
@@ -31,16 +36,15 @@
     background-size: cover;
     min-height: 250px !important;
     width: 100%;
-    padding: 0px;
+    padding: 10px;
 }
 
 #game-pic{
     background: url("../assets/thmub.jpg") no-repeat center center;
     background-size: cover;
-    min-height: 100px !important;
-    width: 100px !important;
-    width: 100%;
+    min-height: 120px !important;
+    width: 120px !important;
     border-radius: 10px;
     padding: 0px;
-    margin-left: 20px;
+    margin-left: 5px;
 }
