@@ -25,6 +25,12 @@
     margin: 5px;
 }
 
+.container-fluid {
+    background: transparent;
+    padding: 0px;
+    float: right;
+}
+
 .btn-primary {
     background: #0f73d2;
     width: inherit;
@@ -95,6 +101,31 @@
     font-size: 48px;
 }
 
+.navbar-nav {
+    float: right;
+    padding-right: 0px;
+    background: transparent;
+    direction: rtl;
+}
+
+.nav{
+    float: right;
+}
+.navbar {
+    margin: 0px;
+    float: right;
+}
+
+.navbar-default {
+    background: transparent;
+    border: 0px;
+    float: right;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #0f73d2;
+}
+
 .material-icons.md-24 {
     font-size: 24px;
 }
@@ -108,6 +139,32 @@
     margin-left: auto;
     margin-right: auto;
     direction: rtl;
+}
+
+.footer-down {
+    background: #cfd2d7;
+    min-height: 100px;
+}
+
+.social {
+    border-radius: 50%;
+    background: #9c9ca4;
+    color: #fffefe;
+    min-width : 30px;
+    min-height: 30px;
+    text-align: center;
+    margin-left: 5px;
+    padding: 4px 0px 0px 0px;
+    vertical-align: middle;
+}
+
+#social{
+    padding: 15px;
+    font-size: 22px;
+}
+
+.studio {
+    color: #2dc7ff;
 }
 
 

@@ -11,8 +11,10 @@
     padding: 0px;;
 }
 
-#studio {
-    color: #2dc7ff;
+#menu {
+    padding: 0px;
+    height: auto;
+    margin-top: 7px;
 }
 
 #foregrand {
@@ -217,9 +219,10 @@ section {
     vertical-align: middle;
 }
 
-p{
+p {
     padding: 10px;
 }
+
 .vertical-align--bottom {
     display: table-cell;
     vertical-align: bottom;
@@ -254,18 +257,18 @@ p{
     padding: 5px;;
 }
 
-.list-group{
+.list-group {
     height: 100px !important;
     overflow: auto;
     float: right;
     background: transparent;
 }
 
-.my-item{
+.my-item {
     float: right;
 }
 
-.rank-list{
+.rank-list {
     float: right;
     text-align: right;
     font-size: 20px;
@@ -275,25 +278,24 @@ p{
     color: #5e5e5e;;
 }
 
-.list{
-    list-style: none ;
+.list {
+    list-style: none;
 }
 
-.personal-image{
+.personal-image {
     float: right;
     margin-top: 10px;
     margin-right: -24px;
 }
 
-.information{
+.information {
     float: right;
     margin-top: 7px;
     text-align: right;
     padding: 2px 10px 0px 0px;;
 }
 
-
-.list-image{
+.list-image {
     padding: 0px;
     border: 5px #c6134f;
     width: 60px;
@@ -310,10 +312,9 @@ p{
     min-height: 320px;
 }
 
-
-.list-item{
-    width:100%;
-    height:auto;
+.list-item {
+    width: 100%;
+    height: auto;
     text-align: center;
     display: inline-block;
     margin: auto;
@@ -321,26 +322,26 @@ p{
 
 }
 
-.list-item:hover{
+.list-item:hover {
     background: #d2d2d2;
 }
 
-#contact{
+#contact {
     background: url("../assets/best_hd_assassins_creed_black_flag_game_wallpapers.jpg") no-repeat top center;
     background-size: cover;
     min-height: 400px !important;
     width: 100%;
 }
 
-#frame-on-contact{
+#frame-on-contact {
     background: rgba(39, 90, 255, 0.83);
-    -webkit-background-size:cover;
-    background-size:cover;
-    width:100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
     min-height: 400px !important;
 }
 
-#content-of-contact{
+#content-of-contact {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -350,6 +351,7 @@ p{
     display: table;
     width: 100%;
 }
+
 .something-else-semantic {
     display: table-cell;
     text-align: center;
