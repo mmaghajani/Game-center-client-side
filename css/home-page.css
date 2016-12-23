@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-.slider-item-two{
+.slider-item-two {
     font-weight: bold;
     direction: rtl;
     height: 250px;
@@ -58,15 +58,15 @@
     border: 1px #e8e8e8 solid;
 }
 
-.slider-item-two:hover{
+.slider-item-two:hover {
     box-shadow: 0px 0px 20px #565758;
 }
 
-.blue_star{
+.blue_star {
     color: #4884ef;
 }
 
-.light_gray_star{
+.light_gray_star {
     color: #b4b4b4;
 }
 
@@ -237,12 +237,91 @@ section {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    min-height: 250px !important;
 }
 
-.picture{
+.picture {
     background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;
     background-size: cover;
     min-height: 150px;
     max-height: 200px !important;
     width: 100%;
+}
+
+#comment-guide {
+    background: #f0f5f0;
+    min-height: 550px !important;
+    float: none;
+    padding: 5px;;
+}
+
+.list-group{
+    height: 100px !important;
+    overflow: auto;
+    float: right;
+    background: transparent;
+}
+
+.my-item{
+    float: right;
+}
+
+.rank-list{
+    float: right;
+    text-align: right;
+    font-size: 20px;
+    height: auto;
+    margin-top: 22px;
+    width: 40px;
+    color: #5e5e5e;;
+}
+
+.list{
+    list-style: none ;
+}
+
+.personal-image{
+    float: right;
+    margin-top: 10px;
+    margin-right: -24px;
+}
+
+.information{
+    float: right;
+    margin-top: 7px;
+    text-align: right;
+    padding: 2px 10px 0px 0px;;
+}
+
+
+.list-image{
+    padding: 0px;
+    border: 5px #c6134f;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    margin-left: 5px;
+    background: #f9a718;
+}
+
+#new-game {
+    min-height: 320px;
+}
+
+
+.list-item{
+    width:91%;
+    height:auto;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: 0px 25px 0px 25px;
+
+}
+
+.list-item:hover{
+    background: #d2d2d2;
 }

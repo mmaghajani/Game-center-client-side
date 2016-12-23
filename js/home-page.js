@@ -10,7 +10,8 @@ $(document).ready(function(){
         responsive:{
             0:{
                 items:1,
-                nav:true
+                nav:true,
+                dots:false
             },
             600:{
                 items:3,
