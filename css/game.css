@@ -54,7 +54,13 @@
 }
 
 #content{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#content{
     min-height: 1000px !important;
+    max-height: 1500px;
     width:100%;
 }
 
