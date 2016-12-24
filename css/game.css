@@ -1,5 +1,5 @@
 #primary-bar{
-    min-height: 60px !important;
+    min-height: 50px !important;
     background: white;
     width: 100%;
     padding-right: 5px;
@@ -26,21 +26,32 @@
 #main-content{
     background: url("../assets/call-of-duty-ghosts-pc-screenshot-1920x1080-005.jpg") no-repeat center center;
     background-size: cover;
-    min-height: 250px !important;
+    min-height: 300px !important;
     width: 100%;
-    padding: 0px;
+    padding: 20px 0px 0px 0px;
 }
 
+#header{
+    min-height: 300px;
+    width:100%;
+    background: #000;
+}
 #frame{
     background: rgba(0, 0, 0, 0.64);
     background-size: cover;
-    min-height: 250px !important;
+    min-height: 300px !important;
     width: 100%;
     padding: 10px;
 }
 
 #menu{
     padding: 0px;;
+}
+
+#content{
+    min-height: 1000px !important;
+    background: #9e9e9e;
+    width:100%;
 }
 
 #game-pic{
