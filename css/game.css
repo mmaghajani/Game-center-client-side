@@ -89,13 +89,19 @@
     font-weight: bold;
     direction: rtl;
     background: #fafff3;
-    min-height: 200px !important;
+    min-height: 150px !important;
     width: 100%;
     border: 1px #e8e8e8 solid;
 }
 
 .slider-item-two:hover {
     box-shadow: 0px 0px 20px #565758;
+}
+
+.slider-item-video:hover > div >div{
+    background: rgba(44, 44, 44, 0.74);
+    min-height: 150px;
+    background-size: cover;
 }
 
 .owl-carousel {
@@ -125,10 +131,17 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
-    min-height: 200px !important;
+    height: auto !important;
 }
+
+#trailer{
+    min-height: 300px !important;
+    box-shadow: 0px 0px 20px #565758;
+    margin-bottom: 50px;
+}
+
 .picture {
-    background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;
+    background: url("../assets/game-wallpaper-rain-ship-helicopter-battlefield-games-background.jpg") no-repeat center center;
     background-size: cover;
     min-height: 150px;
     margin-bottom: 5px;
