@@ -233,7 +233,7 @@
 .personal-image{
 	float: right;
 	margin-top: 10px;
-	margin-right: -24px;
+	/*margin-right: -24px;*/
 }
 
 .information{
@@ -255,8 +255,8 @@
 .list-image{
 	padding: 0px;
 	border: 5px #c6134f;
-	width: 60px;
-	height: 60px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	align-content: center;
 	text-align: center;

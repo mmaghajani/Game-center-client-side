@@ -63,6 +63,7 @@
     padding: 5px;
     border-radius: 3px;
     border: 0px;
+    min-height: 30px;
     margin: 0px 5px 0px 5px;
 }
 
@@ -126,6 +127,10 @@
 
 .blue_star {
     color: #4884ef;
+}
+
+.dark_gray_start{
+    color: #797979;
 }
 
 .light_gray_star {
