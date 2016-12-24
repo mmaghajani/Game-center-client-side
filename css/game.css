@@ -88,7 +88,6 @@
 .slider-item-two {
     font-weight: bold;
     direction: rtl;
-    height: 250px;
     background: #fafff3;
     min-height: 200px !important;
     width: 100%;
@@ -125,13 +124,14 @@
     float: none;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    min-height: 250px !important;
+    margin-bottom: 100px;
+    min-height: 200px !important;
 }
 .picture {
     background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;
     background-size: cover;
     min-height: 150px;
+    margin-bottom: 5px;
     max-height: 200px !important;
     max-width: 100%;
 }
