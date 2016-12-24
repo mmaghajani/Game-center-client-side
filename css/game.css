@@ -1,0 +1,172 @@
+#primary-bar{
+    min-height: 50px !important;
+    background: white;
+    width: 100%;
+    padding-right: 5px;
+    background-size:cover;
+}
+
+#navbar-collapse-button{
+    margin-right: 20px;
+    background: #515151;
+}
+#search-field{
+    text-align: right;
+    align-content: center;
+    float: right;
+    direction: rtl;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-size: 16px;
+    background: url("../assets/ic_search_black_24dp_1x.png") no-repeat 0px 0px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#main-content{
+    background: url("../assets/call-of-duty-ghosts-pc-screenshot-1920x1080-005.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 300px !important;
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+}
+
+.title-holder{
+    border-bottom: 2px solid #d7d7d7;
+    padding: 20px 0px 20px 0px;
+    direction: rtl;
+}
+
+
+.list-item {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: 0px 25px 0px 25px;
+
+}
+
+.list-item-even {
+    background: #f3edff;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: 0px 25px 0px 25px;
+}
+
+.list-item-even:hover{
+    background: #d2d2d2;
+}
+
+#comments{
+    border:0.5px solid #f3f2ff;
+    border-top-width: 0px;
+    margin-top : 10px;
+}
+#header{
+    min-height: 300px;
+    width:100%;
+    background: #000;
+}
+#frame{
+    background: rgba(0, 0, 0, 0.64);
+    background-size: cover;
+    min-height: 300px !important;
+    width: 100%;
+    padding: 10px;
+}
+
+#menu-pill{
+    padding: 0px;;
+}
+
+
+.slider-item-two {
+    font-weight: bold;
+    direction: rtl;
+    background: #fafff3;
+    min-height: 150px !important;
+    width: 100%;
+    border: 1px #e8e8e8 solid;
+}
+
+.slider-item-two:hover {
+    box-shadow: 0px 0px 20px #565758;
+}
+
+.slider-item-video:hover > div >div{
+    background: rgba(44, 44, 44, 0.74);
+    min-height: 150px;
+    background-size: cover;
+}
+
+.owl-carousel {
+    height: 200px;
+}
+
+#context{
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+}
+
+#info{
+    direction: rtl;
+}
+
+#score-tab{
+    direction: rtl;
+}
+
+#comment{
+    direction: rtl;
+}
+
+.slider{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    height: auto !important;
+}
+
+#trailer{
+    min-height: 500px !important;
+    box-shadow: 0px 0px 20px #565758;
+    margin-bottom: 50px;
+}
+
+.picture {
+    background: url("../assets/game-wallpaper-rain-ship-helicopter-battlefield-games-background.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 150px;
+    margin-bottom: 5px;
+    max-height: 200px !important;
+    max-width: 100%;
+}
+
+#content-panel{
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*min-height: 1000px !important;*/
+    max-height: 1000px;
+    width:100%;
+}
+
+#game-pic{
+    background: url("../assets/thmub.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 120px !important;
+    width: 120px !important;
+    border-radius: 10px;
+    padding: 0px;
+    margin-left: 5px;
+}
+
+#tab{
+    background: #e2e2e2;
+}

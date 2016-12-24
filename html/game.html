@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
+    <!--<link href="../node_modules/video.js/dist/video-js.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.css"/>
+
+    <link href="../css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/hw2-global.css">
+    <link rel="stylesheet" href="../css/leaderboard.css">
+    <link href="../css/game.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.0.2/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="../css/ionicons.min.css" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12 navbar-fixed-top" id="primary-bar">
+    <div class="container col-xs-12 col-lg-8 col-md-8 col-sm-8">
+        <nav class="navbar navbar-inverse col-sm-12">
+            <div class="container-fluid col-sm-12">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+                            id="navbar-collapse-button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="#">WebSiteName</a>-->
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><p class="h4 text-muted"><i
+                                class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
+                                class="studio"> استودیو </span>
+                        </p></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-left">
+
+                        <li class="navbar-left"><a href="#"><span class="glyphicon glyphicon-user"></span> ورود</a>
+                        </li>
+                        <li class="navbar-left">
+                            <form class="navbar-form">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="جست و جو ...">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-toolbar" type="submit">
+                                            <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="header">
+    <div id="main-content" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+        <div id="frame" class="vertical-align-wrap col-xs-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="vertical-align--middle">
+                <div class="row container col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <div class="col-xs-12 col-lg-2 col-md-2 col-sm-2 text-left">
+                        <button type="button" class="btn-primary h4">شروع بازی</button>
+                    </div>
+                    <div class="col-lg-8 col-xs-12 col-sm-8 col-md-8 text-right">
+                        <div class="type row">
+                            <p class="h3 text-info">Battlefield 4 : Dragon's Teeth</p>
+                            <p class="h5 text-muted "> اکشن ، اول شخص</p>
+                        </div>
+                        <br>
+                        <div class="stars row">
+                            <i class="material-icons md-18 blue_star">star</i>
+                            <i class="material-icons md-18 blue_star">star</i>
+                            <i class="material-icons md-18 blue_star">star</i>
+                            <i class="material-icons md-18 light_gray_star">star</i>
+                            <i class="material-icons md-18 light_gray_star">star</i>
+                            <span class="text-muted">۳.۱ (۸۴ رای)</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12 img-responsive" id="game-pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="tab">
+    <div class="row col-lg-8 col-sm-8 col-md-8 col-xs-12 container">
+        <ul class="nav nav-pills nav-justified" id="menu-pill">
+            <li class="active"><a data-toggle="pill" href="#info">اطلاعات بازی</a></li>
+            <li><a data-toggle="pill" href="#score-tab" class="text-muted">رتبه بندی و امتیازات</a></li>
+            <li><a data-toggle="pill" href="#comment" class="text-muted">نظرات کاربران</a></li>
+            <li><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a></li>
+            <li><a data-toggle="pill" href="#videos" class="text-muted">عکس ها و ویدیوها</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="content-panel">
+
+    <div id="context" class="tab-content col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div id="info" class="tab-pane fade in active">
+            <div class="row title-holder"><p class="text-muted h2">اطلاعات بازی</p></div>
+            <br>
+            <p class="h5 text-primary text-justify">طرح‌نما یا لورم ایپسوم (به لاتین: lorem ipsum) به متنی آزمایشی و
+                بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به‌عنوان عنصری از
+                ترکیب‌بندی برای پُر کردن صفحه و ارائهٔ اولیهٔ شکل ظاهری و کلیِ طرح سفارش‌گرفته‌شده استفاده می‌کند،
+                تا ازنظر گرافیکی نشانگر چگونگی نوع و اندازهٔ قلم و ظاهرِ متن باشد.
+
+                معمولاً طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفاً به
+                مشتری یا صاحب‌کار خود نشان دهند که صفحهٔ طراحی یا صفحه‌بندی شده، بعد از اینکه متن در آن قرار گیرد،
+                چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموماً
+                نویسندهٔ متن نیستند و وظیفهٔ رعایت حق تکثیر متون را ندارند و در همان حال، کار آنها به‌نوعی وابسته به
+                متن است، آنها با استفاده از محتویات ساختگی، صفحهٔ گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحلهٔ طراحی
+                و صفحه‌بندی را به پایان برند.</p>
+        </div>
+        <div id="score-tab" class="tab-pane fade">
+            <div class="row title-holder"><p class="text-muted h2">رتبه بندی و امتیازات</p></div>
+            <br>
+            <div id="content">
+                <div id="board">
+                    <div id="title">
+                        برترین ها
+                    </div>
+                    <div id="best">
+                        <div id="person1">
+                            <div class="rate">
+                                ۲
+                            </div>
+                            <div>
+                                <img src="../assets/prof2.jpg" class="silver-border">
+                                <div class="hexagon-40 level-16md">
+                                    ۳۱
+                                </div>
+                            </div>
+                            <div class="name">
+                                سروش صحت
+                            </div>
+                            <div class="score">
+                                ۱۵۰۰۰۰۰۰۰
+                            </div>
+                            <div class="stars">
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                            </div>
+                        </div>
+                        <div id="person2">
+                            <div id="rate">
+                                ۱
+                            </div>
+                            <div>
+                                <img src="../assets/prof2.jpg" class="gold_border">
+                                <div class="hexagon-45 level-18md">
+                                    ۳۲
+                                </div>
+                            </div>
+                            <div id="name">
+                                کریم عبدالجبار
+                            </div>
+                            <div id="score">
+                                ۱۵۰۰۰۰۰۰۰
+                            </div>
+                            <div id="stars">
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                        <div id="person3">
+                            <div class="rate">
+                                ۳
+                            </div>
+                            <div>
+                                <img src="../assets/prof2.jpg" class="bronze-border">
+                                <div class="hexagon-40 level-16md">
+                                    ۲۹
+                                </div>
+                            </div>
+                            <div class="name">
+                                الب ارسلان
+                            </div>
+                            <div class="score">
+                                ۱۵۰۰۰۰۰۰۰
+                            </div>
+                            <div class="stars">
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 gold_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="list">
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۴
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۲۵
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    کاظم اسماعیلی
+                                </div>
+                                <div class="score">
+                                    ۱۵۰۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۵
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۲۲
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    سیامک انتظامی
+                                </div>
+                                <div class="score">
+                                    ۱۴۵۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۶
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۲۱
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    بهمن احسان پور
+                                </div>
+                                <div class="score">
+                                    ۱۳۲۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۷
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۱۵
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    سعید کمالوند
+                                </div>
+                                <div class="score">
+                                    ۱۲۴۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۸
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۱۴
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    جاستین بیرانوند
+                                </div>
+                                <div class="score">
+                                    ۱۲۳۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                    <i class="material-icons md-18 light_gray_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۹
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۸
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    پویا انوری راد
+                                </div>
+                                <div class="score">
+                                    ۱۱۹۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="stars-block">
+                                <div class="stars">
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                    <i class="material-icons md-18 gold_star">star</i>
+                                </div>
+                            </div>
+                            <div class="rank-list">
+                                ۱۰
+                            </div>
+                            <div class="personal-image">
+                                <img src="../assets/prof2.jpg" class="list-image">
+                                <div class="hexagon level-14md">
+                                    ۸
+                                </div>
+                            </div>
+                            <div class="information">
+                                <div class="name">
+                                    بهزاد میامی
+                                </div>
+                                <div class="score">
+                                    ۱۱۵۰۰۰۰۰۰
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="progress_bar">
+                        <div class="progress-bar">
+                        </div>
+                        <div class="progress-bar">
+                        </div>
+                        <div class="progress-bar">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="comment" class="tab-pane fade">
+            <div class="row title-holder media">
+                <div class="text-left media-middle media-left col-xs-12 col-sm-2">
+                    <button type="button" class="btn-primary h5 col-xs-12 col-sm-12 media-object">نظر دهید</button>
+                </div>
+                <div class="media-body"><p class="text-muted h2">نظرات کاربران <span
+                        class="h6">( ۸۰ نظر )</span></p></div>
+            </div>
+            <div class="row">
+                <div id="comments" class="col-sm-12">
+                    <div class="row">
+                        <div class="row">
+                            <div class="list-item-even">
+                                <div class="stars-block">
+                                    <div class="stars">
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                    </div>
+                                </div>
+                                <div class="personal-image">
+                                    <img src="../assets/prof2.jpg" class="list-image">
+                                </div>
+                                <div class="information">
+                                    <div class="text-muted h6">
+                                        یکشنبه ۹ آبان
+                                    </div>
+                                    <div class="text-success h5">
+                                        بهزاد میامی
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="list-item">
+                                <div class="stars-block">
+                                    <div class="stars">
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                    </div>
+                                </div>
+                                <div class="personal-image">
+                                    <img src="../assets/prof2.jpg" class="list-image">
+                                </div>
+                                <div class="information">
+                                    <div class="text-muted h6">
+                                        یکشنبه ۹ آبان
+                                    </div>
+                                    <div class="text-success h5">
+                                        بهزاد میامی
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="list-item-even">
+                                <div class="stars-block">
+                                    <div class="stars">
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                    </div>
+                                </div>
+                                <div class="personal-image">
+                                    <img src="../assets/prof2.jpg" class="list-image">
+                                </div>
+                                <div class="information">
+                                    <div class="text-muted h6">
+                                        یکشنبه ۹ آبان
+                                    </div>
+                                    <div class="text-success h5">
+                                        بهزاد میامی
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="list-item">
+                                <div class="stars-block">
+                                    <div class="stars">
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                    </div>
+                                </div>
+                                <div class="personal-image">
+                                    <img src="../assets/prof2.jpg" class="list-image">
+                                </div>
+                                <div class="information">
+                                    <div class="text-muted h6">
+                                        یکشنبه ۹ آبان
+                                    </div>
+                                    <div class="text-success h5">
+                                        بهزاد میامی
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="list-item-even vertical-align-wrap">
+                                <div class="stars-block">
+                                    <div class="stars">
+                                        <i class="material-icons md-18 dark_gray_start">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                        <i class="material-icons md-18 light_gray_star">star</i>
+                                    </div>
+                                </div>
+                                <div class="personal-image vertical-align--middle">
+                                    <img src="../assets/prof2.jpg" class="list-image">
+                                </div>
+                                <div class="information">
+                                    <div class="text-muted h6">
+                                        یکشنبه ۹ آبان
+                                    </div>
+                                    <div class="text-success h5">
+                                        بهزاد میامی
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8 container text-center">
+                <div class="col-xs-12">
+                    <button type="button" class="btn-primary h5">بارگذاری نظرات بعدی</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div id="same-game" class="tab-pane fade">
+            <div class="row title-holder"><p class="text-muted h2">بازی های مشابه</p></div>
+            <br>
+            <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div id="owl1" class="owl-carousel owl-theme">
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div id="owl2" class="owl-carousel owl-theme">
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div id="owl3" class="owl-carousel owl-theme">
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  text-right owl-item">
+                        <div class="picture row">
+
+                        </div>
+                        <div class="container">
+                            <div class="type row">
+                                <p class="h4 text-success">FIFA 2017</p>
+                                <p class="h5 text-muted">ورزشی ، فوتبال</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 blue_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="videos" class="tab-pane fade">
+            <div class="row title-holder"><p class="text-muted h2">عکس ها و ویدیوها</p></div>
+            <br>
+            <div class="row">
+                <video id="trailer"
+                       class="col-lg-12 col-sm-12 col-md-12 col-xs-12 video-js vjs-default-skin vjs-big-play-centered"
+                       controls preload="auto"
+                       poster="../assets/call-of-duty-background-17.jpg" title="تریلر بازی Battlefield Dragon 4">
+                    <source src="../assets/trailer.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
+                <div id="owl4" class="owl-carousel owl-theme">
+                    <div class="slider-item-two slider-item-video text-right owl-item">
+                        <div class="picture row">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  slider-item-video text-right owl-item">
+                        <div class="picture row">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two slider-item-video text-right owl-item">
+                        <div class="picture row">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two  slider-item-video text-right owl-item">
+                        <div class="picture row">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-item-two slider-item-video  text-right owl-item">
+                        <div class="picture row">
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-top col-sm-12">
+        <div class="container col-lg-8 col-sm-8 col-md-8 col-xs-12">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class="h4 text-muted"><i
+                            class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
+                            class="studio">استودیو</span></p>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#" class="text-success">حریم خصوصی</a></li>
+                                <li><a href="#" class="text-success">سوالات متداول</a></li>
+                                <li><a href="#" class="text-success">ارتباط با سازندگان</a></li>
+                                <li><a href="#" class="text-success">درباره ما</a></li>
+                                <li><a href="#" class="text-success">صفحه اصلی</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" id="social">
+                    <i class="ionicons ion-social-facebook social"></i>
+                    <i class="ionicons ion-social-twitter social"></i>
+                    <i class="ionicons ion-social-instagram social"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-down col-sm-12 vertical-align-wrap">
+        <p class="text-muted h4 text-center vertical-align--middle">تمامی حقوق محفوظ و متعلق به دانشگاه امیرکبیر
+            است</p>
+    </div>
+</footer>
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="../js/game.js"></script>
+<script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
+<!--<script src="../node_modules/video.js/dist/video.min.js"></script>-->
+<!--<script>-->
+    <!--videojs.options.flash.swf = "../node_modules/videojs-swf/dist/video-js.swf"-->
+<!--</script>-->
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

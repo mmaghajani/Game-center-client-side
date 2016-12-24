@@ -13,7 +13,11 @@
 }
 
 .col-sm-6 {
-    margin: 5px 0px 5px 0px;
+    /*margin: 3px;*/
+    padding: 0px;
+}
+
+.col-sm-12{
     padding: 0px;
 }
 
@@ -22,7 +26,30 @@
 }
 
 .btn {
-    margin: 5px;
+    margin: 0px;
+}
+
+.vertical-align-wrap {
+    display: table;
+    width: 100%;
+}
+
+.input-group-btn:last-child>.btn{
+    border-radius: 4px 0px 0px 4px;
+    border-right-width: 0px;
+    margin-right: -1px;
+    margin-left: 0px;
+    border-width: 1px;
+}
+
+.vertical-align--middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.vertical-align--bottom {
+    display: table-cell;
+    vertical-align: bottom;
 }
 
 .container-fluid {
@@ -33,11 +60,16 @@
 
 .btn-primary {
     background: #0f73d2;
-    width: inherit;
     padding: 5px;
     border-radius: 3px;
     border: 0px;
+    min-height: 30px;
     margin: 0px 5px 0px 5px;
+}
+
+.btn-toolbar{
+    background: transparent;
+    border: 0px;
 }
 
 .btn-default {
@@ -93,6 +125,34 @@
     padding: 0px;
 }
 
+.blue_star {
+    color: #4884ef;
+}
+
+.dark_gray_start{
+    color: #797979;
+}
+
+.light_gray_star {
+    color: #b4b4b4;
+}
+
+.col-sm-9{
+    padding: 0px;
+}
+
+.col-lg-9{
+    padding: 0px;
+}
+
+.col-md-9{
+    padding:0px;
+}
+
+.col-xs-9{
+    padding:0px;
+}
+
 .material-icons.md-36 {
     font-size: 36px;
 }
@@ -111,6 +171,24 @@
 .nav{
     float: right;
 }
+
+.col-xs-11{
+    padding: 0px;;
+}
+
+.navbar-inverse{
+    background: #ffffff;
+    border: 0px;
+}
+
+.navbar-inverse .navbar-nav > li > a :hover{
+    color: #000;
+}
+
+.navbar-inverse .navbar-nav > li :hover > a{
+    color: #000;
+}
+
 .navbar {
     margin: 0px;
     float: right;
@@ -122,8 +200,11 @@
     float: right;
 }
 
-.navbar-default .navbar-nav > li > a {
-    color: #0f73d2;
+.nav-pills > li.active>a {
+    color: #585858;
+    border-radius: 0px;
+    border-bottom: 3px solid #378fff;
+    background: transparent;
 }
 
 .material-icons.md-24 {
@@ -134,16 +215,30 @@
     font-size: 16px;
 }
 
-.container {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    direction: rtl;
+@media screen and (min-width : 750px){
+    .container {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        direction: rtl;
+    }
+}
+
+@media screen and (max-width : 750px){
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        direction: rtl;
+    }
 }
 
 .footer-down {
     background: #cfd2d7;
     min-height: 100px;
+}
+
+.footer-top{
+    background: #f1f3f1;
 }
 
 .social {
@@ -165,6 +260,10 @@
 
 .studio {
     color: #2dc7ff;
+}
+
+.h4{
+    margin: 0px;
 }
 
 
