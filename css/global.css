@@ -222,6 +222,10 @@
     min-height: 100px;
 }
 
+.footer-top{
+    background: #f1f3f1;
+}
+
 .social {
     border-radius: 50%;
     background: #9c9ca4;

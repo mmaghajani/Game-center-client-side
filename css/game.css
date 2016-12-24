@@ -31,6 +31,11 @@
     padding: 20px 0px 0px 0px;
 }
 
+#title{
+    border-bottom: 2px solid #d7d7d7;
+    padding: 20px 0px 20px 0px;
+}
+
 #header{
     min-height: 300px;
     width:100%;
@@ -44,13 +49,12 @@
     padding: 10px;
 }
 
-#menu{
+#menu-pill{
     padding: 0px;;
 }
 
 #content{
     min-height: 1000px !important;
-    background: #9e9e9e;
     width:100%;
 }
 

@@ -55,8 +55,6 @@
                             </form>
                         </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>
@@ -93,17 +91,47 @@
 </div>
 <div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="tab">
     <div class="row col-lg-8 col-sm-8 col-md-8 col-xs-12 container">
-        <ul class="nav nav-pills nav-justified" id="menu">
-            <li class="active"><a href="#">اطلاعات بازی</a></li>
-            <li><a href="#" class="text-muted">رتبه بندی و امتیازات</a></li>
-            <li><a href="#" class="text-muted">نظرات کاربران</a></li>
-            <li><a href="#" class="text-muted">بازی های مشابه</a></li>
-            <li><a href="#" class="text-muted">عکس ها و ویدیوها</a></li>
+        <ul class="nav nav-pills nav-justified" id="menu-pill">
+            <li class="active"><a data-toggle="pill" href="#info">اطلاعات بازی</a></li>
+            <li><a data-toggle="pill" href="#score" class="text-muted">رتبه بندی و امتیازات</a></li>
+            <li><a data-toggle="pill" href="#comment" class="text-muted">نظرات کاربران</a></li>
+            <li><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a></li>
+            <li><a data-toggle="pill" href="#videos" class="text-muted">عکس ها و ویدیوها</a></li>
         </ul>
     </div>
 </div>
-<div class="row" id="content">
-
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="content">
+    <div class="container col-sm-8 col-lg-8 col-md-8 col-xs-12">
+        <div id="title" class="row"><p class="text-muted h2">اطلاعات بازی</p></div>
+        <br>
+        <div id="context" class="tab-content">
+            <div id="info" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+            <div id="score" class="tab-pane fade">
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
+            </div>
+            <div id="comment" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam.</p>
+            </div>
+            <div id="same-game" class="tab-pane fade">
+                <h3>Menu 3</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo.</p>
+            </div>
+            <div id="video" class="tab-pane fade">
+                <h3>Menu 3</h3>
+                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                    explicabo.</p>
+            </div>
+        </div>
+    </div>
 </div>
 <footer class="row">
     <div class="footer-top col-sm-12">
