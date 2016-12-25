@@ -84,8 +84,35 @@ function addItemsToSliderOne(numberOfItems, gamesData) {
         var item = $('<div class="slider-item-one  text-right  vertical-align-wrap"' + 'id="' + id + '">' +
             '<p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی ' +
             (gamesData.slider[i]).title + '</strong></p>' +
-            '</div>').css('background', 'url(' + (gamesData.slider[i]).small_image + ') no-repeat center center')
+            '</div>').css('background', 'url(' + (gamesData.slider[i]).small_image + ') no-repeat center center').
+        click(function () {
+           handleSliderOneClick($(this),gamesData)
+        })
         $('#owl1').append(item)
+    }
+}
+
+function handleSliderOneClick(item , gamesData) {
+    var sliderItem = item;
+    console.log(sliderItem)
+    var child = sliderItem.children();
+    console.log(child)
+    var title = child[0].textContent.substr(16)
+    titleOfActiveGame = title;
+    for (var i = 0; i < gamesData.slider.length; i++) {
+        console.log((gamesData.slider[i]).title)
+        if ("بازی " + title == (gamesData.slider[i]).title) {
+            $("#main-content").fadeTo("slow", 0.8);
+            $('#main-content').css({
+                'background': 'url(' + (gamesData.slider[i]).large_image + ') no-repeat center center',
+                'background-size': 'cover'
+            })
+            $("#main-content").fadeTo("slow",1);
+
+            $("#subject").children().text((gamesData.slider[i]).title.substr(5))
+            $("#explain").children().text((gamesData.slider[i]).abstract)
+            break;
+        }
     }
 }
 
@@ -116,7 +143,7 @@ function handleSliderOne(gamesData, event) {
 
             $("#subject").children().text((gamesData.slider[i]).title.substr(5))
             $("#explain").children().text((gamesData.slider[i]).abstract)
-
+            break;
         }
     }
 }
