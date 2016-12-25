@@ -7,8 +7,105 @@ var numberOfItemsInLarge = 6;
 var requestURL = "http://localhost/home.json";
 var titleOfActiveGame = "";
 
+
 $(document).ready(function () {
-    var owl2 = $('#owl');
+
+
+    $.ajax({
+        url: requestURL, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+            if (data.response.ok == true) {
+                var gamesData = data.response.result.homepage;
+
+                initSliderOne(gamesData)
+                initSliderTwo(gamesData)
+                initComment(gamesData)
+            }
+        }
+    });
+
+});
+
+function addItemsToCommentBody(num, gamesData) {
+    for (var i = 0; i < num; i++) {
+        var id = i;
+        var text = (gamesData.comments[i]).text;
+        var date = (gamesData.comments[i]).date;
+        var playerAvatar = (gamesData.comments[i]).player.avatar;
+
+        var s = '<div class="row" id="'+id+'">' +
+            '<div class="list-item">' +
+            '<div class="personal-image">' +
+            '<img src="'+ playerAvatar + '" class="list-image">' +
+            '</div>' +
+            '<div class="information">' +
+            '<div class="text-success h4">' +
+            text +
+            '</div>' +
+            '<div class="text-muted h5">' +
+            date +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+        var item = $(s).click(function () {
+            handleSliderTwoClick($(this))
+        })
+        $('#comment-content-body').append(item)
+    }
+}
+
+function initComment(gamesData) {
+    var num = gamesData.comments.length;
+    addItemsToCommentBody(num, gamesData)
+}
+
+function handleSliderTwoClick(item) {
+    var title = $(item.children()[1]).children()[0].textContent
+    window.location.href = ("./games.html?game=" + title);
+}
+
+function addItemsToSliderTwo(numberOfItems, gamesData) {
+    for (var i = 0; i < numberOfItems; i++) {
+        var id = i;
+        var title = (gamesData.new_games[i]).title.substr(5);
+        console.log(title)
+        var categories = (gamesData.new_games[i]).categories;
+        var numOfBlueStar = parseInt((gamesData.new_games[i]).rate);
+        var numOfGrayStar = 5 - numOfBlueStar;
+        var s = '<div class="slider-item-two  text-right owl-item" id="' + id + '">' +
+            '<div class="picture row">' +
+            '<img class="img-responsive picture"' +
+            'src="' + (gamesData.new_games[i]).small_image + '">' +
+            '</div>' +
+            '<div class="container">' +
+            '<p class="h4 text-success">' + title + '</p>' +
+            '<p class="h6 text-muted">' + categories + '</p>' +
+            '<div class="stars row">';
+        for (var j = 0; j < numOfBlueStar; j++) {
+            s += '<i class="material-icons md-18 blue_star">star</i>';
+        }
+        for (var j = 0; j < numOfGrayStar; j++) {
+            s += '<i class="material-icons md-18 light_gray_star">star</i>';
+        }
+        s += '</div>' +
+            '</div>' +
+            '</div>';
+        var item = $(s).click(function () {
+            handleSliderTwoClick($(this))
+        })
+        $('#owl20').append(item)
+    }
+}
+
+function initSliderTwo(gamesData) {
+    var num = gamesData.new_games.length;
+    addItemsToSliderTwo(num, gamesData)
+
+    var owl2 = $('#owl20');
+    // owl1.on('initialized.owl.carousel', function (event) {
+    //     handleSliderOne(gamesData, event)
+    // })
     owl2.owlCarousel({
         loop: true,
         margin: 10,
@@ -21,31 +118,24 @@ $(document).ready(function () {
                 nav: true,
                 dots: false
             },
-            600: {
-                items: 3,
+            500: {
+                items: 2,
                 nav: false
             },
-            800: {
+            1400: {
                 items: 4,
-                loop: false
+                center: true
             }
         }
     })
+    // owl1.on('changed.owl.carousel', function (event) {
+    //     handleSliderOne(gamesData, event)
+    // })
 
-    $.ajax({
-        url: requestURL, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
-            if (data.response.ok == true) {
-                var gamesData = data.response.result.homepage;
-                var num = gamesData.slider.length;
+}
 
-                initSliderOne(gamesData, num)
-            }
-        }
-    });
-
-});
-
-function initSliderOne(gamesData, num) {
+function initSliderOne(gamesData) {
+    var num = gamesData.slider.length;
     addItemsToSliderOne(num, gamesData)
 
     var owl1 = $('#owl1');
@@ -53,7 +143,7 @@ function initSliderOne(gamesData, num) {
         handleSliderOne(gamesData, event)
     })
     owl1.owlCarousel({
-        loop: false, rewind:true , center:false, dots: false, responsiveClass: true, animateOut: 'fadeOut',
+        loop: false, rewind: true, center: false, dots: false, responsiveClass: true, animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
         autoplayTimeout: 5000,
@@ -70,7 +160,7 @@ function initSliderOne(gamesData, num) {
             1000: {
                 items: numberOfItemsInLarge,
                 loop: false,
-                rewind:true,
+                rewind: true,
                 center: false
             }
         }
@@ -117,22 +207,11 @@ function handleSliderOne(gamesData, event) {
     setActiveGame(gamesData, child, sliderItem)
 }
 
-// function getTitleOfGame(child) {
-//     var title = child[0].textContent.substr(6)
-//     if(title.substring(0,3) == "بازی") {
-//         console.log(true)
-//         return title
-//     }else{
-//
-//         return $(child[0]).children()[0].textContent
-//     }
-// }
 function setActiveGame(gamesData, child, item) {
     var title = $(child[0]).children()[0].textContent.substr(6)
-    console.log(title)
     titleOfActiveGame = title;
     for (var i = 0; i < gamesData.slider.length; i++) {
-        if ( title == (gamesData.slider[i]).title) {
+        if (title == (gamesData.slider[i]).title) {
             $("#main-content").fadeTo("slow", 0.8);
             $('#main-content').css({
                 'background': 'url(' + (gamesData.slider[i]).large_image + ') no-repeat center center',
@@ -140,18 +219,18 @@ function setActiveGame(gamesData, child, item) {
             })
             $("#main-content").fadeTo("slow", 1);
             // console.log(i)
-           // console.log(item);
+            // console.log(item);
             $(item).empty()
             //console.log(item);
             var template = $('<div class="slider-item-one-frame slider-item-one-active text-right vertical-align-wrap">'
                 + '<div class="vertical-align--middle">' +
                 '<p class="h4 text-info">' + title + '</p>' +
-                '<p class="h6 text-info">'+ 'تعداد نظرات : ' + (gamesData.slider[i]).number_of_comments + '</p>' +
+                '<p class="h6 text-info">' + 'تعداد نظرات : ' + (gamesData.slider[i]).number_of_comments + '</p>' +
                 '<br>' +
                 '<button type="button" class="text-muted btn-default" onclick="enterGamePageBtnHandler()">صفحه بازی</button>' +
                 '</div></div>');
             $(item).append(template)
-           // console.log(item);
+            // console.log(item);
             $("#subject").children().text((gamesData.slider[i]).title.substr(5))
             $("#explain").children().text((gamesData.slider[i]).abstract)
             break;
@@ -163,22 +242,21 @@ function setActiveGame(gamesData, child, item) {
         var but = $(allItems[i]).children();
 
         var classes = $(but[0]).attr('class').split(' ');
-        if( containes(classes , "slider-item-one-frame")){
+        if (containes(classes, "slider-item-one-frame")) {
             var title = ($($(but[0]).children()[0]).children()[0]).textContent;
-            console.log(title)
-            if( title != titleOfActiveGame){
+            if (title != titleOfActiveGame) {
                 $(allItems[i]).children().remove()
                 var template = $('<p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی ' +
-                    title+ '</strong></p>');
+                    title + '</strong></p>');
                 $(allItems[i]).append(template)
             }
         }
     }
 }
 
-function containes(arr , key){
-    for( var i = 0 ; i < arr.length ; i++ ){
-        if( arr[i] == key){
+function containes(arr, key) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == key) {
             return true
         }
     }
@@ -189,7 +267,7 @@ function enterGamePageBtnHandler(e) {
     window.location.href = ("./games.html?game=" + titleOfActiveGame);
 }
 
-function enterGamePageBtnHandlerTrailer(e){
-    $('#trailer-link').attr("href" , "./games.html#videos?game=" + titleOfActiveGame + "&tab=videos")
+function enterGamePageBtnHandlerTrailer(e) {
+    $('#trailer-link').attr("href", "./games.html#videos?game=" + titleOfActiveGame + "&tab=videos")
     window.location.href = ("./games.html#videos?game=" + titleOfActiveGame + "&tab=videos" );
 }

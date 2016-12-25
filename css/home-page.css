@@ -74,7 +74,8 @@
 }
 
 .slider-item-two:hover {
-    box-shadow: 0px 0px 20px #565758;
+    box-shadow: 0px 0px 35px #565758;
+    cursor: pointer;
 }
 
 
@@ -90,6 +91,7 @@
     background: -moz-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.6)); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.6)); /* Standard syntax */
     box-shadow: 0px 5px 10px #222324;
+    cursor: pointer;
 }
 
 .slider-item-one-active{
@@ -242,11 +244,11 @@ p {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    min-height: 300px !important;
+    min-height: 320px !important;
 }
 
 .picture {
-    background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;
+    /*background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;*/
     background-size: cover;
     min-height: 150px;
     max-height: 200px !important;
@@ -258,6 +260,20 @@ p {
     min-height: 550px !important;
     float: none;
     padding: 5px;;
+}
+
+#comment-content-body{
+    overflow-y: auto;
+    overflow-x: auto;
+    min-height: 400px;
+    max-height: 430px;
+}
+
+#guide-content-body{
+    overflow-y: auto;
+    overflow-x: auto;
+    min-height: 400px;
+    max-height: 430px;
 }
 
 .list-group {
