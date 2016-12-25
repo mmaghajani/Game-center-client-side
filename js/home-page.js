@@ -53,7 +53,7 @@ function initSliderOne(gamesData, num) {
         handleSliderOne(gamesData, event)
     })
     owl1.owlCarousel({
-        loop: true, dots: false, responsiveClass: true, animateOut: 'fadeOut',
+        loop: false, rewind:true , center:true, dots: false, responsiveClass: true, animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
         autoplayTimeout: 5000,
