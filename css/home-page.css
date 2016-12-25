@@ -53,6 +53,17 @@
     width: 100%;
 }
 
+.slider-item-one-frame{
+    font-weight: bold;
+    direction: rtl;
+    height: 200px;
+    /*padding: 5px;*/
+    padding: 10px;
+    background: transparent;
+    min-height: 200px !important;
+    width: 100%;
+}
+
 .slider-item-two {
     font-weight: bold;
     direction: rtl;
@@ -81,7 +92,7 @@
     box-shadow: 0px 5px 10px #222324;
 }
 
-.slider-item-active{
+.slider-item-one-active{
     background: rgba(42, 136, 255, 0.55); /* For browsers that do not support gradients */
     background: -webkit-radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* Safari 5.1 to 6.0 */
     background: -o-radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* For Opera 11.6 to 12.0 */
