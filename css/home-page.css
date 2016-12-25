@@ -53,9 +53,8 @@
 .slider-item-two {
     font-weight: bold;
     direction: rtl;
-    height: 250px;
     background: #fafff3;
-    min-height: 200px !important;
+    min-height: 280px !important;
     width: 100%;
     border: 1px #e8e8e8 solid;
 }
@@ -76,6 +75,15 @@
     background: -o-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.6)); /* For Opera 11.6 to 12.0 */
     background: -moz-radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.6)); /* For Firefox 3.6 to 15 */
     background: radial-gradient(rgb(91, 137, 255), rgba(91, 137, 255, 0.8), rgba(91, 137, 255, 0.6)); /* Standard syntax */
+    box-shadow: 0px 5px 10px #222324;
+}
+
+.slider-item-active{
+    background: rgba(42, 136, 255, 0.55); /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(rgb(19, 159, 115), rgba(19, 159, 115, 0.8), rgba(19, 159, 115, 0.6)); /* Standard syntax */
     box-shadow: 0px 5px 10px #222324;
 }
 
@@ -220,7 +228,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    min-height: 250px !important;
+    min-height: 300px !important;
 }
 
 .picture {
@@ -289,6 +297,18 @@ p {
     background: #f9a718;
 }
 
+.guide-image {
+    padding: 0px;
+    border: 5px #c6134f;
+    width: 60px;
+    height: 60px;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    margin-left: 5px;
+    background: #f9a718;
+}
+
 #new-game {
     min-height: 320px;
 }
@@ -316,10 +336,14 @@ p {
 
 #frame-on-contact {
     background: rgba(39, 90, 255, 0.83);
-    -webkit-background-size: cover;
+    /*-webkit-background-size: cover;*/
     background-size: cover;
     width: 100%;
-    min-height: 400px !important;
+    height: 400px !important;
+}
+
+#panel{
+    height: 400px;
 }
 
 #content-of-contact {

@@ -7,6 +7,10 @@
     margin: 0px 10px 0px 10px;
 }
 
+.navbar-default .navbar-nav>li>a{
+    color: #0f73d2;
+}
+
 .text-primary {
     color: #000000;
     margin: 5px 10px 5px 10px;;
