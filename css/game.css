@@ -153,6 +153,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     /*min-height: 1000px !important;*/
+    min-height: 800px;
     max-height: 1000px;
     width:100%;
 }

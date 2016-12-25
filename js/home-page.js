@@ -53,7 +53,7 @@ function initSliderOne(gamesData, num) {
         handleSliderOne(gamesData, event)
     })
     owl1.owlCarousel({
-        loop: false, rewind:true , center:true, dots: false, responsiveClass: true, animateOut: 'fadeOut',
+        loop: false, rewind:true , center:false, dots: false, responsiveClass: true, animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
         autoplayTimeout: 5000,
@@ -71,7 +71,7 @@ function initSliderOne(gamesData, num) {
                 items: numberOfItemsInLarge,
                 loop: false,
                 rewind:true,
-                center: true
+                center: false
             }
         }
     });
@@ -148,7 +148,7 @@ function setActiveGame(gamesData, child, item) {
                 '<p class="h4 text-info">' + title + '</p>' +
                 '<p class="h6 text-info">'+ 'تعداد نظرات : ' + (gamesData.slider[i]).number_of_comments + '</p>' +
                 '<br>' +
-                '<button type="button" class="text-muted btn-default">صفحه بازی</button>' +
+                '<button type="button" class="text-muted btn-default" onclick="enterGamePageBtnHandler()">صفحه بازی</button>' +
                 '</div></div>');
             $(item).append(template)
            // console.log(item);
@@ -186,5 +186,10 @@ function containes(arr , key){
 }
 
 function enterGamePageBtnHandler(e) {
+    window.location.href = ("./games.html?game=" + titleOfActiveGame);
+}
 
+function enterGamePageBtnHandlerTrailer(e){
+    $('#trailer-link').attr("href" , "./games.html#videos?game=" + titleOfActiveGame + "&tab=videos")
+    window.location.href = ("./games.html#videos?game=" + titleOfActiveGame + "&tab=videos" );
 }
