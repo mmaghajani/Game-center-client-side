@@ -11,6 +11,9 @@
     padding: 0px;;
 }
 
+#explain{
+    direction: rtl;
+}
 #menu {
     padding: 0px;
     height: auto;
