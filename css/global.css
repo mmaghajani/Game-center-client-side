@@ -11,6 +11,17 @@
     color: #0f73d2;
 }
 
+.list-item {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: inline-block;
+    margin: auto;
+    padding: 0px 25px 0px 25px;
+    cursor: pointer;
+
+}
+
 .text-primary {
     color: #000000;
     margin: 5px 10px 5px 10px;;

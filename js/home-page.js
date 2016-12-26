@@ -19,11 +19,73 @@ $(document).ready(function () {
                 initSliderOne(gamesData)
                 initSliderTwo(gamesData)
                 initComment(gamesData)
+                initGuides(gamesData)
             }
         }
     });
 
 });
+
+
+function handleGuideItemClick(item, gamesData) {
+    var num = gamesData.tutorials.length;
+    var title = $($(item.children()[0]).children()[1]).children()[0].textContent
+    var date = $($(item.children()[0]).children()[1]).children()[1].textContent
+
+    for (var i = 0; i < num; i++) {
+        if( date == (gamesData.tutorials[i]).date && title == (gamesData.tutorials[i]).title){
+            var gameTitle = (gamesData.tutorials[i]).game.title
+            window.location.href = ("./games.html?game=" + gameTitle + "&tab=comment");
+        }
+    }
+}
+
+function addItemsToGuideBody(num, gamesData) {
+    for (var i = 0; i < num; i++) {
+        var id = i;
+        var title = (gamesData.tutorials[i]).title;
+        var date = (gamesData.tutorials[i]).date;
+        var gameAvatar = (gamesData.tutorials[i]).game.small_image;
+
+        var s = '<div class="row" id="' + id + '">' +
+            '<div class="list-item">' +
+            '<div class="personal-image">' +
+            '<img src="' + gameAvatar + '" class="guide-image">' +
+            '</div>' +
+            '<div class="information">' +
+            '<div class="text-success h4">' +
+            title +
+            '</div>' +
+            '<div class="text-muted h5">' +
+            date +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+        var item = $(s).click(function () {
+            handleGuideItemClick($(this) , gamesData)
+        })
+        $('#guide-content-body').append(item)
+    }
+}
+
+function initGuides(gamesData) {
+    var num = gamesData.tutorials.length;
+    addItemsToGuideBody(num, gamesData)
+}
+
+function handleCommentItemClick(item, gamesData) {
+    var num = gamesData.comments.length;
+    var text = $($(item.children()[0]).children()[1]).children()[0].textContent
+    console.log(item.attr("name"))
+    for (var i = 0; i < num; i++) {
+        if( item.attr("name") == (gamesData.comments[i]).player.name && text == (gamesData.comments[i]).text){
+            var gameTitle = (gamesData.comments[i]).game.title
+            window.location.href = ("./games.html?game=" + gameTitle + "&tab=comment");
+        }
+    }
+}
 
 function addItemsToCommentBody(num, gamesData) {
     for (var i = 0; i < num; i++) {
@@ -32,10 +94,10 @@ function addItemsToCommentBody(num, gamesData) {
         var date = (gamesData.comments[i]).date;
         var playerAvatar = (gamesData.comments[i]).player.avatar;
 
-        var s = '<div class="row" id="'+id+'">' +
+        var s = '<div class="row" id="' + id + '">' +
             '<div class="list-item">' +
             '<div class="personal-image">' +
-            '<img src="'+ playerAvatar + '" class="list-image">' +
+            '<img src="' + playerAvatar + '" class="list-image">' +
             '</div>' +
             '<div class="information">' +
             '<div class="text-success h4">' +
@@ -49,8 +111,9 @@ function addItemsToCommentBody(num, gamesData) {
             '</div>';
 
         var item = $(s).click(function () {
-            handleSliderTwoClick($(this))
+            handleCommentItemClick($(this) , gamesData)
         })
+        item.attr( "name", (gamesData.comments[i]).player.name)
         $('#comment-content-body').append(item)
     }
 }
@@ -69,7 +132,6 @@ function addItemsToSliderTwo(numberOfItems, gamesData) {
     for (var i = 0; i < numberOfItems; i++) {
         var id = i;
         var title = (gamesData.new_games[i]).title.substr(5);
-        console.log(title)
         var categories = (gamesData.new_games[i]).categories;
         var numOfBlueStar = parseInt((gamesData.new_games[i]).rate);
         var numOfGrayStar = 5 - numOfBlueStar;

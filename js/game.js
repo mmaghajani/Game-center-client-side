@@ -125,5 +125,16 @@ function setCorrectTab() {
         $("#same-game").removeClass('in active')
         $("#videos").addClass('in active')
         $("#videos-tab-title").addClass('active')
+    }else if(tabItem == "comment"){
+        $("#info").removeClass('in active')
+        $("#info-tab-title").removeClass('active')
+        $("#comment-tab-title").addClass('active')
+        $("#comment").addClass('in active')
+        $("#score-tab-title").removeClass('active')
+        $("#score-tab").removeClass('in active')
+        $("#same-game-tab-title").removeClass('active')
+        $("#same-game").removeClass('in active')
+        $("#videos").removeClass('in active')
+        $("#videos-tab-title").removeClass('active')
     }
 }

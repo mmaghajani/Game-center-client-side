@@ -265,14 +265,16 @@ p {
 #comment-content-body{
     overflow-y: auto;
     overflow-x: auto;
-    min-height: 400px;
+    /*min-height: 400px;*/
+    padding: 3px 20px 3px 20px;
     max-height: 430px;
 }
 
 #guide-content-body{
     overflow-y: auto;
     overflow-x: auto;
-    min-height: 400px;
+    padding: 3px 20px 3px 20px;
+    /*min-height: 400px;*/
     max-height: 430px;
 }
 
@@ -305,6 +307,7 @@ p {
     float: right;
     margin-top: 10px;
     margin-right: -24px;
+    padding-bottom: 5px;
 }
 
 .information {
@@ -343,14 +346,8 @@ p {
     min-height: 320px;
 }
 
-.list-item {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    display: inline-block;
-    margin: auto;
-    padding: 0px 25px 0px 25px;
-
+.list-item{
+    border-bottom: 1px solid #d2d2d2;
 }
 
 .list-item:hover {
