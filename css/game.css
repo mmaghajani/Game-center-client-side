@@ -120,6 +120,9 @@
     visibility: hidden;
 }
 
+.slider-item-video:hover{
+    cursor: pointer;
+}
 .slider-item-video:hover > div > div  > p{
     visibility: visible;
 }

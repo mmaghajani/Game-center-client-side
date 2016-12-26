@@ -4,6 +4,7 @@
 var domain = "http://localhost/";
 var tabItem;
 
+
 $(document).ready(function () {
 
     setCorrectTab()
@@ -33,6 +34,7 @@ $(document).ready(function () {
                         initGalleryTab(tabData)
                     } else if (tabItem == 'info') {
                         tabData = data.response.result.game;
+                        initInfoTab(tabData)
                     } else if (tabItem == 'comments') {
                         tabData = data.response.result.comments;
                     }
@@ -137,6 +139,19 @@ $(document).ready(function () {
     // })
 });
 
+function addItemToInfoPanel(data) {
+    var s ='<p class="h5 text-primary text-justify">' +data.info + '</p>';
+    //
+    $('#info').append(s).addClass('text-justify')
+    var images = $('#info').find('img')
+    for( var i = 0 ; i < images.length ; i++ ){
+        $(images[i]).addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    }
+}
+function initInfoTab(tabData) {
+    addItemToInfoPanel(tabData)
+}
+
 function addItemToSlider(gamesData) {
     var numberOfItems = gamesData.images.length;
     for (var i = 0; i < numberOfItems; i++) {
@@ -150,10 +165,6 @@ function addItemToSlider(gamesData) {
             '</div>';
         //
         console.log($($(s).children()[0]))
-        // $($(s).children()[0]).css({
-        //     'background': 'url(' + (gamesData.images[i]).url + ') no-repeat center center',
-        //     'background-size': 'cover'
-        // })
         $('#owl4').append(s)
         $('#' + i).css({
             'background': 'url(' + (gamesData.images[i]).url + ') no-repeat center center',
@@ -161,9 +172,7 @@ function addItemToSlider(gamesData) {
         })
     }
     var owl4 = $('#owl4');
-    // owl1.on('initialized.owl.carousel', function (event) {
-    //     handleSliderOne(gamesData, event)
-    // })
+
     owl4.owlCarousel({
         loop: true,
         margin: 10,
