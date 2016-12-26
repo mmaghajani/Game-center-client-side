@@ -82,7 +82,7 @@ function handleCommentItemClick(item, gamesData) {
     for (var i = 0; i < num; i++) {
         if( item.attr("name") == (gamesData.comments[i]).player.name && text == (gamesData.comments[i]).text){
             var gameTitle = (gamesData.comments[i]).game.title
-            window.location.href = ("./games.html?game=" + gameTitle + "&tab=comment");
+            window.location.href = ("./games.html?game=" + gameTitle + "&tab=comments");
         }
     }
 }

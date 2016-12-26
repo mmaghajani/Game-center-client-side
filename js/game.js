@@ -3,14 +3,15 @@
  */
 var domain = "http://localhost/";
 var tabItem;
-
+var numberOfTotalComments;
+var gameTitle
 
 $(document).ready(function () {
 
     setCorrectTab()
 
     $(document).ready(function () {
-        var gameTitle = getParameterByName('game');
+         gameTitle = getParameterByName('game');
         var urlForHeader = domain + gameTitle + '/header.json';
 
         $.ajax({
@@ -37,6 +38,7 @@ $(document).ready(function () {
                         initInfoTab(tabData)
                     } else if (tabItem == 'comments') {
                         tabData = data.response.result.comments;
+                        initCommentTab(tabData)
                     }
                 }
             }
@@ -139,13 +141,124 @@ $(document).ready(function () {
     // })
 });
 
+function nextComments(event) {
+    var urlForHeader = domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
+    console.log(urlForHeader)
+    $.ajax({
+        url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+            if (data.response.ok == true) {
+                console.log(data)
+                var tabData = data.response.result.comments;
+                console.log(tabData)
+                for (var i = 0; i < tabData.length; i++) {
+                    var id = i;
+                    var length = $($("#comments").children()[0]).children().length ;
+                    var numOfRate = tabData[i].rate;
+                    var s = '<div class="row">';
+                    if (length % 2 == 0) {
+                        s += '<div class="list-item-even">'
+                    } else {
+                        s += '<div class="list-item">'
+                    }
+
+                    s += '<div class="stars-block">' +
+                        '<div class="stars">';
+                    if (numOfRate > 0) {
+                        for (var j = 0; j < numOfRate; j++) {
+                            s += '<i class="material-icons md-18 dark_gray_start">star</i>'
+                        }
+                        for (var j = 5; j > numOfRate; j--) {
+                            s += '<i class="material-icons md-18 light_gray_star">star</i>'
+                        }
+                    }
+                    s += '</div>' +
+                        '</div>' +
+                        '<div class="personal-image">';
+                    if (tabData[i].player.avatar == "") {
+                        s += '<img src="assets/prof2.jpg" class="list-image">'
+                    } else {
+                        s += '<img src="' + tabData[i].player.avatar + '" class="list-image">'
+                    }
+                    s += '</div>' +
+                        '<div class="information">' +
+                        '<div class="text-muted h6">' +
+                        tabData[i].date +
+                        '</div>' +
+                        '<div class="text-success h5">' +
+                        tabData[i].player.name + ' : ' + tabData[i].text +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+
+                    $($('#comments').children()[0]).append(s)
+                }
+            }
+        }
+    });
+}
+function addItemToCommentPanel(tabData) {
+    for (var i = 0; i < tabData.length; i++) {
+        var id = i;
+        var numOfRate = tabData[i].rate;
+        var s = '<div class="row">';
+        if (i % 2 == 0) {
+            s += '<div class="list-item-even">'
+        } else {
+            s += '<div class="list-item">'
+        }
+
+        s += '<div class="stars-block">' +
+            '<div class="stars">';
+        if (numOfRate > 0) {
+            for (var j = 0; j < numOfRate; j++) {
+                s += '<i class="material-icons md-18 dark_gray_start">star</i>'
+            }
+            for (var j = 5; j > numOfRate; j--) {
+                s += '<i class="material-icons md-18 light_gray_star">star</i>'
+            }
+        }
+        s += '</div>' +
+            '</div>' +
+            '<div class="personal-image">';
+        if (tabData[i].player.avatar == "") {
+            s += '<img src="assets/prof2.jpg" class="list-image">'
+        } else {
+            s += '<img src="' + tabData[i].player.avatar + '" class="list-image">'
+        }
+        s += '</div>' +
+            '<div class="information">' +
+            '<div class="text-muted h6">' +
+            tabData[i].date +
+            '</div>' +
+            '<div class="text-success h5">' +
+            tabData[i].player.name + ' : ' + tabData[i].text +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+        $($('#comments').children()[0]).append(s)
+    }
+}
+
+function initCommentTab(tabData) {
+    if (tabData.length > 0) {
+        numberOfTotalComments = tabData[0].game.number_of_comments;
+        console.log($("#comment-number"))
+        $("#comment-number").text("( " + numberOfTotalComments + " نظر )");
+    }
+
+    addItemToCommentPanel(tabData)
+}
+
 function addItemToInfoPanel(data) {
-    var s ='<p class="h5 text-primary text-justify">' +data.info + '</p>';
+    var s = '<p class="h5 text-primary text-justify">' + data.info + '</p>';
     //
     $('#info').append(s).addClass('text-justify')
     var images = $('#info').find('img')
-    for( var i = 0 ; i < images.length ; i++ ){
-        $(images[i]).addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12')
+    for (var i = 0; i < images.length; i++) {
+        $(images[i]).addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12 img-responsive')
     }
 }
 function initInfoTab(tabData) {
@@ -264,7 +377,7 @@ function setCorrectTab() {
         $("#videos").addClass('in active')
         $("#videos-tab-title").addClass('active')
         tabItem = 'gallery';
-    } else if (tabItem == "comment") {
+    } else if (tabItem == "comments") {
         $("#info").removeClass('in active')
         $("#info-tab-title").removeClass('active')
         $("#comment-tab-title").addClass('active')
