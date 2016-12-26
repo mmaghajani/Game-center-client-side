@@ -49,10 +49,10 @@ function addItemsToGuideBody(num, gamesData) {
 
         var s = '<div class="row" id="' + id + '">' +
             '<div class="list-item">' +
-            '<div class="personal-image">' +
+            '<div class="personal-image col-sm-4 col-md-4 col-lg-3 col-xs-4">' +
             '<img src="' + gameAvatar + '" class="guide-image">' +
             '</div>' +
-            '<div class="information">' +
+            '<div class="information col-sm-8 col-md-8 col-lg-9 col-xs-8">' +
             '<div class="text-success h4">' +
             title +
             '</div>' +
@@ -96,10 +96,10 @@ function addItemsToCommentBody(num, gamesData) {
 
         var s = '<div class="row" id="' + id + '">' +
             '<div class="list-item">' +
-            '<div class="personal-image">' +
+            '<div class="personal-image col-sm-4 col-md-4 col-lg-3 col-xs-4">' +
             '<img src="' + playerAvatar + '" class="list-image">' +
             '</div>' +
-            '<div class="information">' +
+            '<div class="information col-sm-8 col-md-8 col-lg-9 col-xs-8">' +
             '<div class="text-success h4">' +
             text +
             '</div>' +
@@ -182,11 +182,13 @@ function initSliderTwo(gamesData) {
             },
             500: {
                 items: 2,
-                nav: false
+                nav:true,
+                dots:false
             },
             1400: {
                 items: 4,
-                center: true
+                center: true,
+                dots:true
             }
         }
     })
