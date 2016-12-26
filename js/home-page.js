@@ -210,7 +210,7 @@ function initSliderOne(gamesData) {
         loop: false, rewind: true, center: false, dots: false, responsiveClass: true, animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 8000,
         autoplayHoverPause: false,
         responsive: {
             0: {
