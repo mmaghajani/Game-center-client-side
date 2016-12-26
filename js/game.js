@@ -163,9 +163,22 @@ function infoClicked(event) {
 }
 
 function rankClicked(event) {
+    if ($("#score-tab-title").attr('load') != 'loaded') {
+        var urlForHeader = domain + gameTitle + '/leaderboard.json'
+        $.ajax({
+            url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+                if (data.response.ok == true) {
+                    console.log(data)
+                    var tabData;
 
+                    tabData = data.response.result.leaderboard;
+                    initRankTab(tabData)
+                    $("#comment-tab-title").attr('load', 'loaded');
+                }
+            }
+        });
+    }
 }
-
 function commentClicked(event) {
     if ($("#comment-tab-title").attr('load') != 'loaded') {
         var urlForHeader = domain + gameTitle + '/comments.json'
@@ -205,6 +218,81 @@ function galleryClicked(event) {
         });
     }
 }
+
+function addItemToRankPanel(tabData) {
+    if( tabData.length > 2 ) {
+        $($("#person1").children()[0]).children()[1].textContent = numberToPersian(tabData[1].level)
+        if (tabData[1].player.avatar != "") {
+            $($($("#person1").children()[0]).children()[0]).attr('src', tabData[1].player.avatar)
+        }
+        $("#person1").children()[2].textContent = tabData[1].player.name
+        $("#person1").children()[4].textContent = numberToPersian(tabData[1].score)
+
+        $($("#person2").children()[0]).children()[1].textContent = numberToPersian(tabData[0].level)
+        if (tabData[1].player.avatar != "") {
+            $($($("#person2").children()[0]).children()[0]).attr('src', tabData[0].player.avatar)
+        }
+        $("#person2").children()[2].textContent = tabData[0].player.name
+        $("#person2").children()[4].textContent = numberToPersian(tabData[0].score)
+
+        $($("#person3").children()[0]).children()[1].textContent = numberToPersian(tabData[2].level)
+        if (tabData[1].player.avatar != "") {
+            $($($("#person3").children()[0]).children()[0]).attr('src', tabData[2].player.avatar)
+        }
+        $("#person3").children()[2].textContent = tabData[2].player.name
+        $("#person3").children()[4].textContent = numberToPersian(tabData[2].score)
+
+    }
+    for (var i = 0; i < tabData.length; i++) {
+        var rank = i + 1;
+        var s = '';
+        if (i % 2 == 0) {
+            s += '<div class="list-item-even-2 vertical-align-wrap">'
+        } else {
+            s += '<div class="list-item vertical-align-wrap">'
+        }
+        s += '<div class="list-cell col-xs-1 col-lg-1 h4 vertical-align--middle">' +
+            numberToPersian(rank) + '.' +
+            '</div>' +
+            '<div class="list-cell col-xs-1 col-lg-1 h4">';
+        if (rank == 1) {
+            s += '<i class="material-icons md-18 gold_star">star</i>';
+        } else if (rank == 2) {
+            s += '<i class="material-icons md-18 light_gray_star">star</i>';
+        } else if (rank == 3) {
+            s += '<i class="material-icons md-18 bronze-start">star</i>';
+        }
+        s += '</div>' +
+            '<div class="list-cell personal-image col-xs-1 col-lg-1">';
+        if (tabData[i].player.avatar != "") {
+            s += '<img src="' + tabData[i].player.avatar + '" class="list-image">'
+        } else {
+            s += '<img src="assets/prof2.jpg" class="list-image">';
+        }
+        s += '</div>' +
+            '<div class="information list-cell col-xs-3 col-lg-5 text-success h4">' +
+            tabData[i].player.name +
+            '</div>' +
+            '<div class="list-cell col-xs-2 col-lg-1 text-warning h4">' +
+            numberToPersian(tabData[i].level) +
+            '</div>' +
+            '<div class="list-cell col-xs-2 col-lg-1 text-primary h4">' +
+            '( ' + numberToPersian(tabData[i].displacement) + ' )' +
+            '</div>' +
+            '<div class="list-cell col-xs-2 col-lg-2 text-warning h4">' +
+            numberToPersian(tabData[i].score) +
+            '</div>' +
+
+            '</div>';
+
+        $('#list').append(s)
+    }
+}
+
+function initRankTab(tabData) {
+    addItemToRankPanel(tabData)
+}
+
 function nextComments(event) {
     var urlForHeader = domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
     console.log(urlForHeader)
@@ -289,7 +377,7 @@ function addItemToCommentPanel(tabData) {
         }
         s += '</div>' +
             '</div>' +
-            '<div class="personal-image">';
+            '<div class="personal-image list-cell">';
         if (tabData[i].player.avatar == "") {
             s += '<img src="assets/prof2.jpg" class="list-image">'
         } else {
@@ -319,7 +407,7 @@ function initCommentTab(tabData) {
     if (tabData.length > 0) {
         numberOfTotalComments = tabData[0].game.number_of_comments;
         console.log($("#comment-number"))
-        $("#comment-number").text("( " + numberOfTotalComments + " نظر )");
+        $("#comment-number").text("( " + numberToPersian(numberOfTotalComments) + " نظر )");
     }
 
     addItemToCommentPanel(tabData)
@@ -405,9 +493,9 @@ function addHeaderItem(gamesData) {
     $($($($("#header-content").children()[1]).children()[0]).children()[0]).children()[1].textContent = gamesData.categories;
 
     var doubleRate = gamesData.rate
-    var numOfComments = gamesData.number_of_comments
+    var numOfComments = numberToPersian(gamesData.number_of_comments)
     var rate = parseInt(gamesData.rate)
-    doubleRate = String(doubleRate).substring(0, 3)
+    doubleRate = numberToPersian(String(doubleRate).substring(0, 3))
     var starsBlock = $($($("#header-content").children()[1]).children()[0]).children()[2];
     for (var i = 0; i < rate; i++) {
         $(starsBlock).append('<i class="material-icons md-18 blue_star">star</i>')
@@ -415,7 +503,7 @@ function addHeaderItem(gamesData) {
     for (var i = 5; i > rate; i--) {
         $(starsBlock).append('<i class="material-icons md-18 light_gray_star">star</i>')
     }
-    $(starsBlock).append('<span class="text-muted">' + ' ' + doubleRate + '( ' + numOfComments + 'رای )' + '</span>');
+    $(starsBlock).append('<span class="text-muted">' + ' ' + doubleRate + ' ' + '( ' + numOfComments + ' ' + 'رای )' + '</span>');
 
     var pic = $($($("#header-content").children()[1]).children()[1]).css('background', 'url(' + gamesData.small_image + ') no-repeat center center');
 }
