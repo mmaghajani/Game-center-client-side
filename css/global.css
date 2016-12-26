@@ -11,6 +11,10 @@
     color: #0f73d2;
 }
 
+.text-warning{
+    color: #25c7df;;
+}
+
 .list-item {
     width: 100%;
     height: auto;
@@ -24,9 +28,15 @@
 
 .text-primary {
     color: #000000;
-    margin: 5px 10px 5px 10px;;
+    padding: 5px 10px 5px 10px;;
 }
 
+.col-xs-1{
+    padding: 0px;
+}
+.col-xs-2{
+    padding: 0px;
+}
 .col-sm-6 {
     /*margin: 3px;*/
     padding: 0px;

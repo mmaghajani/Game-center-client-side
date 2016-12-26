@@ -45,10 +45,10 @@
 
 #board {
 	alignment: center;
-	background: #eaebed;
+	background: #f6f7f9;
 	text-align: center;
 	width: 560px;
-	height: 1000px;
+	min-height: 750px;
 	/*margin-top: 25px;*/
 	padding: 10px 0px 10px 0px;
 	margin: auto;
@@ -57,17 +57,15 @@
 }
 
 #best{
-	border-bottom: 2px solid #c7c7c7;
-	width: auto;
-	height: 290px;
+	min-height: 200px;
 	align-self: center;
-	margin: 0px  25px 20px 25px;
 }
 
 #person1{
 	float: left;
 	padding: 5px;
 	text-align: center;
+	min-height: inherit;
 	/*background: #2aa1c0;*/
 	width: 31%;
 	margin: 50px 4px 4px 4px;
@@ -77,6 +75,7 @@
 	/*//background: #ffff00;*/
 	text-align: center;
 	width: 31%;
+	min-height: inherit;
 	float: left;
 	margin: 4px;
 }
@@ -86,6 +85,7 @@
 	text-align: center;
 	width: 31%;
 	float: left;
+	min-height: inherit;
 	margin: 50px 4px 4px 4px;
 }
 
@@ -222,8 +222,6 @@
 	font-size: 20px;
 	height: auto;
 	margin-top: 22px;
-	width: 40px;
-	color: #5e5e5e;;
 }
 
 .list{
@@ -238,7 +236,6 @@
 
 .information{
 	float: right;
-	margin-top: 7px;
 	text-align: right;
 	padding: 2px 10px 0px 0px;;
 }

@@ -40,7 +40,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><p class="h4 text-muted"><i
+                        <li><a href="index.html"><p class="h4 text-muted"><i
                                 class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
                                 class="studio"> استودیو </span>
                         </p></a></li>
@@ -103,19 +103,19 @@
 <div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="tab">
     <div class="row col-lg-8 col-sm-8 col-md-8 col-xs-12 container">
         <ul class="nav nav-pills nav-justified" id="menu-pill">
-            <li id="info-tab-title" class="active"><a data-toggle="pill" href="#info">اطلاعات بازی</a></li>
-            <li id="score-tab-title"><a data-toggle="pill" href="#score-tab" class="text-muted">رتبه بندی و امتیازات</a>
+            <li id="info-tab-title" class="active" onclick="infoClicked()"><a data-toggle="pill" href="#info">اطلاعات بازی</a></li>
+            <li id="score-tab-title" onclick="rankClicked()"><a data-toggle="pill" href="#score-tab" class="text-muted">رتبه بندی و امتیازات</a>
             </li>
-            <li id="comment-tab-title"><a data-toggle="pill" href="#comment" class="text-muted">نظرات کاربران</a></li>
-            <li id="same-game-tab-title"><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a>
+            <li id="comment-tab-title" onclick="commentClicked()"><a data-toggle="pill" href="#comment" class="text-muted">نظرات کاربران</a></li>
+            <li id="same-game-tab-title" onclick="sameGameClicked()"><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a>
             </li>
-            <li id="videos-tab-title"><a data-toggle="pill" href="#videos" class="text-muted">عکس ها و ویدیوها</a></li>
+            <li id="videos-tab-title" onclick="galleryClicked()"><a data-toggle="pill" href="#videos" class="text-muted">عکس ها و ویدیوها</a></li>
         </ul>
     </div>
 </div>
 <div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="content-panel">
 
-    <div id="context" class="tab-content col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <div id="context" class="tab-content col-lg-8 col-md-8 col-sm-10 col-xs-12">
         <div id="info" class="tab-pane fade in active">
             <div class="row title-holder"><p class="text-muted h2">اطلاعات بازی</p></div>
             <br>
@@ -124,294 +124,370 @@
         <div id="score-tab" class="tab-pane fade">
             <div class="row title-holder"><p class="text-muted h2">رتبه بندی و امتیازات</p></div>
             <br>
-            <div id="content">
-                <div id="board">
-                    <div id="title">
-                        برترین ها
-                    </div>
-                    <div id="best">
-                        <div id="person1">
-                            <div class="rate">
-                                ۲
-                            </div>
-                            <div>
+            <div id="content" class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
+                <div id="board" class="col-sm-12 col-lg-12 col-md-12 col-xs-12 text-center container">
+                    <div id="best" class="row col-lg-8 col-md-10 col-sm-12 col-xs-12 container">
+                        <div id="person1" class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+                            <div class="row">
                                 <img src="assets/prof2.jpg" class="silver-border">
                                 <div class="hexagon-40 level-16md">
                                     ۳۱
                                 </div>
                             </div>
-                            <div class="name">
+                            <br>
+                            <div class="h4 row">
                                 سروش صحت
                             </div>
-                            <div class="score">
+                            <br>
+                            <div class="h4 row text-warning">
                                 ۱۵۰۰۰۰۰۰۰
                             </div>
-                            <div class="stars">
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                            </div>
                         </div>
-                        <div id="person2">
-                            <div id="rate">
-                                ۱
-                            </div>
-                            <div>
+                        <div id="person2" class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+                            <div class="row">
                                 <img src="assets/prof2.jpg" class="gold_border">
                                 <div class="hexagon-45 level-18md">
                                     ۳۲
                                 </div>
                             </div>
-                            <div id="name">
+                            <br>
+                            <div class="h3 row">
                                 کریم عبدالجبار
                             </div>
-                            <div id="score">
+                            <br>
+                            <div class="h3 row text-warning">
                                 ۱۵۰۰۰۰۰۰۰
                             </div>
-                            <div id="stars">
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 light_gray_star">star</i>
-                            </div>
                         </div>
-                        <div id="person3">
-                            <div class="rate">
-                                ۳
-                            </div>
-                            <div>
+                        <div id="person3" class="col-xs-12 col-sm-3 col-lg-3 col-md-3">
+                            <div class="row">
                                 <img src="assets/prof2.jpg" class="bronze-border">
                                 <div class="hexagon-40 level-16md">
                                     ۲۹
                                 </div>
                             </div>
-                            <div class="name">
+                            <br>
+                            <div class="h4 row">
                                 الب ارسلان
                             </div>
-                            <div class="score">
+                            <br>
+                            <div class="h4 row text-warning">
                                 ۱۵۰۰۰۰۰۰۰
                             </div>
-                            <div class="stars">
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 gold_star">star</i>
-                                <i class="material-icons md-18 light_gray_star">star</i>
-                            </div>
                         </div>
                     </div>
-                    <div id="list">
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
+                    <div id="list" class="row">
+                        <div class="list-item list-item-header disabled vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                رتبه
                             </div>
-                            <div class="rank-list">
-                                ۴
+                            <div class="list-cell col-xs-1 h4">
+
                             </div>
-                            <div class="personal-image">
+                            <div class="list-cell h4 col-xs-1">
+                                بازیکن
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+
+                            </div>
+
+                            <div class="list-cell col-xs-1 h4">
+                                سطح
+                            </div>
+                            <div class="list-cell col-xs-1  h4">
+                                تغییر رتبه
+                            </div>
+                            <div class="list-cell col-xs-2 h4">
+                                امتیاز
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۱.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+                                <i class="material-icons md-18 gold_star">star</i>
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
                                 <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۲۵
-                                </div>
                             </div>
-                            <div class="information">
-                                <div class="name">
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
                                     کاظم اسماعیلی
                                 </div>
-                                <div class="score">
-                                    ۱۵۰۰۰۰۰۰۰
-                                </div>
                             </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۵
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۲۲
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    سیامک انتظامی
-                                </div>
-                                <div class="score">
-                                    ۱۴۵۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۶
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۲۱
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    بهمن احسان پور
-                                </div>
-                                <div class="score">
-                                    ۱۳۲۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۷
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۱۵
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    سعید کمالوند
-                                </div>
-                                <div class="score">
-                                    ۱۲۴۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۸
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۱۴
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    جاستین بیرانوند
-                                </div>
-                                <div class="score">
-                                    ۱۲۳۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                    <i class="material-icons md-18 light_gray_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۹
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۸
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    پویا انوری راد
-                                </div>
-                                <div class="score">
-                                    ۱۱۹۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="stars-block">
-                                <div class="stars">
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                    <i class="material-icons md-18 gold_star">star</i>
-                                </div>
-                            </div>
-                            <div class="rank-list">
-                                ۱۰
-                            </div>
-                            <div class="personal-image">
-                                <img src="assets/prof2.jpg" class="list-image">
-                                <div class="hexagon level-14md">
-                                    ۸
-                                </div>
-                            </div>
-                            <div class="information">
-                                <div class="name">
-                                    بهزاد میامی
-                                </div>
-                                <div class="score">
-                                    ۱۱۵۰۰۰۰۰۰
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="progress_bar">
-                        <div class="progress-bar">
-                        </div>
-                        <div class="progress-bar">
-                        </div>
-                        <div class="progress-bar">
-                        </div>
-                    </div>
 
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۲.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+                                <i class="material-icons md-18 light_gray_star">star</i>
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۳.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+                                <i class="material-icons md-18 bronze-start">star</i>
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۴.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۵.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۶.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۷.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۸.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۹.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                        <div class="list-item vertical-align-wrap">
+
+                            <div class="list-cell col-xs-1 h4 vertical-align--middle">
+                                ۱۰.
+                            </div>
+                            <div class="list-cell col-xs-1 h4">
+
+                            </div>
+                            <div class="list-cell personal-image col-xs-1">
+                                <img src="assets/prof2.jpg" class="list-image">
+                            </div>
+                            <div class="information list-cell col-xs-5 text-success h4">
+                                <div class="name list-cell">
+                                    کاظم اسماعیلی
+                                </div>
+                            </div>
+
+                            <div class="list-cell col-xs-1 text-warning h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-1 text-primary h4">
+                                ۴
+                            </div>
+                            <div class="list-cell col-xs-2 text-warning h4">
+                                ۴
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
         <div id="comment" class="tab-pane fade">
             <div class="row title-holder media">
@@ -432,8 +508,18 @@
                                 <div class="modal-body">
                                     <input type="text" class="h5" placeholder="نظر خود را بنویسید...">
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">ثبت نظر</button>
+                                <div class="modal-footer row vertical-align-wrap">
+                                    <div class="form-group text-right text-muted col-sm-3 col-md-2 col-lg-2 col-xs-4">
+                                        <label for="sel1" class="h6">امتیاز دهی :</label>
+                                        <select class="form-control" id="sel1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn-primary text-right vertical-align--middle" data-dismiss="modal">ثبت نظر</button>
                                 </div>
                             </div>
 
@@ -947,6 +1033,8 @@
         </div>
     </div>
 </div>
+<br>
+<br>
 <footer>
     <div class="footer-top col-sm-12">
         <div class="container col-lg-8 col-sm-8 col-md-8 col-xs-12">

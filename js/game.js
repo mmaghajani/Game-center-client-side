@@ -11,7 +11,7 @@ $(document).ready(function () {
     setCorrectTab()
 
     $(document).ready(function () {
-         gameTitle = getParameterByName('game');
+        gameTitle = getParameterByName('game');
         var urlForHeader = domain + gameTitle + '/header.json';
 
         $.ajax({
@@ -33,12 +33,15 @@ $(document).ready(function () {
                     if (tabItem == 'gallery') {
                         tabData = data.response.result.gallery;
                         initGalleryTab(tabData)
+                        $("#videos-tab-title").attr('load', 'loaded');
                     } else if (tabItem == 'info') {
                         tabData = data.response.result.game;
                         initInfoTab(tabData)
+                        $("#info-tab-title").attr('load', 'loaded');
                     } else if (tabItem == 'comments') {
                         tabData = data.response.result.comments;
                         initCommentTab(tabData)
+                        $("#comment-tab-title").attr('load', 'loaded');
                     }
                 }
             }
@@ -141,6 +144,67 @@ $(document).ready(function () {
     // })
 });
 
+function infoClicked(event) {
+    if ($("#info-tab-title").attr('load') != 'loaded') {
+        var urlForHeader = domain + gameTitle + '/info.json'
+        $.ajax({
+            url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+                if (data.response.ok == true) {
+                    console.log(data)
+                    var tabData;
+
+                    tabData = data.response.result.game;
+                    initInfoTab(tabData)
+                    $("#info-tab-title").attr('load', 'loaded');
+                }
+            }
+        });
+    }
+}
+
+function rankClicked(event) {
+
+}
+
+function commentClicked(event) {
+    if ($("#comment-tab-title").attr('load') != 'loaded') {
+        var urlForHeader = domain + gameTitle + '/comments.json'
+        $.ajax({
+            url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+                if (data.response.ok == true) {
+                    console.log(data)
+                    var tabData;
+
+                    tabData = data.response.result.comments;
+                    initCommentTab(tabData)
+                    $("#comment-tab-title").attr('load', 'loaded');
+                }
+            }
+        });
+    }
+}
+
+function sameGameClicked(event) {
+
+}
+
+function galleryClicked(event) {
+    if ($("#videos-tab-title").attr('load') != 'loaded') {
+        var urlForHeader = domain + gameTitle + '/gallery.json'
+        $.ajax({
+            url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+                if (data.response.ok == true) {
+                    console.log(data)
+                    var tabData;
+
+                    tabData = data.response.result.gallery;
+                    initGalleryTab(tabData)
+                    $("#videos-tab-title").attr('load', 'loaded');
+                }
+            }
+        });
+    }
+}
 function nextComments(event) {
     var urlForHeader = domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
     console.log(urlForHeader)
@@ -150,7 +214,7 @@ function nextComments(event) {
                 var tabData = data.response.result.comments;
                 for (var i = 0; i < tabData.length; i++) {
                     var id = i;
-                    var length = $($("#comments").children()[0]).children().length ;
+                    var length = $($("#comments").children()[0]).children().length;
                     var numOfRate = tabData[i].rate;
                     var s = '<div class="row">';
                     if (length % 2 == 0) {
@@ -192,9 +256,9 @@ function nextComments(event) {
                     $($('#comments').children()[0]).append(s)
                 }
 
-                if( tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length ){
+                if (tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length) {
                     console.log("salam")
-                    $("#next-comment").css('visibility' , 'hidden');
+                    $("#next-comment").css('visibility', 'hidden');
                 }
             }
         }
@@ -246,8 +310,8 @@ function addItemToCommentPanel(tabData) {
         $($('#comments').children()[0]).append(s)
     }
 
-    if( tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length ){
-        $("#next-comment").css('visibility' , 'hidden');
+    if (tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length) {
+        $("#next-comment").css('visibility', 'hidden');
     }
 }
 
