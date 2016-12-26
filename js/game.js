@@ -147,9 +147,7 @@ function nextComments(event) {
     $.ajax({
         url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
             if (data.response.ok == true) {
-                console.log(data)
                 var tabData = data.response.result.comments;
-                console.log(tabData)
                 for (var i = 0; i < tabData.length; i++) {
                     var id = i;
                     var length = $($("#comments").children()[0]).children().length ;
@@ -193,9 +191,16 @@ function nextComments(event) {
 
                     $($('#comments').children()[0]).append(s)
                 }
+
+                if( tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length ){
+                    console.log("salam")
+                    $("#next-comment").css('visibility' , 'hidden');
+                }
             }
         }
     });
+
+
 }
 function addItemToCommentPanel(tabData) {
     for (var i = 0; i < tabData.length; i++) {
@@ -239,6 +244,10 @@ function addItemToCommentPanel(tabData) {
             '</div>';
 
         $($('#comments').children()[0]).append(s)
+    }
+
+    if( tabData[0].game.number_of_comments == $($("#comments").children()[0]).children().length ){
+        $("#next-comment").css('visibility' , 'hidden');
     }
 }
 

@@ -416,7 +416,29 @@
         <div id="comment" class="tab-pane fade">
             <div class="row title-holder media">
                 <div class="text-left media-middle media-left col-xs-12 col-sm-2">
-                    <button type="button" class="btn-primary h5 col-xs-12 col-sm-12 media-object">نظر دهید</button>
+                    <button type="button" class="btn-primary h5 col-xs-12 col-sm-12 media-object" data-toggle="modal"
+                            data-target="#myModal">نظر دهید
+                    </button>
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg">
+
+                            <!-- Modal content-->
+                            <div class="modal-content text-right">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <input type="text" class="h3" placeholder="عنوان">
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="h5" placeholder="نظر خود را بنویسید...">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">ثبت نظر</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="media-body"><p class="text-muted h2">نظرات کاربران <span
                         class="h6" id="comment-number">( ۸۰ نظر )</span></p></div>
@@ -425,124 +447,124 @@
                 <div id="comments" class="col-sm-12">
                     <div class="row">
                         <!--<div class="row">-->
-                            <!--<div class="list-item-even">-->
-                                <!--<div class="stars-block">-->
-                                    <!--<div class="stars">-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="personal-image">-->
-                                    <!--<img src="assets/prof2.jpg" class="list-image">-->
-                                <!--</div>-->
-                                <!--<div class="information">-->
-                                    <!--<div class="text-muted h6">-->
-                                        <!--یکشنبه ۹ آبان-->
-                                    <!--</div>-->
-                                    <!--<div class="text-success h5">-->
-                                        <!--بهزاد میامی-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-item-even">-->
+                        <!--<div class="stars-block">-->
+                        <!--<div class="stars">-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="personal-image">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information">-->
+                        <!--<div class="text-muted h6">-->
+                        <!--یکشنبه ۹ آبان-->
+                        <!--</div>-->
+                        <!--<div class="text-success h5">-->
+                        <!--بهزاد میامی-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</div>-->
                         <!--<div class="row">-->
-                            <!--<div class="list-item">-->
-                                <!--<div class="stars-block">-->
-                                    <!--<div class="stars">-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="personal-image">-->
-                                    <!--<img src="assets/prof2.jpg" class="list-image">-->
-                                <!--</div>-->
-                                <!--<div class="information">-->
-                                    <!--<div class="text-muted h6">-->
-                                        <!--یکشنبه ۹ آبان-->
-                                    <!--</div>-->
-                                    <!--<div class="text-success h5">-->
-                                        <!--بهزاد میامی-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-item">-->
+                        <!--<div class="stars-block">-->
+                        <!--<div class="stars">-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="personal-image">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information">-->
+                        <!--<div class="text-muted h6">-->
+                        <!--یکشنبه ۹ آبان-->
+                        <!--</div>-->
+                        <!--<div class="text-success h5">-->
+                        <!--بهزاد میامی-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</div>-->
                         <!--<div class="row">-->
-                            <!--<div class="list-item-even">-->
-                                <!--<div class="stars-block">-->
-                                    <!--<div class="stars">-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="personal-image">-->
-                                    <!--<img src="assets/prof2.jpg" class="list-image">-->
-                                <!--</div>-->
-                                <!--<div class="information">-->
-                                    <!--<div class="text-muted h6">-->
-                                        <!--یکشنبه ۹ آبان-->
-                                    <!--</div>-->
-                                    <!--<div class="text-success h5">-->
-                                        <!--بهزاد میامی-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-item-even">-->
+                        <!--<div class="stars-block">-->
+                        <!--<div class="stars">-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="personal-image">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information">-->
+                        <!--<div class="text-muted h6">-->
+                        <!--یکشنبه ۹ آبان-->
+                        <!--</div>-->
+                        <!--<div class="text-success h5">-->
+                        <!--بهزاد میامی-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</div>-->
                         <!--<div class="row">-->
-                            <!--<div class="list-item">-->
-                                <!--<div class="stars-block">-->
-                                    <!--<div class="stars">-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="personal-image">-->
-                                    <!--<img src="assets/prof2.jpg" class="list-image">-->
-                                <!--</div>-->
-                                <!--<div class="information">-->
-                                    <!--<div class="text-muted h6">-->
-                                        <!--یکشنبه ۹ آبان-->
-                                    <!--</div>-->
-                                    <!--<div class="text-success h5">-->
-                                        <!--بهزاد میامی-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-item">-->
+                        <!--<div class="stars-block">-->
+                        <!--<div class="stars">-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="personal-image">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information">-->
+                        <!--<div class="text-muted h6">-->
+                        <!--یکشنبه ۹ آبان-->
+                        <!--</div>-->
+                        <!--<div class="text-success h5">-->
+                        <!--بهزاد میامی-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</div>-->
                         <!--<div class="row">-->
-                            <!--<div class="list-item-even vertical-align-wrap">-->
-                                <!--<div class="stars-block">-->
-                                    <!--<div class="stars">-->
-                                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="personal-image vertical-align&#45;&#45;middle">-->
-                                    <!--<img src="assets/prof2.jpg" class="list-image">-->
-                                <!--</div>-->
-                                <!--<div class="information">-->
-                                    <!--<div class="text-muted h6">-->
-                                        <!--یکشنبه ۹ آبان-->
-                                    <!--</div>-->
-                                    <!--<div class="text-success h5">-->
-                                        <!--بهزاد میامی-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-item-even vertical-align-wrap">-->
+                        <!--<div class="stars-block">-->
+                        <!--<div class="stars">-->
+                        <!--<i class="material-icons md-18 dark_gray_start">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="personal-image vertical-align&#45;&#45;middle">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information">-->
+                        <!--<div class="text-muted h6">-->
+                        <!--یکشنبه ۹ آبان-->
+                        <!--</div>-->
+                        <!--<div class="text-success h5">-->
+                        <!--بهزاد میامی-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                         <!--</div>-->
                     </div>
                 </div>
@@ -551,7 +573,9 @@
             <br>
             <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8 container text-center">
                 <div class="col-xs-12">
-                    <button type="button" class="btn-primary h5" onclick="nextComments()">بارگذاری نظرات بعدی</button>
+                    <button type="button" id="next-comment" class="btn-primary h5" onclick="nextComments()">بارگذاری
+                        نظرات بعدی
+                    </button>
                 </div>
             </div>
             <br>
@@ -862,11 +886,11 @@
             <br>
             <div class="row">
                 <!--<video id="trailer"-->
-                       <!--class="col-lg-12 col-sm-12 col-md-12 col-xs-12 video-js vjs-default-skin vjs-big-play-centered"-->
-                       <!--controls preload="auto"-->
-                       <!--poster="assets/call-of-duty-background-17.jpg" title="تریلر بازی Battlefield Dragon 4">-->
-                    <!--<source src="http://as4.tabriz.asset.aparat.com/aparat-video/33599344cedadecf865082b9c469cc6f5900322-360p__48466.mp4" type="video/mp4">-->
-                    <!--Your browser does not support the video tag.-->
+                <!--class="col-lg-12 col-sm-12 col-md-12 col-xs-12 video-js vjs-default-skin vjs-big-play-centered"-->
+                <!--controls preload="auto"-->
+                <!--poster="assets/call-of-duty-background-17.jpg" title="تریلر بازی Battlefield Dragon 4">-->
+                <!--<source src="http://as4.tabriz.asset.aparat.com/aparat-video/33599344cedadecf865082b9c469cc6f5900322-360p__48466.mp4" type="video/mp4">-->
+                <!--Your browser does not support the video tag.-->
                 <!--</video>-->
                 <!--<iframe id="trailer" class="col-lg-12 col-sm-12 col-md-12 col-xs-12" src="http://as4.tabriz.asset.aparat.com/aparat-video/33599344cedadecf865082b9c469cc6f5900322-360p__48466.mp4">-->
 
@@ -881,39 +905,39 @@
             <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
                 <div id="owl4" class="owl-carousel owl-theme">
                     <!--<div class="slider-item-two slider-item-video text-right owl-item">-->
-                        <!--<div class="picture row">-->
-                            <!--<div>-->
+                    <!--<div class="picture row">-->
+                    <!--<div>-->
 
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  slider-item-video text-right owl-item">-->
-                        <!--<div class="picture row">-->
-                            <!--<div>-->
+                    <!--<div class="picture row">-->
+                    <!--<div>-->
 
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two slider-item-video text-right owl-item">-->
-                        <!--<div class="picture row">-->
-                            <!--<div>-->
+                    <!--<div class="picture row">-->
+                    <!--<div>-->
 
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  slider-item-video text-right owl-item">-->
-                        <!--<div class="picture row">-->
-                            <!--<div>-->
+                    <!--<div class="picture row">-->
+                    <!--<div>-->
 
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two slider-item-video  text-right owl-item">-->
-                        <!--<div class="picture row">-->
-                            <!--<div>-->
+                    <!--<div class="picture row">-->
+                    <!--<div>-->
 
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                 </div>
             </div>

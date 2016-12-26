@@ -67,6 +67,20 @@
     background: #d2d2d2;
 }
 
+#myModal{
+    direction: rtl;
+    float: right;
+}
+
+#myModal input{
+    border: 0px;
+}
+
+#myModal input:focus{
+    border-width: 0px 0px 0px 0px;
+    outline: 0px;
+}
+
 #comments{
     border:0.5px solid #f3f2ff;
     border-top-width: 0px;
