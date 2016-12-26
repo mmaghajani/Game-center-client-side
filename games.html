@@ -71,27 +71,30 @@
     <div id="main-content" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
         <div id="frame" class="vertical-align-wrap col-xs-12 col-lg-12 col-md-12 col-sm-12">
             <div class="vertical-align--middle">
-                <div class="row container col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                    <div class="col-xs-12 col-lg-2 col-md-2 col-sm-2 text-left">
+                <div class="row container col-xs-12 col-sm-8 col-md-8 col-lg-8" id="header-content">
+                    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2 text-left">
                         <button type="button" class="btn-primary h4">شروع بازی</button>
                     </div>
-                    <div class="col-lg-8 col-xs-12 col-sm-8 col-md-8 text-right">
-                        <div class="type row">
-                            <p class="h3 text-info">Battlefield 4 : Dragon's Teeth</p>
-                            <p class="h5 text-muted "> اکشن ، اول شخص</p>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+                        <div class="col-lg-9 col-xs-7 col-sm-8 col-md-9 text-right" id="info-panel">
+                            <div class="type row">
+                                <p class="h3 text-info">Battlefield 4 : Dragon's Teeth</p>
+                                <p class="h5 text-muted "> اکشن ، اول شخص</p>
+                            </div>
+                            <br>
+                            <div class="stars row">
+                                <!--<i class="material-icons md-18 blue_star">star</i>-->
+                                <!--<i class="material-icons md-18 blue_star">star</i>-->
+                                <!--<i class="material-icons md-18 blue_star">star</i>-->
+                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                                <!--<span class="text-muted">۳.۱ (۸۴ رای)</span>-->
+                            </div>
                         </div>
-                        <br>
-                        <div class="stars row">
-                            <i class="material-icons md-18 blue_star">star</i>
-                            <i class="material-icons md-18 blue_star">star</i>
-                            <i class="material-icons md-18 blue_star">star</i>
-                            <i class="material-icons md-18 light_gray_star">star</i>
-                            <i class="material-icons md-18 light_gray_star">star</i>
-                            <span class="text-muted">۳.۱ (۸۴ رای)</span>
+                        <div class="col-lg-3 col-sm-4 col-md-3 col-xs-5 img-responsive" id="game-pic">
                         </div>
                     </div>
-                    <div class="col-lg-2 col-sm-2 col-md-2 col-xs-12 img-responsive" id="game-pic">
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -101,9 +104,11 @@
     <div class="row col-lg-8 col-sm-8 col-md-8 col-xs-12 container">
         <ul class="nav nav-pills nav-justified" id="menu-pill">
             <li id="info-tab-title" class="active"><a data-toggle="pill" href="#info">اطلاعات بازی</a></li>
-            <li id="score-tab-title"><a data-toggle="pill" href="#score-tab" class="text-muted">رتبه بندی و امتیازات</a></li>
+            <li id="score-tab-title"><a data-toggle="pill" href="#score-tab" class="text-muted">رتبه بندی و امتیازات</a>
+            </li>
             <li id="comment-tab-title"><a data-toggle="pill" href="#comment" class="text-muted">نظرات کاربران</a></li>
-            <li id="same-game-tab-title"><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a></li>
+            <li id="same-game-tab-title"><a data-toggle="pill" href="#same-game" class="text-muted">بازی های مشابه</a>
+            </li>
             <li id="videos-tab-title"><a data-toggle="pill" href="#videos" class="text-muted">عکس ها و ویدیوها</a></li>
         </ul>
     </div>
@@ -866,52 +871,60 @@
             <div class="row title-holder"><p class="text-muted h2">عکس ها و ویدیوها</p></div>
             <br>
             <div class="row">
+                <!--<video id="trailer"-->
+                       <!--class="col-lg-12 col-sm-12 col-md-12 col-xs-12 video-js vjs-default-skin vjs-big-play-centered"-->
+                       <!--controls preload="auto"-->
+                       <!--poster="assets/call-of-duty-background-17.jpg" title="تریلر بازی Battlefield Dragon 4">-->
+                    <!--<source src="http://as4.tabriz.asset.aparat.com/aparat-video/33599344cedadecf865082b9c469cc6f5900322-360p__48466.mp4" type="video/mp4">-->
+                    <!--Your browser does not support the video tag.-->
+                <!--</video>-->
+                <!--<iframe id="trailer" class="col-lg-12 col-sm-12 col-md-12 col-xs-12" src="http://as4.tabriz.asset.aparat.com/aparat-video/33599344cedadecf865082b9c469cc6f5900322-360p__48466.mp4">-->
+
+                <!--</iframe>-->
                 <video id="trailer"
-                       class="col-lg-12 col-sm-12 col-md-12 col-xs-12 video-js vjs-default-skin vjs-big-play-centered"
-                       controls preload="auto"
+                       class="video-js vjs-default-skin vjs-big-play-centered col-lg-12 col-sm-12 col-md-12 col-xs-12"
+                       data-setup='{"techOrder": ["html5"] , "controls": true, "autoplay": false, "preload": "none"}'
                        poster="assets/call-of-duty-background-17.jpg" title="تریلر بازی Battlefield Dragon 4">
-                    <source src="assets/trailer.mp4" type="video/mp4">
-                    <source src="movie.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
+                    <div class="vjs-button">Button</div>
                 </video>
             </div>
             <div class="slider col-sm-12 col-md-12 col-xs-12 col-lg-12">
                 <div id="owl4" class="owl-carousel owl-theme">
-                    <div class="slider-item-two slider-item-video text-right owl-item">
-                        <div class="picture row">
-                            <div>
+                    <!--<div class="slider-item-two slider-item-video text-right owl-item">-->
+                        <!--<div class="picture row">-->
+                            <!--<div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item-two  slider-item-video text-right owl-item">
-                        <div class="picture row">
-                            <div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slider-item-two  slider-item-video text-right owl-item">-->
+                        <!--<div class="picture row">-->
+                            <!--<div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item-two slider-item-video text-right owl-item">
-                        <div class="picture row">
-                            <div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slider-item-two slider-item-video text-right owl-item">-->
+                        <!--<div class="picture row">-->
+                            <!--<div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item-two  slider-item-video text-right owl-item">
-                        <div class="picture row">
-                            <div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slider-item-two  slider-item-video text-right owl-item">-->
+                        <!--<div class="picture row">-->
+                            <!--<div>-->
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-item-two slider-item-video  text-right owl-item">
-                        <div class="picture row">
-                            <div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="slider-item-two slider-item-video  text-right owl-item">-->
+                        <!--<div class="picture row">-->
+                            <!--<div>-->
 
-                            </div>
-                        </div>
-                    </div>
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </div>
             </div>
             <div class="row">
@@ -964,7 +977,7 @@
 <script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
 <!--<script src="../node_modules/video.js/dist/video.min.js"></script>-->
 <!--<script>-->
-    <!--videojs.options.flash.swf = "../node_modules/videojs-swf/dist/video-js.swf"-->
+<!--videojs.options.flash.swf = "../node_modules/videojs-swf/dist/video-js.swf"-->
 <!--</script>-->
 <script src="js/bootstrap.min.js"></script>
 </body>

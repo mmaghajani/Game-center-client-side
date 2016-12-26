@@ -35,7 +35,7 @@ function handleGuideItemClick(item, gamesData) {
     for (var i = 0; i < num; i++) {
         if( date == (gamesData.tutorials[i]).date && title == (gamesData.tutorials[i]).title){
             var gameTitle = (gamesData.tutorials[i]).game.title
-            window.location.href = ("./games.html?game=" + gameTitle + "&tab=comment");
+            window.location.href = ("./games.html?game=" + gameTitle + "&tab=info");
         }
     }
 }
@@ -332,6 +332,6 @@ function enterGamePageBtnHandler(e) {
 }
 
 function enterGamePageBtnHandlerTrailer(e) {
-    $('#trailer-link').attr("href", "./games.html#videos?game=" + titleOfActiveGame + "&tab=videos")
-    window.location.href = ("./games.html#videos?game=" + titleOfActiveGame + "&tab=videos" );
+    $('#trailer-link').attr("href", "./games.html#videos?game=" + titleOfActiveGame + "&tab=gallery")
+    window.location.href = ("./games.html#videos?game=" + titleOfActiveGame + "&tab=gallery" );
 }
