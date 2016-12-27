@@ -1,7 +1,7 @@
 /**
  * Created by mma on 12/22/16.
  */
-var domain = "http://localhost/";
+
 var tabItem;
 var numberOfTotalComments;
 var gameTitle
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         gameTitle = getParameterByName('game');
-        var urlForHeader = domain + gameTitle + '/header.json';
+        var urlForHeader = my_domain + gameTitle + '/header.json';
 
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
@@ -23,7 +23,7 @@ $(document).ready(function () {
             }
         });
 
-        urlForHeader = domain + gameTitle + '/' + tabItem + '.json'
+        urlForHeader = my_domain + gameTitle + '/' + tabItem + '.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -45,106 +45,18 @@ $(document).ready(function () {
             }
         });
 
+        handlerForSearchPanel()
 
     });
-
-    // var owl4 = $('#owl4');
-    // owl4.owlCarousel({
-    //     loop: true,
-    //     margin: 10,
-    //     responsiveClass: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //             nav: true,
-    //             dots: false
-    //         },
-    //         600: {
-    //             items: 3,
-    //             nav: false,
-    //             dots: false
-    //         },
-    //         1000: {
-    //             items: 4,
-    //             loop: true,
-    //             dots: false
-    //         }
-    //     }
-    // })
-    // var owl3 = $('#owl3');
-    // owl3.owlCarousel({
-    //     loop: true,
-    //     margin: 10,
-    //     responsiveClass: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //             nav: true,
-    //             dots: false
-    //         },
-    //         600: {
-    //             items: 3,
-    //             nav: false,
-    //             dots: false
-    //         },
-    //         1000: {
-    //             items: 4,
-    //             loop: true,
-    //             dots: false
-    //         }
-    //     }
-    // })
-    // var owl2 = $('#owl2');
-    // owl2.owlCarousel({
-    //     loop: true,
-    //     margin: 10,
-    //     responsiveClass: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //             nav: true,
-    //             dots: false
-    //         },
-    //         600: {
-    //             items: 3,
-    //             nav: false,
-    //             dots: false
-    //         },
-    //         1000: {
-    //             items: 4,
-    //             loop: true,
-    //             dots: false
-    //         }
-    //     }
-    // })
-    // var owl1 = $('#owl1');
-    // owl1.owlCarousel({
-    //     loop: true,
-    //     margin: 10,
-    //     responsiveClass: true,
-    //     responsive: {
-    //         0: {
-    //             items: 1,
-    //             nav: true,
-    //             dots: false
-    //         },
-    //         600: {
-    //             items: 3,
-    //             nav: false,
-    //             dots: false
-    //         },
-    //         1000: {
-    //             items: 4,
-    //             loop: true,
-    //             dots: false
-    //         }
-    //     }
-    // })
 });
+function handlerForSearchPanel() {
+    var keyword= $("#query-search").textContent
+    window.location.href = ("./games_list.html?q=" + keyword  );
+}
 
 function infoClicked(event) {
     if ($("#info-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = domain + gameTitle + '/info.json'
+        var urlForHeader = my_domain + gameTitle + '/info.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -162,7 +74,7 @@ function infoClicked(event) {
 
 function rankClicked(event) {
     if ($("#score-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = domain + gameTitle + '/leaderboard.json'
+        var urlForHeader = my_domain + gameTitle + '/leaderboard.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -179,7 +91,7 @@ function rankClicked(event) {
 }
 function commentClicked(event) {
     if ($("#comment-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = domain + gameTitle + '/comments.json'
+        var urlForHeader = my_domain + gameTitle + '/comments.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -408,7 +320,7 @@ function initSameGameTab(tabData) {
 }
 function sameGameClicked(event) {
     if ($("#same-game-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = domain + gameTitle + '/related_games.json'
+        var urlForHeader = my_domain + gameTitle + '/related_games.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -426,7 +338,7 @@ function sameGameClicked(event) {
 
 function galleryClicked(event) {
     if ($("#videos-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = domain + gameTitle + '/gallery.json'
+        var urlForHeader = my_domain + gameTitle + '/gallery.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -517,7 +429,7 @@ function initRankTab(tabData) {
 }
 
 function nextComments(event) {
-    var urlForHeader = domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
+    var urlForHeader = my_domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
     console.log(urlForHeader)
     $.ajax({
         url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
@@ -735,17 +647,6 @@ function initHeader(gamesData) {
     addHeaderItem(gamesData)
 }
 
-function getParameterByName(name, url) {
-    if (!url) {
-        url = window.location.href;
-    }
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
 
 function setCorrectTab() {
     tabItem = getParameterByName('tab');

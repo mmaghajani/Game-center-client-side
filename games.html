@@ -25,7 +25,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 </head>
 <body>
-<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12 navbar-fixed-top" id="primary-bar">
+<div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12 navbar-fixed-top primary-bar" id="primary-bar">
     <div class="container col-xs-12 col-lg-8 col-md-8 col-sm-8">
         <nav class="navbar navbar-inverse col-sm-12">
             <div class="container-fluid col-sm-12">
@@ -52,9 +52,9 @@
                         <li class="navbar-left">
                             <form class="navbar-form">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="جست و جو ...">
+                                    <input type="text" id="query-search" class="form-control" placeholder="جست و جو ...">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-toolbar" type="submit">
+                                        <button class="btn btn-toolbar" type="submit" onclick="handlerForSearchPanel()">
                                             <i class="glyphicon glyphicon-search"></i>
                                         </button>
                                     </div>

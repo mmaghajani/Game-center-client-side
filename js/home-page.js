@@ -4,13 +4,13 @@
 var numberOfItemsInSmall = 1;
 var numberOfItemsInMedium = 3;
 var numberOfItemsInLarge = 6;
-var requestURL = "http://localhost/home.json";
 var titleOfActiveGame = "";
 
 
 $(document).ready(function () {
 
 
+    var requestURL = my_domain + 'home.json'
     $.ajax({
         url: requestURL, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
             if (data.response.ok == true) {

@@ -1,6 +1,7 @@
 /**
  * Created by mma on 12/27/16.
  */
+var my_domain = "http://localhost/";
 function numberToPersian(number) {
     var s = '' ;
     var x = new String(number)
@@ -45,4 +46,17 @@ function numberToPersian(number) {
     }
 
     return s ;
+}
+
+
+function getParameterByName(name, url) {
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
