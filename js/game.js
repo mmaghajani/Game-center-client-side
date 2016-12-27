@@ -24,11 +24,9 @@ $(document).ready(function () {
         });
 
         urlForHeader = domain + gameTitle + '/' + tabItem + '.json'
-        console.log(urlForHeader)
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
-                    console.log(data)
                     var tabData;
                     if (tabItem == 'gallery') {
                         tabData = data.response.result.gallery;
@@ -197,8 +195,233 @@ function commentClicked(event) {
     }
 }
 
-function sameGameClicked(event) {
+function handleSliderClick(item) {
+    console.log("salam")
+    var title = $(item.children()[1]).children()[0].textContent
+    title = 'بازی ' + title
+    window.location.href = ("./games.html?game=" + title);
+}
+function addItemToSameGamePanel(tabData) {
+    var numOfRelated = tabData.length;
 
+    var numOfItemSlider1 = 0, numOfItemSlider2 = 0, numOfItemSlider3 = 0
+
+    for (var i = 0; i < numOfRelated; i++) {
+        if (i % 3 == 0) {
+            numOfItemSlider1++
+        } else if (i % 3 == 1) {
+            numOfItemSlider2++
+        } else {
+            numOfItemSlider3++
+        }
+    }
+
+    for (var i = 0; i < numOfItemSlider1; i++) {
+        var id = i;
+        var title = (tabData[i]).title.substr(5);
+        var categories = (tabData[i]).categories;
+        var numOfBlueStar = parseInt((tabData[i]).rate);
+        var numOfGrayStar = 5 - numOfBlueStar;
+        var s = '<div class="slider-item-two  text-right owl-item" id="' + id + '">' +
+            '<div class="picture row">' +
+            '<img class="img-responsive picture"' +
+            'src="' + (tabData[i]).small_image + '">' +
+            '</div>' +
+            '<div class="container">' +
+            '<p class="h4 text-success">' + title + '</p>' +
+            '<p class="h6 text-muted">' + categories + '</p>' +
+            '<div class="stars row">';
+        for (var j = 0; j < numOfBlueStar; j++) {
+            s += '<i class="material-icons md-18 blue_star">star</i>';
+        }
+        for (var j = 0; j < numOfGrayStar; j++) {
+            s += '<i class="material-icons md-18 light_gray_star">star</i>';
+        }
+        s += '</div>' +
+            '</div>' +
+            '</div>';
+        var item = $(s).click(function () {
+            handleSliderClick($(this))
+        })
+        $('#related-slider-owl1').append(item)
+    }
+
+    var owl1 = $('#related-slider-owl1');
+    // owl1.on('initialized.owl.carousel', function (event) {
+    //     handleSliderOne(gamesData, event)
+    // })
+    owl1.owlCarousel({
+        loop: false,
+        margin: 10,
+        responsiveClass: true,
+        center:true ,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        responsive: {
+            0: {
+                items: 1,
+                nav: true,
+                dots: false
+            },
+            500: {
+                items: 2,
+                nav: true,
+            },
+            1400: {
+                items: 4,
+                center: true,
+                dots: true
+            }
+        }
+    })
+
+    if (numOfItemSlider2 > 0) {
+
+        for (var i = numOfItemSlider1; i < numOfItemSlider1 + numOfItemSlider2; i++) {
+            var id = i;
+            var title = (tabData[i]).title.substr(5);
+            var categories = (tabData[i]).categories;
+            var numOfBlueStar = parseInt((tabData[i]).rate);
+            var numOfGrayStar = 5 - numOfBlueStar;
+            var s = '<div class="slider-item-two  text-right owl-item" id="' + id + '">' +
+                '<div class="picture row">' +
+                '<img class="img-responsive picture"' +
+                'src="' + (tabData[i]).small_image + '">' +
+                '</div>' +
+                '<div class="container">' +
+                '<p class="h4 text-success">' + title + '</p>' +
+                '<p class="h6 text-muted">' + categories + '</p>' +
+                '<div class="stars row">';
+            for (var j = 0; j < numOfBlueStar; j++) {
+                s += '<i class="material-icons md-18 blue_star">star</i>';
+            }
+            for (var j = 0; j < numOfGrayStar; j++) {
+                s += '<i class="material-icons md-18 light_gray_star">star</i>';
+            }
+            s += '</div>' +
+                '</div>' +
+                '</div>';
+            var item = $(s).click(function () {
+                handleSliderClick($(this))
+            })
+            $('#related-slider-owl2').append(item)
+        }
+
+        var owl2 = $('#related-slider-owl2');
+        // owl1.on('initialized.owl.carousel', function (event) {
+        //     handleSliderOne(gamesData, event)
+        // })
+        owl2.owlCarousel({
+            loop: false,
+            margin: 10,
+            responsiveClass: true,
+            center:true ,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+                    dots: false
+                },
+                500: {
+                    items: 2,
+                    nav: true,
+                },
+                1400: {
+                    items: 4,
+                    center: true,
+                    dots: true
+                }
+            }
+        })
+
+        if (numOfItemSlider3 > 0) {
+            for (var i = numOfItemSlider2 + numOfItemSlider1; i < numOfItemSlider1 +
+            numOfItemSlider2 + numOfItemSlider3; i++) {
+                var id = i;
+                var title = (tabData[i]).title.substr(5);
+                var categories = (tabData[i]).categories;
+                var numOfBlueStar = parseInt((tabData[i]).rate);
+                var numOfGrayStar = 5 - numOfBlueStar;
+                var s = '<div class="slider-item-two  text-right owl-item" id="' + id + '">' +
+                    '<div class="picture row">' +
+                    '<img class="img-responsive picture"' +
+                    'src="' + (tabData[i]).small_image + '">' +
+                    '</div>' +
+                    '<div class="container">' +
+                    '<p class="h4 text-success">' + title + '</p>' +
+                    '<p class="h6 text-muted">' + categories + '</p>' +
+                    '<div class="stars row">';
+                for (var j = 0; j < numOfBlueStar; j++) {
+                    s += '<i class="material-icons md-18 blue_star">star</i>';
+                }
+                for (var j = 0; j < numOfGrayStar; j++) {
+                    s += '<i class="material-icons md-18 light_gray_star">star</i>';
+                }
+                s += '</div>' +
+                    '</div>' +
+                    '</div>';
+                var item = $(s).click(function () {
+                    handleSliderTwoClick($(this))
+                })
+                $('#related-slider-owl3').append(item)
+            }
+
+            var owl3 = $('#related-slider-owl3');
+            // owl1.on('initialized.owl.carousel', function (event) {
+            //     handleSliderOne(gamesData, event)
+            // })
+            owl3.owlCarousel({
+                loop: false,
+                margin: 10,
+                responsiveClass: true,
+                center:true ,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true,
+                        dots: false
+                    },
+                    500: {
+                        items: 2,
+                        nav: true,
+                    },
+                    1400: {
+                        items: 4,
+                        center: true,
+                        dots: true
+                    }
+                }
+            })
+
+        }
+    }
+
+
+}
+
+function initSameGameTab(tabData) {
+    addItemToSameGamePanel(tabData)
+}
+function sameGameClicked(event) {
+    if ($("#same-game-tab-title").attr('load') != 'loaded') {
+        var urlForHeader = domain + gameTitle + '/related_games.json'
+        $.ajax({
+            url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
+                if (data.response.ok == true) {
+                    console.log(data)
+                    var tabData;
+
+                    tabData = data.response.result.games;
+                    initSameGameTab(tabData)
+                    $("#same-game-tab-title").attr('load', 'loaded');
+                }
+            }
+        });
+    }
 }
 
 function galleryClicked(event) {
@@ -220,7 +443,7 @@ function galleryClicked(event) {
 }
 
 function addItemToRankPanel(tabData) {
-    if( tabData.length > 2 ) {
+    if (tabData.length > 2) {
         $($("#person1").children()[0]).children()[1].textContent = numberToPersian(tabData[1].level)
         if (tabData[1].player.avatar != "") {
             $($($("#person1").children()[0]).children()[0]).attr('src', tabData[1].player.avatar)

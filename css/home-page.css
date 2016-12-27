@@ -216,11 +216,11 @@
 }
 
 .owl-carousel {
-    height: 200px;
+    min-height: 200px;
 }
 
 .owl-stage {
-    height: 200px;;
+    min-height: 200px;;
 }
 
 

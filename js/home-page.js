@@ -125,6 +125,7 @@ function initComment(gamesData) {
 
 function handleSliderTwoClick(item) {
     var title = $(item.children()[1]).children()[0].textContent
+    title = 'بازی ' + title
     window.location.href = ("./games.html?game=" + title);
 }
 

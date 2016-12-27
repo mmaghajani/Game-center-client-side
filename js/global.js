@@ -5,7 +5,6 @@ function numberToPersian(number) {
     var s = '' ;
     var x = new String(number)
     var str = x.split('');
-    console.log(x)
     for( var i = 0 ; i < str.length ; i++){
         var digit = str[i];
         //console.log(digit)
@@ -45,7 +44,5 @@ function numberToPersian(number) {
         }
     }
 
-
-    //console.log(s)
     return s ;
 }
