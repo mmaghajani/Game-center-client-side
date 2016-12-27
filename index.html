@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>AmirKabir Studio</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,85 +34,48 @@
                     <div class="row text-center">
                         <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
                             <div class="text-left">
-                                <a href="html/register.html">
+                                <a href="register.html">
                                     <button type="button" class="btn-primary text-info h4">ثبت نام</button>
                                 </a>
-                                <a href="html/login.html" class="text-info h4">ورود</a>
+                                <a href="login.html" class="text-info h4">ورود</a>
                             </div>
                         </div>
                         <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
-                            <p id="page-title" class="text-right text-info h4">امیرکبیر <span
+                            <a href="./index.html"><p id="page-title" class="text-right text-info h4">امیرکبیر <span
                                     class="studio">استودیو</span>
-                                <i class="icon glyphicon ion-ios-game-controller-b"></i></p>
+                                <i class="icon glyphicon ion-ios-game-controller-b"></i></p></a>
                         </div>
                     </div>
                 </div>
                 <div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                     <div id="subject" class="row text-right text-info h2"><p>مرکز بازی سازی امیرکبیر</p></div>
                     <br>
-                    <div id="explain" class="row text-right text-info h4">
-                        <p>لورم ایپسوم یا طرح نما به طرحی بی معنی</p>
-                        <p>در صنعت چاپ و طراحی گفته میشود</p>
+                    <div id="explain" class="row text-right text-info h4 text-justify">
+                        <p>لورم ایپسوم یا طرح نما به طرحی بی معنی
+                            در صنعت چاپ و طراحی گفته میشود</p>
                     </div>
                     <br>
                     <div class="row text-right text-info">
-                        <span class="text-muted">تریلر این بازی</span>
+                        <a id="trailer-link" href="./games.html" onclick="enterGamePageBtnHandlerTrailer()"><span class="text-muted" >تریلر این بازی</span></a>
                         <span><i class="material-icons md-24 glyphicon text-muted">play_circle_filled</i></span>
-                        <a href="#">
-                            <button type="button" class="btn-primary">ورود به صفحه بازی</button>
-                        </a>
-
+                        <button type="button" class="btn-primary" onclick="enterGamePageBtnHandler()">ورود به صفحه
+                            بازی
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="slider" class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
-        <div class="owl-carousel owl-theme">
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-1">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-2">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-3">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-4">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-5">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-7">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-8">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-9">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-10">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-11">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
-            <div class="slider-item-one  text-right  vertical-align-wrap" id="item-12">
-                <p class="vertical-align text-info vertical-align--bottom h5"><strong>بررسی بازی Assassin
-                    Creed</strong></strong></p>
-            </div>
+        <div id="owl1" class="owl-carousel owl-theme">
+            <!--<div class="slider-item-one-frame slider-item-one-active text-right vertical-align-wrap">-->
+                <!--<div class="vertical-align&#45;&#45;middle">-->
+                    <!--<p class="h4 text-info">مرکز بازی سازی امیرکبیر</p>-->
+                    <!--<p class="h6 text-info">تعداد نظرات : ۲۵</p>-->
+                    <!--<br>-->
+                    <!--<button type="button" class="text-muted btn-default">صفحه بازی</button>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
@@ -123,97 +86,98 @@
         <p class="h3 text-right text-primary">جدیدترین بازی ها</p>
     </div>
     <div id="slider-2" class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
-        <div id="owl" class="owl-carousel owl-theme">
-            <div class="slider-item-two  text-right owl-item">
-                <div class="picture row">
+        <div id="owl20" class="owl-carousel owl-theme">
+            <!--<div class="slider-item-two  text-right owl-item">-->
+                <!--<div class="picture row">-->
+                    <!--<img class="img-responsive picture"-->
+                            <!--src="assets/marco_reus_fifa_17-1920x1080-1024x576.jpg" height="576" width="1024"/></img>-->
+                <!--</div>-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
+                        <!--<p class="h4 text-success">FIFA 2017</p>-->
+                        <!--<p class="h6 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<div class="stars row">-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slider-item-two  text-right owl-item">-->
+                <!--<div class="picture row">-->
 
-                </div>
-                <div class="container">
-                    <div class="type row">
-                        <p class="h4 text-success">FIFA 2017</p>
-                        <p class="h5 text-muted">ورزشی ، فوتبال</p>
-                    </div>
-                    <div class="stars row">
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item-two  text-right owl-item">
-                <div class="picture row">
+                <!--</div>-->
+                <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                        <!--<p class="h4 text-success">FIFA 2017</p>-->
+                        <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<div class="stars row">-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slider-item-two  text-right owl-item">-->
+                <!--<div class="picture row">-->
 
-                </div>
-                <div class="container">
-                    <div class="type row">
-                        <p class="h4 text-success">FIFA 2017</p>
-                        <p class="h5 text-muted">ورزشی ، فوتبال</p>
-                    </div>
-                    <div class="stars row">
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item-two  text-right owl-item">
-                <div class="picture row">
+                <!--</div>-->
+                <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                        <!--<p class="h4 text-success">FIFA 2017</p>-->
+                        <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<div class="stars row">-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slider-item-two  text-right owl-item">-->
+                <!--<div class="picture row">-->
 
-                </div>
-                <div class="container">
-                    <div class="type row">
-                        <p class="h4 text-success">FIFA 2017</p>
-                        <p class="h5 text-muted">ورزشی ، فوتبال</p>
-                    </div>
-                    <div class="stars row">
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item-two  text-right owl-item">
-                <div class="picture row">
+                <!--</div>-->
+                <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                        <!--<p class="h4 text-success">FIFA 2017</p>-->
+                        <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<div class="stars row">-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slider-item-two  text-right owl-item">-->
+                <!--<div class="picture row">-->
 
-                </div>
-                <div class="container">
-                    <div class="type row">
-                        <p class="h4 text-success">FIFA 2017</p>
-                        <p class="h5 text-muted">ورزشی ، فوتبال</p>
-                    </div>
-                    <div class="stars row">
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item-two  text-right owl-item">
-                <div class="picture row">
-
-                </div>
-                <div class="container">
-                    <div class="type row">
-                        <p class="h4 text-success">FIFA 2017</p>
-                        <p class="h5 text-muted">ورزشی ، فوتبال</p>
-                    </div>
-                    <div class="stars row">
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 blue_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                        <i class="material-icons md-18 light_gray_star">star</i>
-                    </div>
-                </div>
-            </div>
+                <!--</div>-->
+                <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                        <!--<p class="h4 text-success">FIFA 2017</p>-->
+                        <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<div class="stars row">-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 blue_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
@@ -229,146 +193,28 @@
         <br>
         <br>
         <div class="row col-sm-12 col-xs-12 col-md-12 col-lg-12 text-right">
-            <div id="guides" class="col-sm-6 col-lg-6 col-md-6 col-xs-12">
+            <div id="guides" class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <p class="h4 row">آخرین راهنماهای بازی ها</p>
                 <br>
-                <div class="row">
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="guide-content-body">
+
                 </div>
             </div>
-            <div id="comments" class="col-sm-6 col-lg-6 col-md-6 col-xs-12">
+            <div id="comments" class="col-sm-12 col-lg-6 col-md-6 col-xs-12">
                 <p class="h4 row">نظرات و گفت و گو ها</p>
                 <br>
-                <div class="row">
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="list-item">
-                            <div class="personal-image">
-                                <img src="./assets/prof2.jpg" class="list-image">
-                            </div>
-                            <div class="information">
-                                <div class="text-success h4">
-                                    بهزاد میامی
-                                </div>
-                                <div class="text-muted h5">
-                                    یکشنبه ۹ آبان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="comment-content-body">
+
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-<div id="contact">
-    <div id="frame-on-contact" class="vertical-align-wrap">
-        <div class="container col-xs-12 col-md-8 col-lg-8 col-sm-8 text-center vertical-align--middle">
-            <div class="media-middle">
+<div id="contact" class="col-xs-12">
+    <div id="frame-on-contact" class="col-xs-12 vertical-align-wrap">
+        <div id="panel" class="container col-xs-12 col-md-8 col-lg-8 col-sm-8 text-center vertical-align--middle">
+            <div class="">
                 <p class="text-info h1">به جامعه بازی سازان امیرکبیر بپیوندید</p>
                 <br>
                 <p class="text-info h3">بیش از ۵۰۰۰ عضو فعال در سراسر کشور</p>
@@ -385,9 +231,10 @@
         <div class="container col-lg-8 col-sm-8 col-md-8 col-xs-12">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <a href="./index.html">
                     <p class="h4 text-muted"><i
                             class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
-                            class="studio">استودیو</span></p>
+                            class="studio">استودیو</span></p></a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="menu">
                     <nav class="navbar navbar-default">
@@ -397,7 +244,7 @@
                                 <li><a href="#" class="text-success">سوالات متداول</a></li>
                                 <li><a href="#" class="text-success">ارتباط با سازندگان</a></li>
                                 <li><a href="#" class="text-success">درباره ما</a></li>
-                                <li><a href="#" class="text-success">صفحه اصلی</a></li>
+                                <li><a href="./index.html" class="text-success">صفحه اصلی</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -405,9 +252,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12" id="social">
-                    <i class="ionicons ion-social-facebook social"></i>
-                    <i class="ionicons ion-social-twitter social"></i>
-                    <i class="ionicons ion-social-instagram social"></i>
+                    <a href="http://facebook.com"><i class="ionicons ion-social-facebook social"></i></a>
+                    <a href="http://twitter.com"><i class="ionicons ion-social-twitter social"></i></a>
+                    <a href="http://instagram.com"><i class="ionicons ion-social-instagram social"></i></a>
                 </div>
             </div>
         </div>
@@ -419,6 +266,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="js/global.js"></script>
 <script src="js/home-page.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
