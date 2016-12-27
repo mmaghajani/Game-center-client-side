@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         gameTitle = getParameterByName('game');
-        var urlForHeader = my_domain + gameTitle + '/header.json';
+        var urlForHeader = my_domain + +'games/' + gameTitle + '/header.json';
 
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
@@ -23,7 +23,7 @@ $(document).ready(function () {
             }
         });
 
-        urlForHeader = my_domain + gameTitle + '/' + tabItem + '.json'
+        urlForHeader = my_domain + 'games/' + gameTitle + '/' + tabItem + '.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -54,7 +54,7 @@ function handlerForSearchPanel() {
 
 function infoClicked(event) {
     if ($("#info-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = my_domain + gameTitle + '/info.json'
+        var urlForHeader = my_domain + 'games/' + gameTitle + '/info.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -72,7 +72,7 @@ function infoClicked(event) {
 
 function rankClicked(event) {
     if ($("#score-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = my_domain + gameTitle + '/leaderboard.json'
+        var urlForHeader = my_domain + 'games/' +gameTitle + '/leaderboard.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -89,7 +89,7 @@ function rankClicked(event) {
 }
 function commentClicked(event) {
     if ($("#comment-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = my_domain + gameTitle + '/comments.json'
+        var urlForHeader = my_domain + 'games/' + gameTitle + '/comments.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -318,7 +318,7 @@ function initSameGameTab(tabData) {
 }
 function sameGameClicked(event) {
     if ($("#same-game-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = my_domain + gameTitle + '/related_games.json'
+        var urlForHeader = my_domain + 'games/' + gameTitle + '/related_games.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -336,7 +336,7 @@ function sameGameClicked(event) {
 
 function galleryClicked(event) {
     if ($("#videos-tab-title").attr('load') != 'loaded') {
-        var urlForHeader = my_domain + gameTitle + '/gallery.json'
+        var urlForHeader = my_domain + 'games/' + gameTitle + '/gallery.json'
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
@@ -427,7 +427,7 @@ function initRankTab(tabData) {
 }
 
 function nextComments(event) {
-    var urlForHeader = my_domain + gameTitle + '/comments' + $($("#comments").children()[0]).children().length + '.json'
+    var urlForHeader = my_domain + 'games/' + gameTitle + '/comments.json?offset=' + $($("#comments").children()[0]).children().length
     console.log(urlForHeader)
     $.ajax({
         url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {

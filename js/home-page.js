@@ -129,6 +129,14 @@ function handleSliderTwoClick(item) {
     window.location.href = ("./games.html?game=" + title);
 }
 
+function addHandller() {
+    var items = $("#owl20").find(".owl-item")
+    for( var i = 0 ; i < items.length ; i++ ){
+        $(items[i]).click(function () {
+            handleSliderTwoClick($(this))
+        })
+    }
+}
 function addItemsToSliderTwo(numberOfItems, gamesData) {
     for (var i = 0; i < numberOfItems; i++) {
         var id = i;
@@ -154,10 +162,10 @@ function addItemsToSliderTwo(numberOfItems, gamesData) {
         s += '</div>' +
             '</div>' +
             '</div>';
-        var item = $(s).click(function () {
-            handleSliderTwoClick($(this))
-        })
-        $('#owl20').append(item)
+        // var item = $(s).click(function () {
+        //     handleSliderTwoClick($(this))
+        // })
+        $('#owl20').append(s)
     }
 }
 
@@ -193,6 +201,8 @@ function initSliderTwo(gamesData) {
             }
         }
     })
+
+    addHandller()
     // owl1.on('changed.owl.carousel', function (event) {
     //     handleSliderOne(gamesData, event)
     // })
@@ -211,7 +221,7 @@ function initSliderOne(gamesData) {
         loop: false, rewind: true, center: false, dots: false, responsiveClass: true, animateOut: 'fadeOut',
         animateIn: 'fadeIn',
         autoplay: true,
-        autoplayTimeout: 8000,
+        autoplayTimeout: 5000,
         autoplayHoverPause: false,
         responsive: {
             0: {
