@@ -44,13 +44,11 @@ $(document).ready(function () {
                 }
             }
         });
-
-        handlerForSearchPanel()
-
     });
 });
 function handlerForSearchPanel() {
-    var keyword= $("#query-search").textContent
+    var keyword= $("#query-search").val()
+    console.log(keyword)
     window.location.href = ("./games_list.html?q=" + keyword  );
 }
 
