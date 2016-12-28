@@ -11,6 +11,12 @@
     color: #0f73d2;
 }
 
+.loader{
+    align-self: center;
+    align-content: center;
+    alignment: center;
+}
+
 .text-warning{
     color: #25c7df;;
 }
