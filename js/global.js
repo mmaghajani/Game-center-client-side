@@ -1,7 +1,7 @@
 /**
  * Created by mma on 12/27/16.
  */
-var my_domain = "http://‫‪api.ie.ce-it.ir/F95/‬‬";
+var my_domain = 'http://‫‪api.ie.ce-it.ir/F95/‬‬';
 function numberToPersian(number) {
     var s = '' ;
     var x = new String(number)

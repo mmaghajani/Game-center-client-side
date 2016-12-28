@@ -23,6 +23,12 @@ $(document).ready(function () {
 
 })
 
+function handlerForSearchPanel() {
+    var keyword= $("#query-search").val()
+    console.log(keyword)
+    window.location.href = ("./games_list.html?q=" + keyword  );
+}
+
 function handleSliderClick(item) {
     var title = $(item.children()[1]).children()[0].textContent
     title = 'بازی ' + title

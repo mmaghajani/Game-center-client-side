@@ -11,6 +11,7 @@ $(document).ready(function () {
 
 
     var requestURL = my_domain + 'home.json'
+    console.log(requestURL)
     $.ajax({
         url: requestURL, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
             if (data.response.ok == true) {

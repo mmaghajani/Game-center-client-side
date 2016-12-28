@@ -12,8 +12,8 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         gameTitle = getParameterByName('game');
-        var urlForHeader = my_domain + +'games/' + gameTitle + '/header.json';
 
+        var urlForHeader = my_domain +'games/' + gameTitle + '/header.json';
         $.ajax({
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {

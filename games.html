@@ -7,7 +7,7 @@
     <title>Game</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
     <!--<link href="../node_modules/video.js/dist/video-js.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/>
@@ -47,12 +47,14 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-left">
 
-                        <li class="navbar-left"><a href="./login.html"><span class="glyphicon glyphicon-user"></span> ورود</a>
+                        <li class="navbar-left"><a href="./login.html"><span class="glyphicon glyphicon-user"></span>
+                            ورود</a>
                         </li>
                         <li class="navbar-left">
                             <form class="navbar-form">
                                 <div class="input-group">
-                                    <input type="text" id="query-search" class="form-control" placeholder="جست و جو ...">
+                                    <input type="text" id="query-search" class="form-control"
+                                           placeholder="جست و جو ...">
                                     <div class="input-group-btn">
                                         <button class="btn btn-toolbar" type="button" onclick="handlerForSearchPanel()">
                                             <i class="glyphicon glyphicon-search"></i>
@@ -103,13 +105,25 @@
 <div class="row col-xs-12 col-lg-12 col-md-12 col-sm-12" id="tab">
     <div class="row col-lg-8 col-sm-8 col-md-8 col-xs-12 container">
         <ul class="nav nav-pills nav-justified" id="menu-pill">
-            <li id="info-tab-title" class="active tab-title" onclick="infoClicked()"><a data-toggle="pill" href="#info" class="text-muted tab-title">اطلاعات بازی</a></li>
-            <li id="score-tab-title" class="tab-title" onclick="rankClicked()"><a data-toggle="pill" href="#score-tab" class="text-muted tab-title">رتبه بندی و امتیازات</a>
+            <li id="info-tab-title" class="active tab-title" onclick="infoClicked()"><a data-toggle="pill" href="#info"
+                                                                                        class="text-muted tab-title">اطلاعات
+                بازی</a></li>
+            <li id="score-tab-title" class="tab-title" onclick="rankClicked()"><a data-toggle="pill" href="#score-tab"
+                                                                                  class="text-muted tab-title">رتبه بندی
+                و امتیازات</a>
             </li>
-            <li id="comment-tab-title" class="tab-title" onclick="commentClicked()"><a data-toggle="pill" href="#comment" class="text-muted tab-title">نظرات کاربران</a></li>
-            <li id="same-game-tab-title" class="tab-title" onclick="sameGameClicked()"><a data-toggle="pill" href="#same-game" class="text-muted tab-title">بازی های مشابه</a>
+            <li id="comment-tab-title" class="tab-title" onclick="commentClicked()"><a data-toggle="pill"
+                                                                                       href="#comment"
+                                                                                       class="text-muted tab-title">نظرات
+                کاربران</a></li>
+            <li id="same-game-tab-title" class="tab-title" onclick="sameGameClicked()"><a data-toggle="pill"
+                                                                                          href="#same-game"
+                                                                                          class="text-muted tab-title">بازی
+                های مشابه</a>
             </li>
-            <li id="videos-tab-title" class="tab-title" onclick="galleryClicked()"><a data-toggle="pill" href="#videos" class="text-muted tab-title">عکس ها و ویدیوها</a></li>
+            <li id="videos-tab-title" class="tab-title" onclick="galleryClicked()"><a data-toggle="pill" href="#videos"
+                                                                                      class="text-muted tab-title">عکس
+                ها و ویدیوها</a></li>
         </ul>
     </div>
 </div>
@@ -205,282 +219,282 @@
                         </div>
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۱.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
-                                <!--<i class="material-icons md-18 gold_star">star</i>-->
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۱.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<i class="material-icons md-18 gold_star">star</i>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۲.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۲.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۳.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
-                                <!--<i class="material-icons md-18 bronze-start">star</i>-->
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۳.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<i class="material-icons md-18 bronze-start">star</i>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۴.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۴.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۵.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۵.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۶.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۶.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۷.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۷.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۸.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۸.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۹.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۹.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                         <!--<div class="list-item vertical-align-wrap">-->
 
-                            <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
-                                <!--۱۰.-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 h4">-->
+                        <!--<div class="list-cell col-xs-1 h4 vertical-align&#45;&#45;middle">-->
+                        <!--۱۰.-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 h4">-->
 
-                            <!--</div>-->
-                            <!--<div class="list-cell personal-image col-xs-1">-->
-                                <!--<img src="assets/prof2.jpg" class="list-image">-->
-                            <!--</div>-->
-                            <!--<div class="information list-cell col-xs-5 text-success h4">-->
-                                <!--<div class="name list-cell">-->
-                                    <!--کاظم اسماعیلی-->
-                                <!--</div>-->
-                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="list-cell personal-image col-xs-1">-->
+                        <!--<img src="assets/prof2.jpg" class="list-image">-->
+                        <!--</div>-->
+                        <!--<div class="information list-cell col-xs-5 text-success h4">-->
+                        <!--<div class="name list-cell">-->
+                        <!--کاظم اسماعیلی-->
+                        <!--</div>-->
+                        <!--</div>-->
 
-                            <!--<div class="list-cell col-xs-1 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-1 text-primary h4">-->
-                                <!--۴-->
-                            <!--</div>-->
-                            <!--<div class="list-cell col-xs-2 text-warning h4">-->
-                                <!--۴-->
-                            <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-1 text-primary h4">-->
+                        <!--۴-->
+                        <!--</div>-->
+                        <!--<div class="list-cell col-xs-2 text-warning h4">-->
+                        <!--۴-->
+                        <!--</div>-->
 
                         <!--</div>-->
                     </div>
@@ -519,7 +533,9 @@
                                             <option>5</option>
                                         </select>
                                     </div>
-                                    <button type="button" class="btn btn-primary text-right vertical-align--middle" data-dismiss="modal">ثبت نظر</button>
+                                    <button type="button" class="btn btn-primary text-right vertical-align--middle"
+                                            data-dismiss="modal">ثبت نظر
+                                    </button>
                                 </div>
                             </div>
 
@@ -672,99 +688,99 @@
             <div id="related-slider-1" class="col-sm-12 col-md-12 col-xs-12 col-lg-12">
                 <div id="related-slider-owl1" class="owl-carousel owl-theme">
                     <!--<div class="slider-item-two  text-right owl-item">-->
-                        <!--<div class="picture row">-->
+                    <!--<div class="picture row">-->
 
-                        <!--</div>-->
-                        <!--<div class="container">-->
-                            <!--<div class="type row">-->
-                                <!--<p class="h4 text-success">FIFA 2017</p>-->
-                                <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<div class="stars row">-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                    <!--<p class="h4 text-success">FIFA 2017</p>-->
+                    <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div class="stars row">-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  text-right owl-item">-->
-                        <!--<div class="picture row">-->
+                    <!--<div class="picture row">-->
 
-                        <!--</div>-->
-                        <!--<div class="container">-->
-                            <!--<div class="type row">-->
-                                <!--<p class="h4 text-success">FIFA 2017</p>-->
-                                <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<div class="stars row">-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                    <!--<p class="h4 text-success">FIFA 2017</p>-->
+                    <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div class="stars row">-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  text-right owl-item">-->
-                        <!--<div class="picture row">-->
+                    <!--<div class="picture row">-->
 
-                        <!--</div>-->
-                        <!--<div class="container">-->
-                            <!--<div class="type row">-->
-                                <!--<p class="h4 text-success">FIFA 2017</p>-->
-                                <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<div class="stars row">-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                    <!--<p class="h4 text-success">FIFA 2017</p>-->
+                    <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div class="stars row">-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  text-right owl-item">-->
-                        <!--<div class="picture row">-->
+                    <!--<div class="picture row">-->
 
-                        <!--</div>-->
-                        <!--<div class="container">-->
-                            <!--<div class="type row">-->
-                                <!--<p class="h4 text-success">FIFA 2017</p>-->
-                                <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<div class="stars row">-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                    <!--<p class="h4 text-success">FIFA 2017</p>-->
+                    <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div class="stars row">-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                     <!--<div class="slider-item-two  text-right owl-item">-->
-                        <!--<div class="picture row">-->
+                    <!--<div class="picture row">-->
 
-                        <!--</div>-->
-                        <!--<div class="container">-->
-                            <!--<div class="type row">-->
-                                <!--<p class="h4 text-success">FIFA 2017</p>-->
-                                <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<div class="stars row">-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 blue_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                                <!--<i class="material-icons md-18 light_gray_star">star</i>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="container">-->
+                    <!--<div class="type row">-->
+                    <!--<p class="h4 text-success">FIFA 2017</p>-->
+                    <!--<p class="h5 text-muted">ورزشی ، فوتبال</p>-->
+                    <!--</div>-->
+                    <!--<br>-->
+                    <!--<div class="stars row">-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 blue_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--<i class="material-icons md-18 light_gray_star">star</i>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                 </div>
             </div>
@@ -1040,9 +1056,11 @@
         <div class="container col-lg-8 col-sm-8 col-md-8 col-xs-12">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <p class="h4 text-muted"><i
-                            class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
-                            class="studio">استودیو</span></p>
+                    <a href="index.html">
+                        <p class="h4 text-muted"><i
+                                class="icon glyphicon ion-ios-game-controller-b"></i> امیرکبیر <span
+                                class="studio">استودیو</span></p>
+                    </a>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="menu">
                     <nav class="navbar navbar-default">
@@ -1082,6 +1100,6 @@
 <!--<script>-->
 <!--videojs.options.flash.swf = "../node_modules/videojs-swf/dist/video-js.swf"-->
 <!--</script>-->
-<script src="js/bootstrap.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
