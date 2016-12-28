@@ -5,7 +5,7 @@
 */
 
 html, body {
-    background-color: #3f6aaf;
+    /*background-color: #3f6aaf;*/
     padding: 0px;
     margin: 0px;
     border: 0px;
@@ -36,18 +36,16 @@ ul#menu {
     margin: auto;
 }
 
-#account {
+.account {
     margin: auto;
-    width: 800px;
     font-weight: 100;
     float: left;
     text-align: center;
 }
 
-#games {
+.games {
     float: right;
     margin: auto;
-    width: 600px;
     padding-top: 5px;
     text-align: center;
 }

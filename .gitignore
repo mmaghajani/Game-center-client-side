@@ -67,3 +67,11 @@ favicon.ico
 humans.txt
 example.html
 robots.txt
+.*
+LICENSE
+bower.json
+karma.conf.js
+node_modules/
+e2e-tests/
+
+assets/trailer.mp4

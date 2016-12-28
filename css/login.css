@@ -3,6 +3,10 @@
 	date: dd-mm-yy;
 	version: 0.1;
 */
+html,body{
+    background: #3f6aaf;
+}
+
 #form {
     alignment: center;
     background: #eaebed;
