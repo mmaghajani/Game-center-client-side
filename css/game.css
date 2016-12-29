@@ -520,6 +520,13 @@ p{
     width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+
+    #best{
+        display: none;
+    }
+}
+
 #game-pic {
     background: url("../assets/thmub.jpg") no-repeat center center;
     background-size: cover;
