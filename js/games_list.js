@@ -13,7 +13,7 @@ $(document).ready(function () {
             url: urlForHeader, type: 'GET', headers: {'Access-Control-Allow-Origin': '*'}, success: function (data) {
                 if (data.response.ok == true) {
                     var searchData = data.response.result.games;
-                    $("#frame").find("p")[0].textContent = 'نتایج جست و جو برای : ' + keyword
+                    $("#frame-one").find("p")[0].textContent = 'نتایج جست و جو برای : ' + keyword
 
                     addItemToResultPanel(searchData)
                 }
