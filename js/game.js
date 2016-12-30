@@ -81,7 +81,7 @@ function rankClicked(event) {
 
                     tabData = data.response.result.leaderboard;
                     initRankTab(tabData)
-                    $("#comment-tab-title").attr('load', 'loaded');
+                    $("#score-tab-title").attr('load', 'loaded');
                 }
             }
         });
@@ -112,6 +112,7 @@ function handleSliderClick(item) {
     window.location.href = ("./games.html?game=" + title);
 }
 function addItemToSameGamePanel(tabData) {
+    $($('#related-slider-1').children()[0]).remove()
     var numOfRelated = tabData.length;
 
     var numOfItemSlider1 = 0, numOfItemSlider2 = 0, numOfItemSlider3 = 0
@@ -353,6 +354,7 @@ function galleryClicked(event) {
 }
 
 function addItemToRankPanel(tabData) {
+    $($('#list').children()[1]).remove()
     if (tabData.length > 2) {
         $($("#person1").children()[0]).children()[1].textContent = numberToPersian(tabData[1].level)
         if (tabData[1].player.avatar != "") {
@@ -537,6 +539,7 @@ function addItemToCommentPanel(tabData) {
 }
 
 function initCommentTab(tabData) {
+    $($('#comments').children()[0]).remove()
     if (tabData.length > 0) {
         numberOfTotalComments = tabData[0].game.number_of_comments;
         console.log($("#comment-number"))
@@ -549,7 +552,8 @@ function initCommentTab(tabData) {
 function addItemToInfoPanel(data) {
     var s = '<p class="h5 text-primary text-justify">' + data.info + '</p>';
     //
-    $('#info').append(s).addClass('text-justify')
+    $('#info-content').empty()
+    $('#info-content').append(s).addClass('text-justify')
     var images = $('#info').find('img')
     for (var i = 0; i < images.length; i++) {
         $(images[i]).addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12 img-responsive')
@@ -629,7 +633,7 @@ function addHeaderItem(gamesData) {
     var numOfComments = numberToPersian(gamesData.number_of_comments)
     var rate = parseInt(gamesData.rate)
     doubleRate = numberToPersian(String(doubleRate).substring(0, 3))
-    var starsBlock = $($($("#header-content").children()[1]).children()[0]).children()[2];
+    var starsBlock = $($($("#header-content").children()[1]).children()[0]).children()[1];
     for (var i = 0; i < rate; i++) {
         $(starsBlock).append('<i class="material-icons md-18 blue_star">star</i>')
     }

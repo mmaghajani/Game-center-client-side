@@ -157,7 +157,7 @@
     left: 4.1508px;
 }
 
-level-18md {
+.level-18md {
     float: right;
     position: relative;
     top: 59px;
@@ -360,7 +360,7 @@ level-18md {
 #frame {
     background: rgba(0, 0, 0, 0.64);
     background-size: cover;
-    min-height: 300px !important;
+    height: 300px !important;
     width: 100%;
     padding: 10px;
 }
@@ -499,6 +499,9 @@ p{
     margin-bottom: 50px;
 }
 
+.header-star{
+    padding: 0px 10px 0px 10px;
+}
 .picture {
     /*background: url("../assets/marco_reus_fifa_17-1920x1080-1024x576.jpg") no-repeat center center;*/
     background-size: cover;
@@ -517,12 +520,20 @@ p{
     width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+
+    #best{
+        display: none;
+    }
+}
+
 #game-pic {
     background: url("../assets/thmub.jpg") no-repeat center center;
     background-size: cover;
     min-height: 120px !important;
     width: 120px !important;
     border-radius: 10px;
+    margin-top: 20px;
     padding: 0px;
     margin-left: 5px;
 }

@@ -54,10 +54,10 @@
     box-shadow: 0px 0px 20px #565758;
 }
 
-#frame{
+#frame-one{
     background: rgba(0, 0, 0, 0.64);
     background-size: cover;
-    min-height: inherit !important;
+    height: 220px !important;
     width: 100%;
     padding: 10px;
 }
