@@ -72,5 +72,6 @@ LICENSE
 bower.json
 karma.conf.js
 node_modules/
-package.json
 e2e-tests/
+
+assets/trailer.mp4
